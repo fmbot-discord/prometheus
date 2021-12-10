@@ -278,7 +278,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "bot_registered_users_count{exported_job=\"fmbot production\"}",
+          "expr": "bot_registered_users_count{exported_job=\"production\"}",
           "interval": "",
           "legendFormat": "Registered",
           "refId": "A"
@@ -289,7 +289,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "bot_authorized_users_count{exported_job=\"fmbot production\"}",
+          "expr": "bot_authorized_users_count{exported_job=\"production\"}",
           "interval": "",
           "legendFormat": "Authorized",
           "refId": "B"
@@ -424,7 +424,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "fmbot production cached images used"
+              "options": "production cached images used"
             },
             "properties": [
               {
@@ -436,7 +436,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "fmbot production images fetched per second"
+              "options": "production images fetched per second"
             },
             "properties": [
               {
@@ -576,7 +576,7 @@
           "exemplar": true,
           "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024 /1024",
           "interval": "",
-          "legendFormat": ".fmbot production memory usage",
+          "legendFormat": "{exported_job} memory usage",
           "refId": "A"
         }
       ],
@@ -1085,7 +1085,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "dotnet_total_memory_bytes{exported_job=\"fmbot production\"} /1024 /1024",
+          "expr": "dotnet_total_memory_bytes{exported_job=\"production\"} /1024 /1024",
           "interval": "",
           "legendFormat": "Usage",
           "refId": "A"
@@ -1223,7 +1223,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "rate(bot_commands_executed{exported_job=\"fmbot production\"}[1m]) * 60",
+          "expr": "rate(bot_commands_executed{exported_job=\"production\"}[1m]) * 60",
           "interval": "",
           "legendFormat": "Usage",
           "refId": "A"
@@ -1357,7 +1357,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "rate(lastfm_api_calls{exported_job=\"fmbot production\"}[1m]) * 60",
+          "expr": "rate(lastfm_api_calls{exported_job=\"production\"}[1m]) * 60",
           "interval": "",
           "legendFormat": "Usage",
           "refId": "A"
