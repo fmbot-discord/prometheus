@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1639142017094,
+  "iteration": 1639145678173,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -576,7 +576,7 @@
           "exemplar": true,
           "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024 /1024",
           "interval": "",
-          "legendFormat": "{exported_job} memory usage",
+          "legendFormat": "{{exported_job}} memory usage",
           "refId": "A"
         }
       ],
@@ -2246,7 +2246,7 @@
       }
     }
   ],
-  "refresh": "",
+  "refresh": "30s",
   "schemaVersion": 33,
   "style": "dark",
   "tags": [
@@ -2341,10 +2341,10 @@
         "current": {
           "selected": true,
           "text": [
-            "local"
+            "production"
           ],
           "value": [
-            "local"
+            "production"
           ]
         },
         "definition": "label_values(exported_job)",
@@ -2400,6 +2400,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
