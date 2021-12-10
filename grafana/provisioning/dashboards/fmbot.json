@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1639139601914,
+  "iteration": 1639141132453,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -1593,9 +1593,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
+      "datasource": {},
       "fieldConfig": {
         "defaults": {
           "links": []
@@ -1641,8 +1639,14 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "increase(dotnet_collection_count_total[$interval])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "Generation-{{generation}}",
           "refId": "A"
@@ -1768,9 +1772,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
@@ -1816,10 +1817,16 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "dotnet_total_memory_bytes{job=~\"$bottype\"} /1024/1024",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024/1024",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{exported_jobjob}}",
           "refId": "A"
         }
       ],
@@ -1861,9 +1868,6 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1910,10 +1914,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "http_requests_in_progress",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{exported_jobjob}}",
           "refId": "A"
         }
       ],
@@ -1956,9 +1966,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
+      "datasource": {},
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
@@ -2004,11 +2012,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "process_working_set_bytes /1024/1024",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{exported_jobjob}}",
           "refId": "A"
         }
       ],
@@ -2050,9 +2063,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
+      "datasource": {},
       "decimals": 0,
       "description": "",
       "fieldConfig": {
@@ -2099,10 +2110,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "process_num_threads",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{exported_job}}",
           "refId": "A"
         }
       ],
@@ -2142,99 +2159,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 8,
-        "x": 7,
-        "y": 50
-      },
-      "hiddenSeries": false,
-      "id": 20,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "8.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "sum(discord_server_count)",
-          "format": "heatmap",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "The duration of HTTP requests",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "uid": "fmbot production"
-      },
+      "datasource": {},
       "decimals": 0,
       "description": "",
       "fieldConfig": {
@@ -2282,11 +2207,16 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
           "expr": "process_open_handles",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{exported_job}}",
           "refId": "A"
         }
       ],
@@ -2322,7 +2252,7 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": "",
   "schemaVersion": 33,
   "style": "dark",
   "tags": [
@@ -2476,6 +2406,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
