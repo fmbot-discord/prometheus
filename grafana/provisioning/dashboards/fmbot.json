@@ -690,13 +690,13 @@
       "pluginVersion": "8.3.1",
       "targets": [
         {
-          "expr": "increase(lastfm_api_calls{job=~\"$bottype\"}[1d])",
+          "expr": "increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d])",
           "interval": "",
           "legendFormat": "Unauthorized",
           "refId": "A"
         },
         {
-          "expr": "increase(lastfm_authorized_api_calls{job=~\"$bottype\"}[1d])",
+          "expr": "increase(lastfm_authorized_api_calls{exported_job=~\"$bottype\"}[1d])",
           "interval": "",
           "legendFormat": "Authorized",
           "refId": "B"
