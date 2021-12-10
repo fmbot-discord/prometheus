@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1639145678173,
+  "iteration": 1639146749712,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -75,7 +75,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "targets": [
         {
           "datasource": {
@@ -270,7 +270,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "targets": [
         {
           "datasource": {
@@ -339,7 +339,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "targets": [
         {
           "datasource": {
@@ -420,32 +420,7 @@
           },
           "unit": "none"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "production cached images used"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "short"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "production images fetched per second"
-            },
-            "properties": [
-              {
-                "id": "unit",
-                "value": "short"
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 8,
@@ -453,7 +428,7 @@
         "x": 10,
         "y": 10
       },
-      "id": 38,
+      "id": 39,
       "links": [],
       "options": {
         "legend": {
@@ -473,40 +448,30 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "rate(lastfm_image_cdn_calls{exported_job=~\"$bottype\"}[$interval]) * 60",
+          "expr": "bot_registered_users_count{exported_job=~\"$bottype\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_job}} images fetched per second",
+          "legendFormat": "{{exported_job}} registered users",
           "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "rate(lastfm_cached_image_cdn_calls{exported_job=~\"$bottype\"}[$interval]) * 60",
-          "interval": "",
-          "legendFormat": "{{exported_job}} cached images used per second",
-          "refId": "B"
         }
       ],
-      "title": "Images fetched per minute",
+      "title": "Registered users",
       "type": "timeseries"
     },
     {
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "palette-classic"
           },
           "custom": {
-            "axisLabel": "mb",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -520,7 +485,7 @@
               "type": "linear"
             },
             "showPoints": "never",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -529,9 +494,9 @@
               "mode": "off"
             }
           },
+          "decimals": 0,
           "links": [],
           "mappings": [],
-          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -545,7 +510,7 @@
               }
             ]
           },
-          "unit": "decmbytes"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -555,7 +520,8 @@
         "x": 17,
         "y": 10
       },
-      "id": 35,
+      "id": 48,
+      "links": [],
       "options": {
         "legend": {
           "calcs": [],
@@ -574,13 +540,15 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024 /1024",
+          "expr": "bot_registered_users_count{exported_job=~\"$bottype\"}",
+          "format": "time_series",
           "interval": "",
-          "legendFormat": "{{exported_job}} memory usage",
+          "intervalFactor": 1,
+          "legendFormat": "{{exported_job}} registered users",
           "refId": "A"
         }
       ],
-      "title": "Memory usage",
+      "title": "Registered users",
       "type": "timeseries"
     },
     {
@@ -628,7 +596,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "targets": [
         {
           "datasource": {
@@ -687,7 +655,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "targets": [
         {
           "expr": "increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d])",
@@ -762,7 +730,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 10,
+        "w": 6,
         "x": 0,
         "y": 18
       },
@@ -862,15 +830,40 @@
           },
           "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "production cached images used"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "production images fetched per second"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "short"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 8,
-        "w": 7,
-        "x": 10,
+        "w": 6,
+        "x": 6,
         "y": 18
       },
-      "id": 39,
+      "id": 38,
       "links": [],
       "options": {
         "legend": {
@@ -890,15 +883,26 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "bot_registered_users_count{exported_job=~\"$bottype\"}",
+          "expr": "rate(lastfm_image_cdn_calls{exported_job=~\"$bottype\"}[$interval]) * 60",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_job}} registered users",
+          "legendFormat": "{{exported_job}} images fetched per second",
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(lastfm_cached_image_cdn_calls{exported_job=~\"$bottype\"}[$interval]) * 60",
+          "interval": "",
+          "legendFormat": "{{exported_job}} cached images used per second",
+          "refId": "B"
         }
       ],
-      "title": "Registered users",
+      "title": "Images fetched per minute",
       "type": "timeseries"
     },
     {
@@ -958,8 +962,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 7,
-        "x": 17,
+        "w": 6,
+        "x": 12,
         "y": 18
       },
       "id": 2,
@@ -982,15 +986,131 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "discord_server_count{exported_job=~\"$bottype\"}",
+          "expr": "rate(lastfm_errors{exported_job=~\"$bottype\"}[$interval]) * 60",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_job}} servers",
+          "legendFormat": "Total {{exported_job}} Last.fm errors",
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(lastfm_errors_badauth{exported_job=~\"$bottype\"}[$interval]) * 60",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Badauth",
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "rate(lastfm_errors_failure{exported_job=~\"$bottype\"}[$interval]) * 60",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Failure",
+          "refId": "C"
+        }
+      ],
+      "title": "Last.fm errors",
+      "type": "timeseries"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "mb",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 18
+      },
+      "id": 35,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024 /1024",
+          "interval": "",
+          "legendFormat": "{{exported_job}} memory usage",
           "refId": "A"
         }
       ],
-      "title": "Servers",
+      "title": "Memory usage",
       "type": "timeseries"
     },
     {
@@ -1070,7 +1190,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1208,7 +1328,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1342,7 +1462,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1528,7 +1648,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1624,7 +1744,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1716,7 +1836,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1898,7 +2018,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1996,7 +2116,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2094,7 +2214,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2191,7 +2311,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "8.3.2",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2339,7 +2459,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "production"
           ],
@@ -2369,7 +2489,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {
@@ -2400,6 +2520,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
