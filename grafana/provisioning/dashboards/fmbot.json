@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1639146749712,
+  "iteration": 1640957281662,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -815,10 +815,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 100000
               }
             ]
           }
@@ -1198,10 +1194,6 @@
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 100000
               }
             ]
           }
@@ -2603,7 +2595,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "production"
           ],
@@ -2633,7 +2625,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -2664,6 +2656,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 5,
+  "version": 7,
   "weekStart": ""
 }

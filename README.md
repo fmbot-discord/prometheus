@@ -138,12 +138,12 @@ Verify all the services have been provisioned. The Replica count for each servic
 ## Check the Metrics
 Once all the services are up we can open the Traefik Dashboard. The dashboard should show us our frontend and backends configured for both Grafana and Prometheus.
 
-    http://localhost:8081
+    http://localhost:8080
 
 
 Take a look at the metrics which Traefik is now producing in Prometheus metrics format
 
-    http://localhost:8081/metrics
+    http://localhost:8080/metrics
 
 
 ## Login to Grafana and Visualize Metrics
