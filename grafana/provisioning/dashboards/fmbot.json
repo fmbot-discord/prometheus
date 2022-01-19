@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1640957281662,
+  "iteration": 1642588667907,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -75,7 +75,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -143,7 +143,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -271,7 +271,7 @@
           "exemplar": true,
           "expr": "rate(lastfm_api_calls{exported_job=~\"$bottype\"}[$interval]) * 60",
           "interval": "",
-          "legendFormat": "Last.fm calls {{exported_job}}",
+          "legendFormat": "Last.fm {{method}}",
           "refId": "B"
         },
         {
@@ -326,7 +326,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -380,7 +380,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -787,7 +787,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -795,7 +795,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d]) / (24 * 60 * 60)",
+          "expr": "sum(increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d]) / (24 * 60 * 60))",
           "instant": false,
           "interval": "",
           "legendFormat": "{{exported_job}}",
@@ -842,16 +842,26 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
-          "expr": "increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d])",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d]))",
           "interval": "",
           "legendFormat": "Unauthorized",
           "refId": "A"
         },
         {
-          "expr": "increase(lastfm_authorized_api_calls{exported_job=~\"$bottype\"}[1d])",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "sum(increase(lastfm_authorized_api_calls{exported_job=~\"$bottype\"}[1d]))",
           "interval": "",
           "legendFormat": "Authorized",
           "refId": "B"
@@ -1221,7 +1231,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
@@ -1229,7 +1239,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "increase(bot_commands_executed{exported_job=~\"$bottype\"}[1d])",
+          "expr": "sum(increase(bot_commands_executed{exported_job=~\"$bottype\"}[1d]))",
           "interval": "",
           "legendFormat": "Commands",
           "refId": "B"
@@ -1240,7 +1250,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "increase(bot_slash_commands_executed{exported_job=~\"$bottype\"}[1d])",
+          "expr": "sum(increase(bot_slash_commands_executed{exported_job=~\"$bottype\"}[1d]))",
           "interval": "",
           "legendFormat": "Slash",
           "refId": "C"
@@ -1410,7 +1420,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1508,7 +1518,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1593,7 +1603,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1725,7 +1735,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1863,7 +1873,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2059,7 +2069,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2155,7 +2165,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2250,7 +2260,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2348,7 +2358,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2447,7 +2457,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.3.2",
+      "pluginVersion": "8.3.4",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2503,7 +2513,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 33,
+  "schemaVersion": 34,
   "style": "dark",
   "tags": [
     "prometheus-net",
@@ -2520,19 +2530,19 @@
         "auto_min": "10s",
         "current": {
           "selected": false,
-          "text": "5m",
-          "value": "5m"
+          "text": "1m",
+          "value": "1m"
         },
         "hide": 0,
         "name": "interval",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1m",
             "value": "1m"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "5m",
             "value": "5m"
           },
@@ -2656,6 +2666,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 7,
+  "version": 8,
   "weekStart": ""
 }
