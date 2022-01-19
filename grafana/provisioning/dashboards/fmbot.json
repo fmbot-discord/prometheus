@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1642588667907,
+  "iteration": 1642588667911,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -850,7 +850,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(increase(lastfm_api_calls{exported_job=~\"$bottype\"}[1d]))",
+          "expr": "sum(increase(lastfm_api_calls{exported_job=~\"$bottype\"}[$__range]))",
           "interval": "",
           "legendFormat": "Unauthorized",
           "refId": "A"
@@ -861,13 +861,13 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(increase(lastfm_authorized_api_calls{exported_job=~\"$bottype\"}[1d]))",
+          "expr": "sum(increase(lastfm_authorized_api_calls{exported_job=~\"$bottype\"}[$__range]))",
           "interval": "",
           "legendFormat": "Authorized",
           "refId": "B"
         }
       ],
-      "title": "Last.fm API calls in the last 24 hours",
+      "title": "Last.fm API calls",
       "type": "stat"
     },
     {
@@ -1239,7 +1239,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(increase(bot_commands_executed{exported_job=~\"$bottype\"}[1d]))",
+          "expr": "sum(increase(bot_commands_executed{exported_job=~\"$bottype\"}[$__range]))",
           "interval": "",
           "legendFormat": "Commands",
           "refId": "B"
@@ -1250,7 +1250,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_job=~\"$bottype\"}[1d]))",
+          "expr": "sum(increase(bot_slash_commands_executed{exported_job=~\"$bottype\"}[$__range]))",
           "interval": "",
           "legendFormat": "Slash",
           "refId": "C"
@@ -2635,7 +2635,7 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {
