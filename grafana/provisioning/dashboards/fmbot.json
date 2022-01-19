@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "iteration": 1642588667911,
+  "iteration": 1642618908658,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -273,6 +273,18 @@
           "interval": "",
           "legendFormat": "Last.fm {{method}}",
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "sum(rate(lastfm_api_calls{exported_job=~\"$bottype\"}[$interval]) * 60)",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Last.fm total",
+          "refId": "E"
         },
         {
           "datasource": {
@@ -2512,7 +2524,7 @@
       }
     }
   ],
-  "refresh": "30s",
+  "refresh": "",
   "schemaVersion": 34,
   "style": "dark",
   "tags": [
@@ -2529,7 +2541,7 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "1m",
           "value": "1m"
         },
@@ -2605,7 +2617,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "production"
           ],
@@ -2635,8 +2647,8 @@
     ]
   },
   "time": {
-    "from": "now-30m",
-    "to": "now"
+    "from": "2022-01-19T16:00:23.854Z",
+    "to": "2022-01-19T18:20:18.683Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -2666,6 +2678,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
