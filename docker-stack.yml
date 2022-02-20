@@ -120,3 +120,21 @@ services:
       - 9091:9091
     networks:
       - monitor-net
+     
+  seq:
+    image: datalust/seq
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '2'
+          memory: 6G
+    ports:
+      - 7373:80
+      - 5341:5341
+    environment:
+      - ACCEPT_EULA=Y
+    networks:
+      - monitor-net
