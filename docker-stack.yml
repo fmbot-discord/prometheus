@@ -34,6 +34,10 @@ services:
           - node.role==manager
       restart_policy:
         condition: on-failure
+      resources:
+        limits:
+          cpus: '2'
+          memory: 6G
 
   node-exporter:
     image: prom/node-exporter
