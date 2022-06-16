@@ -36,8 +36,8 @@ services:
         condition: on-failure
       resources:
         limits:
-          cpus: '2'
-          memory: 6G
+          cpus: '3'
+          memory: 8G
 
   node-exporter:
     image: prom/node-exporter
