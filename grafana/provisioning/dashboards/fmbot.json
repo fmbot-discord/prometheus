@@ -1678,7 +1678,7 @@
           "expr": "sum(increase(opencollective_api_calls{exported_job=~\"$bottype\"}[$__range]))",
           "hide": false,
           "interval": "",
-          "legendFormat": "Discogs",
+          "legendFormat": "OpenCollective",
           "range": true,
           "refId": "D"
         }
