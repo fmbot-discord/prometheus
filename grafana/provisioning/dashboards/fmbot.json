@@ -81,7 +81,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -153,7 +153,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -348,7 +348,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -406,7 +406,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -672,7 +672,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -753,7 +753,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -1140,11 +1140,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "rate(bot_updated_users{exported_job=~\"$bottype\"}[$interval]) * 60",
           "instant": false,
           "interval": "",
-          "legendFormat": "Updated {{exported_job}} ",
+          "legendFormat": "Updated {{exported_job}}",
           "refId": "A"
         },
         {
@@ -1152,10 +1153,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
           "expr": "rate(bot_indexed_users{exported_job=~\"$bottype\"}[$interval]) * 60",
           "interval": "",
-          "legendFormat": "Indexed {{exported_job}} ",
+          "legendFormat": "Indexed {{exported_job}}",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -1203,7 +1206,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -1272,7 +1275,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -1703,7 +1706,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "targets": [
         {
           "datasource": {
@@ -1906,7 +1909,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2100,6 +2103,109 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 33
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024/1024",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{exported_jobjob}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Total known allocated memory",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2182,18 +2288,18 @@
         ]
       },
       "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 0,
-        "y": 33
+        "h": 8,
+        "w": 9,
+        "x": 6,
+        "y": 38
       },
       "id": 55,
       "links": [],
       "options": {
         "legend": {
           "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
+          "displayMode": "table",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -2214,7 +2320,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Scrobbled",
+          "legendFormat": "Scrobbled {{bot}}",
           "range": true,
           "refId": "A"
         },
@@ -2227,115 +2333,12 @@
           "exemplar": true,
           "expr": "rate(lastfm_scrobbling_nowplaying{exported_job=~\"$bottype\"}[$interval]) * 60",
           "interval": "",
-          "legendFormat": "Now played",
+          "legendFormat": "NP {{bot}}",
           "range": true,
           "refId": "B"
         }
       ],
       "title": "Botscrobbles per minute",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "decmbytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 5,
-        "x": 6,
-        "y": 38
-      },
-      "id": 8,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "8.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "exemplar": true,
-          "expr": "dotnet_total_memory_bytes{exported_job=~\"$bottype\"} /1024/1024",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{exported_jobjob}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Total known allocated memory",
       "type": "timeseries"
     },
     {
@@ -2380,7 +2383,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2516,7 +2519,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2751,7 +2754,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2848,7 +2851,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -2943,7 +2946,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "9.3.6",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -3158,6 +3161,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
