@@ -38,10 +38,7 @@ scrape_configs:
 
 
   - job_name: 'cadvisor'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
-
     dns_sd_configs:
     - names:
       - 'tasks.cadvisor'
@@ -52,8 +49,6 @@ scrape_configs:
 #          - targets: ['cadvisor:8080']
 
   - job_name: 'node-exporter'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
 
     dns_sd_configs:
@@ -69,3 +64,11 @@ scrape_configs:
       - 'tasks.pushgateway'
       type: 'A'
       port: 9091
+
+  - job_name: 'postgresql'
+    scrape_interval: 15s
+    dns_sd_configs:
+    - names:
+      - 'tasks.postgresql'
+      type: 'A'
+      port: 9187

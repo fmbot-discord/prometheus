@@ -1,4 +1,15 @@
-![](https://github.com/vegasbrianc/prometheus/workflows/prometheus%20test/badge.svg)
+# .fmbot monitoring stack
+
+This is a fork from the default prometheus monitoring stack, customized for .fmbot.
+
+The below readme is a default description of the project. We should probably improve this, because all the bloat from the fork is not required.
+
+Running:
+
+    $ docker stack deploy -c docker-stack.yml prom
+
+
+The grafana dashboard is currently not publicly available.
 
 # Contents
 
