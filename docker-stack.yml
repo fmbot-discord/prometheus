@@ -154,6 +154,11 @@ services:
       - prometheus
     networks:
       - monitor-net
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+        mode: host
     deploy:
       mode: global
       restart_policy:
