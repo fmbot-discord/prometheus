@@ -130,16 +130,15 @@ services:
   postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
     environment:
-      - DATA_SOURCE_NAME=postgresql://postgres:password@localhost:5432/fmbot?sslmode=disable
+      - DATA_SOURCE_NAME=postgresql://postgres:password@172.17.0.1:5432/fmbot?sslmode=disable
     ports:
       - 9187:9187
-    depends_on:
-      - prometheus
-    ports:
       - target: 5432
         published: 5432
         protocol: tcp
         mode: host
+    depends_on:
+      - prometheus
     deploy:
       mode: global
       restart_policy:
