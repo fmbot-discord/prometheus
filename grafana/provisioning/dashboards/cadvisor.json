@@ -1,7 +1,7 @@
 {
     "__inputs": [
         {
-            "name": "DS_PROMETHEUS",
+            "name": "Prometheus",
             "label": "Prometheus",
             "description": "Prometheus as the datasource is obligatory",
             "type": "datasource",
@@ -57,7 +57,10 @@
     "panels": [
         {
             "collapsed": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -74,7 +77,10 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -171,7 +177,10 @@
         },
         {
             "collapsed": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -188,7 +197,10 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -288,7 +300,10 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -385,7 +400,10 @@
         },
         {
             "collapsed": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -402,7 +420,10 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -505,7 +526,10 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -601,7 +625,10 @@
         },
         {
             "collapsed": false,
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -614,7 +641,10 @@
             "type": "row"
         },
         {
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": {
+                "type": "prometheus",
+                "uid": "PBFA97CFB590B2093"
+            },
             "fieldConfig": {
                 "defaults": {
                     "custom": {
@@ -751,7 +781,10 @@
             {
                 "allValue": ".*",
                 "current": {},
-                "datasource": "${DS_PROMETHEUS}",
+                "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                },
                 "definition": "label_values({__name__=~\"container.*\"},instance)",
                 "description": null,
                 "error": null,
@@ -778,7 +811,10 @@
             {
                 "allValue": ".*",
                 "current": {},
-                "datasource": "${DS_PROMETHEUS}",
+                "datasource": {
+                    "type": "prometheus",
+                    "uid": "PBFA97CFB590B2093"
+                },
                 "definition": "label_values({__name__=~\"container.*\", instance=~\"$host\"},name)",
                 "description": null,
                 "error": null,
