@@ -64,8 +64,5 @@ scrape_configs:
 
   - job_name: 'postgresql'
     scrape_interval: 15s
-    dns_sd_configs:
-    - names:
-      - 'tasks.postgresql-exporter'
-      type: 'A'
-      port: 9187
+    static_configs:
+         - targets: ['localhost:9187']
