@@ -130,7 +130,7 @@ services:
   postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
     environment:
-      - DATA_SOURCE_NAME=postgresql://postgres:password@172.17.0.1:5432/fmbot?sslmode=disable
+      - DATA_SOURCE_NAME=postgresql://postgres:password@host.docker.internal:5432/fmbot?sslmode=disable
     ports:
       - 9187:9187
     depends_on:
@@ -139,3 +139,5 @@ services:
       mode: global
       restart_policy:
         condition: on-failure
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
