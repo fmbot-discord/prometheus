@@ -127,7 +127,7 @@ services:
     environment:
       - ACCEPT_EULA=Y
 
-  postgresql-exporter:
+  postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
     environment:
       - DATA_SOURCE_NAME=postgresql://postgres:password@localhost:5432/fmbot?sslmode=disable
