@@ -4,9 +4,6 @@ volumes:
     prometheus_data: {}
     grafana_data: {}
 
-networks:
-  monitor-net:
-
 services:
 
   prometheus:
@@ -27,8 +24,6 @@ services:
     depends_on:
       - cadvisor
       - pushgateway
-    networks:
-      - monitor-net
     deploy:
       placement:
         constraints:
@@ -53,8 +48,6 @@ services:
       - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
     ports:
       - 9100:9100
-    networks:
-      - monitor-net
     deploy:
       mode: global
       restart_policy:
@@ -66,8 +59,6 @@ services:
       - 9093:9093
     volumes:
       - "./alertmanager/:/etc/alertmanager/"
-    networks:
-      - monitor-net
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
@@ -87,8 +78,6 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     ports:
       - 8080:8080
-    networks:
-      - monitor-net
     deploy:
       mode: global
       restart_policy:
@@ -105,8 +94,6 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
-    networks:
-      - monitor-net
     user: "472"
     deploy:
       placement:
@@ -123,8 +110,6 @@ services:
         condition: on-failure
     ports:
       - 9091:9091
-    networks:
-      - monitor-net
      
   seq:
     image: datalust/seq
@@ -141,8 +126,6 @@ services:
       - 5341:5341
     environment:
       - ACCEPT_EULA=Y
-    networks:
-      - monitor-net
 
   postgresql-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
@@ -152,8 +135,6 @@ services:
       - 9187:9187
     depends_on:
       - prometheus
-    networks:
-      - monitor-net
     ports:
       - target: 5432
         published: 5432
