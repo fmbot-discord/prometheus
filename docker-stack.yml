@@ -94,9 +94,6 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
-    environment:
-      - GF_SECURITY_ADMIN_USER=frikandel
-      - GF_SECURITY_ADMIN_PASSWORD=$GRAFANA_PASSWORD
     user: "472"
     deploy:
       placement:

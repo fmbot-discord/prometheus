@@ -1,0 +1,103 @@
+apiVersion: 1
+groups:
+    - orgId: 1
+      name: Alerting group
+      folder: Shard events
+      interval: 2m
+      rules:
+        - uid: f915a647-f598-4e63-98f5-cd076d2c5450
+          title: Shard events
+          condition: D
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: PBFA97CFB590B2093
+              model:
+                datasource:
+                    type: prometheus
+                    uid: PBFA97CFB590B2093
+                editorMode: code
+                exemplar: true
+                expr: sum by (exported_instance) (rate(bot_shard_disconnected{exported_instance=~"(prod-1|prod-2|prod-3|prod-4|prod-5)"}[$__rate_interval]) * 60)
+                format: time_series
+                instant: false
+                interval: ""
+                intervalFactor: 1
+                intervalMs: 15000
+                legendFormat: '{{exported_instance}} connect'
+                maxDataPoints: 43200
+                range: true
+                refId: A
+            - refId: D
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 4
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: AVG
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: D
+                type: threshold
+            - refId: AVG
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0
+                            - 0
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: max
+                refId: AVG
+                settings:
+                    mode: dropNN
+                type: reduce
+          dashboardUid: zyAf4i4Zz
+          panelId: 59
+          noDataState: NoData
+          execErrState: Error
+          for: 15m
+          annotations:
+            __dashboardUid__: zyAf4i4Zz
+            __panelId__: "59"
+            summary: Shard disconnects are occurring too frequently
+          labels: {}
+          isPaused: false
