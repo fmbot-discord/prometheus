@@ -126,6 +126,8 @@ services:
       - 5341:5341
     environment:
       - ACCEPT_EULA=Y
+      - SEQ_FIRSTRUN_ADMINUSERNAME=frikandel
+      - SEQ_FIRSTRUN_ADMINPASSWORDHASH="$SEQ_PASSWORD"
 
   postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
