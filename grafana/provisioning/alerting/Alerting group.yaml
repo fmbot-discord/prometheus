@@ -9,7 +9,7 @@ groups:
           title: Shard events
           condition: D
           data:
-            - refId: A
+            - refId: Disconnects over 10m
               relativeTimeRange:
                 from: 600
                 to: 0
@@ -26,10 +26,10 @@ groups:
                 interval: ""
                 intervalFactor: 1
                 intervalMs: 15000
-                legendFormat: '{{exported_instance}} connect'
+                legendFormat: '{{exported_instance}} disconnect'
                 maxDataPoints: 43200
                 range: true
-                refId: A
+                refId: Disconnects over 10m
             - refId: D
               relativeTimeRange:
                 from: 600
@@ -39,7 +39,7 @@ groups:
                 conditions:
                     - evaluator:
                         params:
-                            - 4
+                            - 3
                         type: gt
                       operator:
                         type: and
@@ -53,12 +53,12 @@ groups:
                 datasource:
                     type: __expr__
                     uid: __expr__
-                expression: AVG
+                expression: Average
                 intervalMs: 1000
                 maxDataPoints: 43200
                 refId: D
                 type: threshold
-            - refId: AVG
+            - refId: Average
               relativeTimeRange:
                 from: 600
                 to: 0
@@ -82,11 +82,11 @@ groups:
                     name: Expression
                     type: __expr__
                     uid: __expr__
-                expression: A
+                expression: Disconnects over 10m
                 intervalMs: 1000
                 maxDataPoints: 43200
-                reducer: max
-                refId: AVG
+                reducer: mean
+                refId: Average
                 settings:
                     mode: dropNN
                 type: reduce
@@ -94,10 +94,13 @@ groups:
           panelId: 59
           noDataState: NoData
           execErrState: Error
-          for: 15m
+          for: 10m
           annotations:
             __dashboardUid__: zyAf4i4Zz
             __panelId__: "59"
+            description: ""
+            runbook_url: ""
             summary: Shard disconnects are occurring too frequently
-          labels: {}
+          labels:
+            "": ""
           isPaused: false
