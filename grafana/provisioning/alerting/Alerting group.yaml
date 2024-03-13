@@ -39,7 +39,7 @@ groups:
                 conditions:
                     - evaluator:
                         params:
-                            - 3
+                            - 4
                         type: gt
                       operator:
                         type: and
@@ -94,7 +94,7 @@ groups:
           panelId: 59
           noDataState: NoData
           execErrState: Error
-          for: 10m
+          for: 15m
           annotations:
             __dashboardUid__: zyAf4i4Zz
             __panelId__: "59"
