@@ -25,7 +25,6 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 10427,
   "graphTooltip": 0,
-  "id": 3,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -83,7 +82,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -101,6 +100,26 @@
         }
       ],
       "title": "Guilds",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "Guilds"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -157,7 +176,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -175,6 +194,26 @@
         }
       ],
       "title": "Registered guilds",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "Registered"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -259,6 +298,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -364,7 +404,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -381,6 +421,26 @@
         }
       ],
       "title": "Registered users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "Registered"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -426,7 +486,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -443,6 +503,26 @@
         }
       ],
       "title": "Authorized users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "Authorized"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "stat"
     },
     {
@@ -529,6 +609,7 @@
           "sortDesc": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -637,6 +718,7 @@
           "sortDesc": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -703,7 +785,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -786,7 +868,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -888,6 +970,7 @@
           "sortDesc": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1011,6 +1094,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1077,7 +1161,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1152,7 +1236,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1262,6 +1346,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1275,50 +1360,36 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_registered_users_count{exported_instance=\"prod-3\"}",
+          "expr": "bot_registered_users_count{exported_instance=\"$master_instance\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "{{exported_job}} registered users",
           "range": true,
           "refId": "A"
-        },
-        {
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  100,
-                  0
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "avg"
-              },
-              "type": "query"
-            }
-          ],
-          "datasource": {
-            "name": "Expression",
-            "type": "__expr__",
-            "uid": "__expr__"
-          },
-          "hide": false,
-          "refId": "B",
-          "type": "classic_conditions"
         }
       ],
       "title": "Registered users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "production registered users"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "timeseries"
     },
     {
@@ -1399,6 +1470,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1422,6 +1494,26 @@
         }
       ],
       "title": "Authorized users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": " authorized users"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "timeseries"
     },
     {
@@ -1507,6 +1599,7 @@
           "sortDesc": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1574,7 +1667,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1741,6 +1834,7 @@
           "sortDesc": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1822,7 +1916,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.0",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -1923,6 +2017,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2040,6 +2135,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2172,6 +2268,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2339,6 +2436,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2474,6 +2572,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -2529,6 +2628,44 @@
         }
       ],
       "title": "Active users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "1 day"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "7 days"
+              },
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": "30 days"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
       "type": "timeseries"
     },
     {
@@ -2581,7 +2718,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2589,8 +2727,7 @@
               }
             ]
           },
-          "unit": "none",
-          "unitScale": true
+          "unit": "none"
         },
         "overrides": [
           {
@@ -2634,6 +2771,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2721,7 +2859,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -2729,8 +2868,7 @@
               }
             ]
           },
-          "unit": "decmbytes",
-          "unitScale": true
+          "unit": "decmbytes"
         },
         "overrides": []
       },
@@ -2753,6 +2891,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -2779,56 +2918,91 @@
       "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {},
-      "decimals": 0,
       "description": "",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
           "links": [],
-          "unitScale": true
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 5,
         "x": 12,
         "y": 46
       },
-      "hiddenSeries": false,
       "id": 14,
       "interval": "",
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
@@ -2844,86 +3018,93 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Number of open handles",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {},
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
           "links": [],
-          "unitScale": true
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 7,
         "x": 17,
         "y": 46
       },
-      "hiddenSeries": false,
       "id": 18,
       "interval": "",
-      "legend": {
-        "alignAsTable": false,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
@@ -2939,86 +3120,93 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "GC collection count",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {},
-      "decimals": 0,
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
           "links": [],
-          "unitScale": true
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 9,
         "x": 6,
         "y": 54
       },
-      "hiddenSeries": false,
       "id": 10,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
@@ -3034,89 +3222,94 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Process working set",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": "",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "datasource": {},
-      "decimals": 0,
       "description": "",
       "fieldConfig": {
         "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
           "links": [],
-          "unitScale": true
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 8,
         "w": 9,
         "x": 15,
         "y": 54
       },
-      "hiddenSeries": false,
       "id": 56,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
       },
-      "percentage": false,
       "pluginVersion": "10.3.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
           "datasource": {
@@ -3132,36 +3325,8 @@
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Total number of threads",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "decimals": 0,
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     }
   ],
   "refresh": "5m",
@@ -3301,7 +3466,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "prod-2",
           "value": "prod-2"
         },
@@ -3335,6 +3500,7 @@
     "from": "now-24h",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "5s",
