@@ -1360,7 +1360,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_registered_users_count{exported_instance=\"$master_instance\"}",
+          "expr": "sum(bot_registered_users_count{exported_instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1382,7 +1382,7 @@
                     "value": 0
                   }
                 },
-                "fieldName": "production registered users"
+                "fieldName": " registered users"
               }
             ],
             "match": "all",
@@ -2132,7 +2132,9 @@
           ],
           "displayMode": "table",
           "placement": "right",
-          "showLegend": true
+          "showLegend": true,
+          "sortBy": "Total",
+          "sortDesc": true
         },
         "tooltip": {
           "maxHeight": 600,
@@ -2551,7 +2553,32 @@
           },
           "unit": "none"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "30 days"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 7,
@@ -2586,7 +2613,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_active_users_count_1d{exported_instance=\"$master_instance\"}",
+          "expr": "sum(bot_active_users_count_1d{exported_instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2601,7 +2628,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_active_users_count_7d{exported_instance=\"$master_instance\"}",
+          "expr": "sum(bot_active_users_count_7d{exported_instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2617,7 +2644,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_active_users_count_30d{exported_instance=\"$master_instance\"}",
+          "expr": "sum(bot_active_users_count_30d{exported_instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3529,6 +3556,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
