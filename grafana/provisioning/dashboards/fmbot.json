@@ -1333,7 +1333,7 @@
       },
       "gridPos": {
         "h": 7,
-        "w": 4,
+        "w": 5,
         "x": 6,
         "y": 24
       },
@@ -1457,8 +1457,8 @@
       },
       "gridPos": {
         "h": 7,
-        "w": 5,
-        "x": 10,
+        "w": 4,
+        "x": 11,
         "y": 24
       },
       "id": 47,
@@ -1484,7 +1484,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_authorized_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_supporter_count{exported_instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1493,7 +1493,7 @@
           "refId": "A"
         }
       ],
-      "title": "Authorized users",
+      "title": "Total active supporters",
       "transformations": [
         {
           "id": "filterByValue",
@@ -1613,7 +1613,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name) (rate(bot_discord_events{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (name) (rate(bot_discord_events{exported_instance=~\"$botinstance\"}[$interval]))",
           "instant": true,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -1621,7 +1621,7 @@
           "refId": "A"
         }
       ],
-      "title": "Discord events per minute",
+      "title": "Discord events per second",
       "type": "timeseries"
     },
     {
@@ -2355,6 +2355,22 @@
           "legendFormat": "OpenAI",
           "range": true,
           "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(rate(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Apple Music",
+          "range": true,
+          "refId": "F"
         }
       ],
       "title": "External API calls per minute",
@@ -3151,6 +3167,130 @@
       "type": "timeseries"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 6,
+        "x": 0,
+        "y": 51
+      },
+      "id": 61,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(bot_authorized_users_count{exported_instance=\"$master_instance\"})",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{exported_job}} authorized users",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Authorized users",
+      "transformations": [
+        {
+          "id": "filterByValue",
+          "options": {
+            "filters": [
+              {
+                "config": {
+                  "id": "equal",
+                  "options": {
+                    "value": 0
+                  }
+                },
+                "fieldName": " authorized users"
+              }
+            ],
+            "match": "all",
+            "type": "exclude"
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
       "datasource": {},
       "fieldConfig": {
         "defaults": {
@@ -3556,6 +3696,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
