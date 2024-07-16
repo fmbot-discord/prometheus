@@ -317,7 +317,7 @@
           "expr": "sum(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
-          "legendFormat": "Commands ",
+          "legendFormat": "Text commands ",
           "refId": "A"
         },
         {
@@ -342,7 +342,7 @@
           "exemplar": true,
           "expr": "sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
-          "legendFormat": "Last.fm API calls",
+          "legendFormat": "Last.fm unauthorized calls",
           "range": true,
           "refId": "B"
         },
@@ -355,7 +355,7 @@
           "exemplar": true,
           "expr": "sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
-          "legendFormat": "Last.fm authorized calls {{exported_job}}",
+          "legendFormat": "Last.fm authorized calls",
           "range": true,
           "refId": "D"
         }
@@ -739,7 +739,7 @@
           "expr": "sum by (method)(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
-          "legendFormat": "{{method}} call",
+          "legendFormat": "{{method}}",
           "refId": "A"
         }
       ],
@@ -2259,7 +2259,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_job}} images fetched per second",
+          "legendFormat": "Fetched",
           "range": true,
           "refId": "A"
         },
@@ -2272,12 +2272,12 @@
           "exemplar": true,
           "expr": "sum(rate(lastfm_cached_image_cdn_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
-          "legendFormat": "{{exported_job}} cached images used per second",
+          "legendFormat": "Cache hits",
           "range": true,
           "refId": "B"
         }
       ],
-      "title": "Images fetched per minute",
+      "title": "Images per minute",
       "type": "timeseries"
     },
     {
@@ -2559,7 +2559,7 @@
           "exemplar": true,
           "expr": "sum by (method) (rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
-          "legendFormat": "{{method}} call",
+          "legendFormat": "{{method}}",
           "range": true,
           "refId": "A"
         }
@@ -2663,7 +2663,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "Total {{exported_job}} Last.fm errors",
+          "legendFormat": "Total",
           "range": true,
           "refId": "A"
         },
@@ -3598,18 +3598,18 @@
           "text": [
             "prod-1",
             "prod-2",
-            "prod-3",
             "prod-4",
             "prod-5",
-            "prod-6"
+            "prod-6",
+            "prod-3"
           ],
           "value": [
             "prod-1",
             "prod-2",
-            "prod-3",
             "prod-4",
             "prod-5",
-            "prod-6"
+            "prod-6",
+            "prod-3"
           ]
         },
         "datasource": {
@@ -3700,6 +3700,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
