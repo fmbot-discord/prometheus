@@ -1033,6 +1033,22 @@
           "legendFormat": "Authorized",
           "range": true,
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(bot_unique_users_count{exported_instance=\"$master_instance\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Unique",
+          "range": true,
+          "refId": "C"
         }
       ],
       "title": "Users",
@@ -1826,12 +1842,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 5,
         "w": 6,
         "x": 0,
         "y": 28
       },
-      "id": 54,
+      "id": 63,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -1858,9 +1874,9 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(spotify_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
           "interval": "",
-          "legendFormat": "Spotify",
+          "legendFormat": "Guild",
           "range": true,
           "refId": "B"
         },
@@ -1871,56 +1887,14 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
           "interval": "",
-          "legendFormat": "Musicbrainz",
+          "legendFormat": "User",
           "range": true,
           "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum(increase(discogs_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Discogs",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum(increase(opencollective_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "OpenCollective",
-          "range": true,
-          "refId": "D"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum(increase(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
-          "hide": false,
-          "interval": "",
-          "legendFormat": "Apple Music",
-          "range": true,
-          "refId": "E"
         }
       ],
-      "title": "External API calls",
+      "title": "Slash commands executed - App type",
       "type": "stat"
     },
     {
@@ -2400,30 +2374,21 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "yellow",
-                "value": 20
-              },
-              {
                 "color": "green",
-                "value": 25
+                "value": null
               }
             ]
-          },
-          "unit": "percent"
+          }
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 8,
         "w": 6,
         "x": 0,
-        "y": 36
+        "y": 33
       },
-      "id": 62,
+      "id": 54,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -2450,14 +2415,69 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_1d{exported_instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{exported_instance=~\"$master_instance\"}) * 100",
+          "expr": "sum(increase(spotify_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
-          "legendFormat": "__auto",
+          "legendFormat": "Spotify",
           "range": true,
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "interval": "",
+          "legendFormat": "Musicbrainz",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(discogs_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Discogs",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(opencollective_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "OpenCollective",
+          "range": true,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum(increase(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "Apple Music",
+          "range": true,
+          "refId": "E"
         }
       ],
-      "title": "DAU/MAU Ratio",
+      "title": "External API calls",
       "type": "stat"
     },
     {
@@ -2826,6 +2846,78 @@
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
       },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 20
+              },
+              {
+                "color": "green",
+                "value": 25
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 41
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.1.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "avg(bot_active_users_count_1d{exported_instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{exported_instance=~\"$master_instance\"}) * 100",
+          "interval": "",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "DAU/MAU Ratio",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -2913,7 +3005,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 40
+        "y": 45
       },
       "id": 55,
       "options": {
@@ -2965,6 +3057,115 @@
         }
       ],
       "title": "Botscrobbles per minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 6,
+        "y": 47
+      },
+      "id": 64,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "sum"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$interval]) * 60)",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "/{{name}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Slash commands per minute - Guild",
       "type": "timeseries"
     },
     {
@@ -3028,8 +3229,8 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 6,
-        "x": 6,
+        "w": 5,
+        "x": 14,
         "y": 47
       },
       "id": 18,
@@ -3067,114 +3268,6 @@
         }
       ],
       "title": "GC collection count",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 12,
-        "y": 47
-      },
-      "id": 56,
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "maxHeight": 600,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "10.3.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "process_num_threads",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Total number of threads",
       "type": "timeseries"
     },
     {
@@ -3350,7 +3443,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 48
+        "y": 53
       },
       "id": 10,
       "options": {
@@ -3389,6 +3482,115 @@
         }
       ],
       "title": "Process working set",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 6,
+        "y": 55
+      },
+      "id": 65,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max",
+            "sum"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$interval]) * 60)",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "/{{name}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Slash commands per minute - User",
       "type": "timeseries"
     },
     {
@@ -3455,9 +3657,9 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
-        "w": 6,
-        "x": 6,
+        "h": 8,
+        "w": 5,
+        "x": 14,
         "y": 55
       },
       "id": 14,
@@ -3499,6 +3701,114 @@
       ],
       "title": "Number of open handles",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 19,
+        "y": 55
+      },
+      "id": 56,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "process_num_threads",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{exported_instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total number of threads",
+      "type": "timeseries"
     }
   ],
   "refresh": "5m",
@@ -3518,20 +3828,20 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
-          "text": "1m",
-          "value": "1m"
+          "selected": true,
+          "text": "5m",
+          "value": "5m"
         },
         "hide": 0,
         "name": "interval",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "1m",
             "value": "1m"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "5m",
             "value": "5m"
           },
@@ -3598,18 +3908,18 @@
           "text": [
             "prod-1",
             "prod-2",
+            "prod-3",
             "prod-4",
             "prod-5",
-            "prod-6",
-            "prod-3"
+            "prod-6"
           ],
           "value": [
             "prod-1",
             "prod-2",
+            "prod-3",
             "prod-4",
             "prod-5",
-            "prod-6",
-            "prod-3"
+            "prod-6"
           ]
         },
         "datasource": {
@@ -3700,6 +4010,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 6,
+  "version": 7,
   "weekStart": ""
 }
