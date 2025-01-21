@@ -23,10 +23,9 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
-  "gnetId": 10427,
   "graphTooltip": 0,
+  "id": 3,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "datasource": {
@@ -83,7 +82,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -178,7 +177,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -288,7 +287,6 @@
         "y": 0
       },
       "id": 24,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -306,7 +304,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -408,7 +406,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -491,7 +489,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -600,7 +598,6 @@
         "y": 8
       },
       "id": 52,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -620,7 +617,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -710,7 +707,6 @@
         "y": 8
       },
       "id": 53,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -730,7 +726,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -793,7 +789,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -877,7 +873,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1005,7 +1001,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1206,7 +1202,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "10.2.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1397,7 +1393,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.3.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1532,7 +1528,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1608,7 +1604,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.2.0",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1729,7 +1725,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1854,7 +1850,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "8.3.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1885,8 +1881,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2000,8 +1995,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2216,8 +2210,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2358,8 +2351,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2429,8 +2421,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -2585,8 +2576,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2694,8 +2684,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2831,8 +2820,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2851,7 +2839,6 @@
         "y": 39
       },
       "id": 41,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -2939,8 +2926,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
+                "color": "red"
               },
               {
                 "color": "yellow",
@@ -3050,8 +3036,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3196,8 +3181,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3216,7 +3200,6 @@
         "y": 47
       },
       "id": 64,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -3303,8 +3286,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -3323,7 +3305,6 @@
         "y": 47
       },
       "id": 18,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -3371,8 +3352,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           }
@@ -3715,7 +3695,6 @@
         "y": 55
       },
       "id": 65,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -3824,7 +3803,6 @@
         "y": 55
       },
       "id": 14,
-      "interval": "",
       "options": {
         "legend": {
           "calcs": [
@@ -3971,9 +3949,9 @@
       "type": "timeseries"
     }
   ],
+  "preload": false,
   "refresh": "5m",
-  "revision": 1,
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [
     "prometheus-net",
     "net",
@@ -3988,11 +3966,9 @@
         "auto_count": 30,
         "auto_min": "10s",
         "current": {
-          "selected": false,
           "text": "5m",
           "value": "5m"
         },
-        "hide": 0,
         "name": "interval",
         "options": [
           {
@@ -4057,14 +4033,11 @@
           }
         ],
         "query": "1m,5m,10m,15m,30m,1h,6h,12h,1d,7d,14d,30d",
-        "queryValue": "",
         "refresh": 2,
-        "skipUrlSync": false,
         "type": "interval"
       },
       {
         "current": {
-          "selected": true,
           "text": [
             "prod-1",
             "prod-2",
@@ -4072,7 +4045,12 @@
             "prod-4",
             "prod-5",
             "prod-6",
-            "prod-7"
+            "prod-7",
+            "prod-10",
+            "prod-11",
+            "prod-12",
+            "prod-8",
+            "prod-9"
           ],
           "value": [
             "prod-1",
@@ -4081,7 +4059,12 @@
             "prod-4",
             "prod-5",
             "prod-6",
-            "prod-7"
+            "prod-7",
+            "prod-10",
+            "prod-11",
+            "prod-12",
+            "prod-8",
+            "prod-9"
           ]
         },
         "datasource": {
@@ -4089,7 +4072,6 @@
           "uid": "PBFA97CFB590B2093"
         },
         "definition": "label_values(exported_instance)",
-        "hide": 0,
         "includeAll": true,
         "multi": true,
         "name": "botinstance",
@@ -4101,27 +4083,19 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {
-          "selected": false,
-          "text": "prod-5",
-          "value": "prod-5"
+          "text": "prod-12",
+          "value": "prod-12"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
         "definition": "label_values(exported_instance)",
-        "hide": 0,
         "includeAll": false,
-        "multi": false,
         "name": "master_instance",
         "options": [],
         "query": {
@@ -4131,12 +4105,7 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       }
     ]
   },
@@ -4144,34 +4113,10 @@
     "from": "now-24h",
     "to": "now"
   },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
+  "timepicker": {},
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }
