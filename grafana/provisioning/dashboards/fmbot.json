@@ -82,7 +82,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -177,7 +177,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -299,12 +299,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -406,7 +407,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -489,7 +490,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -612,12 +613,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -721,12 +723,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -789,7 +792,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -873,7 +876,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -996,12 +999,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1197,12 +1201,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1388,12 +1393,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1528,7 +1534,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1604,7 +1610,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1720,12 +1726,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1845,12 +1852,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -1913,7 +1921,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2055,12 +2063,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2265,12 +2274,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2388,12 +2398,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2457,7 +2468,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2565,7 +2576,7 @@
               "type": "linear"
             },
             "showPoints": "auto",
-            "spanNulls": false,
+            "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
@@ -2601,23 +2612,28 @@
       "id": 67,
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "mean"
+          ],
           "displayMode": "table",
           "placement": "right",
-          "showLegend": true
+          "showLegend": true,
+          "sortBy": "Mean",
+          "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (method)  (rate(lastfm_api_response_time_sum{exported_instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{exported_instance=~\"$botinstance\"}[$interval]))",
+          "expr": "sum by (method)  (rate(lastfm_api_response_time_sum{exported_instance=~\"$botinstance\"}[1h]) / rate(lastfm_api_response_time_count{exported_instance=~\"$botinstance\"}[1h]))",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -2716,12 +2732,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2821,12 +2838,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -2939,7 +2957,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3066,12 +3084,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3149,7 +3168,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3260,12 +3279,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3396,12 +3416,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3502,12 +3523,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3610,12 +3632,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3720,12 +3743,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3828,12 +3852,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -3937,12 +3962,13 @@
           "showLegend": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -4047,12 +4073,13 @@
           "sortDesc": true
         },
         "tooltip": {
+          "hideZeros": false,
           "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.2",
       "targets": [
         {
           "datasource": {
@@ -4241,6 +4268,6 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 13,
+  "version": 14,
   "weekStart": ""
 }
