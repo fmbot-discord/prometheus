@@ -28,6 +28,19 @@
   "links": [],
   "panels": [
     {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 70,
+      "panels": [],
+      "title": "Row title",
+      "type": "row"
+    },
+    {
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
@@ -62,7 +75,7 @@
         "h": 5,
         "w": 3,
         "x": 0,
-        "y": 0
+        "y": 1
       },
       "id": 30,
       "options": {
@@ -82,7 +95,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -157,7 +170,7 @@
         "h": 5,
         "w": 3,
         "x": 3,
-        "y": 0
+        "y": 1
       },
       "id": 49,
       "options": {
@@ -177,7 +190,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -285,7 +298,7 @@
         "h": 8,
         "w": 18,
         "x": 6,
-        "y": 0
+        "y": 1
       },
       "id": 24,
       "options": {
@@ -306,7 +319,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -388,7 +401,7 @@
         "h": 5,
         "w": 3,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "id": 31,
       "options": {
@@ -408,7 +421,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -471,7 +484,7 @@
         "h": 5,
         "w": 3,
         "x": 3,
-        "y": 5
+        "y": 6
       },
       "id": 50,
       "options": {
@@ -491,7 +504,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -598,7 +611,7 @@
         "h": 8,
         "w": 9,
         "x": 6,
-        "y": 8
+        "y": 9
       },
       "id": 52,
       "options": {
@@ -621,7 +634,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -709,7 +722,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 8
+        "y": 9
       },
       "id": 53,
       "options": {
@@ -732,7 +745,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -775,7 +788,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 10
+        "y": 11
       },
       "id": 57,
       "options": {
@@ -795,7 +808,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -859,7 +872,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 15
+        "y": 16
       },
       "id": 33,
       "options": {
@@ -879,7 +892,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -992,7 +1005,7 @@
         "h": 7,
         "w": 6,
         "x": 6,
-        "y": 16
+        "y": 17
       },
       "id": 39,
       "options": {
@@ -1009,7 +1022,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1195,7 +1208,7 @@
         "h": 7,
         "w": 5,
         "x": 12,
-        "y": 16
+        "y": 17
       },
       "id": 47,
       "options": {
@@ -1212,7 +1225,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1384,7 +1397,7 @@
         "h": 7,
         "w": 7,
         "x": 17,
-        "y": 16
+        "y": 17
       },
       "id": 12,
       "options": {
@@ -1405,7 +1418,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1520,7 +1533,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 18
+        "y": 19
       },
       "id": 32,
       "options": {
@@ -1540,7 +1553,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1596,7 +1609,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 23
+        "y": 24
       },
       "id": 40,
       "options": {
@@ -1616,7 +1629,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1716,7 +1729,7 @@
         "h": 8,
         "w": 9,
         "x": 6,
-        "y": 23
+        "y": 24
       },
       "id": 59,
       "options": {
@@ -1739,7 +1752,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1846,7 +1859,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 23
+        "y": 24
       },
       "id": 35,
       "options": {
@@ -1866,7 +1879,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -1909,7 +1922,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 28
+        "y": 29
       },
       "id": 63,
       "options": {
@@ -1929,7 +1942,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2061,7 +2074,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 31
+        "y": 32
       },
       "id": 51,
       "options": {
@@ -2078,7 +2091,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2273,7 +2286,7 @@
         "h": 8,
         "w": 4,
         "x": 12,
-        "y": 31
+        "y": 32
       },
       "id": 38,
       "options": {
@@ -2290,7 +2303,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2392,7 +2405,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 31
+        "y": 32
       },
       "id": 58,
       "options": {
@@ -2415,7 +2428,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2459,7 +2472,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 33
+        "y": 34
       },
       "id": 54,
       "options": {
@@ -2479,7 +2492,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2619,7 +2632,7 @@
         "h": 9,
         "w": 7,
         "x": 6,
-        "y": 39
+        "y": 40
       },
       "id": 67,
       "options": {
@@ -2639,7 +2652,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "disableTextWrap": false,
@@ -2728,7 +2741,7 @@
         "h": 9,
         "w": 5,
         "x": 13,
-        "y": 39
+        "y": 40
       },
       "id": 46,
       "options": {
@@ -2751,7 +2764,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2839,7 +2852,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 39
+        "y": 40
       },
       "id": 41,
       "options": {
@@ -2858,7 +2871,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -2951,7 +2964,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 41
+        "y": 42
       },
       "id": 62,
       "options": {
@@ -2971,7 +2984,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3084,7 +3097,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 45
+        "y": 46
       },
       "id": 55,
       "options": {
@@ -3105,7 +3118,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3163,7 +3176,7 @@
         "h": 5,
         "w": 6,
         "x": 18,
-        "y": 47
+        "y": 48
       },
       "id": 66,
       "options": {
@@ -3183,7 +3196,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3284,7 +3297,7 @@
         "h": 8,
         "w": 5,
         "x": 6,
-        "y": 48
+        "y": 49
       },
       "id": 2,
       "options": {
@@ -3301,7 +3314,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3374,7 +3387,7 @@
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 10,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -3415,35 +3428,36 @@
               }
             ]
           },
-          "unit": "none"
+          "unit": "short"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 8,
-        "w": 7,
-        "x": 11,
-        "y": 48
+        "w": 5,
+        "x": 13,
+        "y": 49
       },
-      "id": 68,
+      "id": 14,
       "options": {
         "legend": {
           "calcs": [
-            "sum",
-            "mean"
+            "mean",
+            "lastNotNull",
+            "max"
           ],
           "displayMode": "table",
-          "placement": "right",
+          "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
           "hideZeros": false,
           "maxHeight": 600,
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3452,17 +3466,16 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "process_open_handles",
           "format": "time_series",
-          "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{method}}",
+          "legendFormat": "{{exported_instance}}",
           "range": true,
-          "refId": "C"
+          "refId": "A"
         }
       ],
-      "title": "Failure errors per minute",
+      "title": "Number of open handles",
       "type": "timeseries"
     },
     {
@@ -3533,7 +3546,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 52
+        "y": 53
       },
       "id": 8,
       "options": {
@@ -3554,7 +3567,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3643,7 +3656,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 53
+        "y": 54
       },
       "id": 10,
       "options": {
@@ -3664,7 +3677,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3750,7 +3763,7 @@
         "h": 8,
         "w": 7,
         "x": 6,
-        "y": 56
+        "y": 57
       },
       "id": 18,
       "options": {
@@ -3770,7 +3783,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -3856,120 +3869,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 5,
-        "x": 13,
-        "y": 56
-      },
-      "id": 14,
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "maxHeight": 600,
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "12.2.1",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "process_open_handles",
-          "format": "time_series",
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
-          "range": true,
-          "refId": "A"
-        }
-      ],
-      "title": "Number of open handles",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
         "w": 6,
         "x": 18,
-        "y": 60
+        "y": 61
       },
       "id": 56,
       "options": {
@@ -3990,7 +3892,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -4079,7 +3981,7 @@
         "h": 8,
         "w": 8,
         "x": 6,
-        "y": 64
+        "y": 65
       },
       "id": 64,
       "options": {
@@ -4102,7 +4004,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -4190,7 +4092,7 @@
         "h": 8,
         "w": 8,
         "x": 6,
-        "y": 72
+        "y": 73
       },
       "id": 65,
       "options": {
@@ -4213,7 +4115,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.2.1",
+      "pluginVersion": "12.3.0",
       "targets": [
         {
           "datasource": {
@@ -4231,6 +4133,469 @@
         }
       ],
       "title": "Slash commands per minute - User",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 81
+      },
+      "id": 71,
+      "panels": [],
+      "title": "Last.fm error visualization",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 82
+      },
+      "id": 68,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Total",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "format": "time_series",
+          "hide": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{method}}",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": " sum (rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Authorized API calls",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "All failure errors",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Failure errors per minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 11,
+        "y": 82
+      },
+      "id": 69,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.3.0",
+      "targets": [
+        {
+          "editorMode": "code",
+          "expr": "sum(increase(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$__range])) + sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "interval": "",
+          "legendFormat": "API Calls",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(increase(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$__range]))",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Failure errors",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Error counts",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 11,
+        "x": 0,
+        "y": 90
+      },
+      "id": 72,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "mean"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Max",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\", method=\"\"}[$interval]) * 60)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Unknown method",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\", method!=\"\"}[$interval]) * 60)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{method}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Failure errors per minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 7,
+        "x": 11,
+        "y": 90
+      },
+      "id": 73,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": false,
+          "sortBy": "Total",
+          "sortDesc": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.3.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "expr": "sum(rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval])) \n/ \n(sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval])) + sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval])))\n* 100",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Error rate",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Failure error rate %",
       "type": "timeseries"
     }
   ],
@@ -4402,5 +4767,5 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 16
+  "version": 17
 }
