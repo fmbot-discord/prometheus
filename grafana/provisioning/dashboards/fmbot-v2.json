@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 0,
+  "id": 14,
   "links": [],
   "panels": [
     {
@@ -2820,12 +2820,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (rate(bot_shard_connected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"connected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}} connect",
+          "legendFormat": "Connected",
           "range": true,
           "refId": "A"
         },
@@ -2836,18 +2836,52 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (rate(bot_shard_disconnected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"disconnected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}} disconnect",
+          "legendFormat": "Disconnected",
           "range": true,
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"ready\"}[$__rate_interval]) * 60)",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Ready",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"resumed\"}[$__rate_interval]) * 60)",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "Resume",
+          "range": true,
+          "refId": "D"
         }
       ],
-      "title": "Shard events",
+      "title": "Shard events per minute",
       "type": "timeseries"
     },
     {
@@ -4329,10 +4363,15 @@
       "id": 1302,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
+          "calcs": [
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true,
+          "sortBy": "Max",
+          "sortDesc": true
         },
         "tooltip": {
           "hideZeros": false,
@@ -4343,13 +4382,17 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
-          "legendFormat": "Received (Rx)",
+          "editorMode": "code",
+          "expr": "sum by (name) (rate(container_network_receive_bytes_total{name=~\".*prod.*\"}[$__rate_interval]))",
+          "legendFormat": "Received {{name}}",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "-sum(rate(container_network_transmit_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
-          "legendFormat": "Transmitted (Tx)",
+          "editorMode": "code",
+          "expr": "sum by (name) (rate(container_network_transmit_bytes_total{name=~\".*prod.*\"}[$__rate_interval]))",
+          "legendFormat": "Transmit {{name}}",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -5276,195 +5319,6 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 2,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 123
-      },
-      "id": 804,
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "12.3.1",
-      "targets": [
-        {
-          "expr": "sum by (exported_instance) (rate(bot_shard_connected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
-          "legendFormat": "{{exported_instance}} connect",
-          "refId": "A"
-        },
-        {
-          "expr": "sum by (exported_instance) (rate(bot_shard_disconnected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
-          "legendFormat": "{{exported_instance}} disconnect",
-          "refId": "B"
-        }
-      ],
-      "title": "Shard Connect/Disconnect Events",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 2,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 123
-      },
-      "id": 805,
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean",
-            "max"
-          ],
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "multi",
-          "sort": "desc"
-        }
-      },
-      "pluginVersion": "12.3.1",
-      "targets": [
-        {
-          "expr": "sum(system_net_http_http_client_active_requests{exported_instance=~\"$botinstance\"})",
-          "legendFormat": "Active HTTP Requests",
-          "refId": "A"
-        }
-      ],
-      "title": "Active HTTP Client Requests",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -5505,8 +5359,8 @@
       "gridPos": {
         "h": 8,
         "w": 6,
-        "x": 6,
-        "y": 131
+        "x": 0,
+        "y": 123
       },
       "id": 10,
       "options": {
@@ -5616,8 +5470,8 @@
       "gridPos": {
         "h": 8,
         "w": 6,
-        "x": 12,
-        "y": 131
+        "x": 6,
+        "y": 123
       },
       "id": 56,
       "options": {
@@ -5657,6 +5511,98 @@
         }
       ],
       "title": "Total number of threads",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 123
+      },
+      "id": 805,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "multi",
+          "sort": "desc"
+        }
+      },
+      "pluginVersion": "12.3.1",
+      "targets": [
+        {
+          "expr": "sum(system_net_http_http_client_active_requests{exported_instance=~\"$botinstance\"})",
+          "legendFormat": "Active HTTP Requests",
+          "refId": "A"
+        }
+      ],
+      "title": "Active HTTP Client Requests",
       "type": "timeseries"
     },
     {
@@ -5728,7 +5674,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 131
+        "y": 123
       },
       "id": 14,
       "options": {
@@ -5939,5 +5885,5 @@
   "timezone": "",
   "title": "fmbot-v2",
   "uid": "fmbot-v2",
-  "version": 2
+  "version": 1
 }
