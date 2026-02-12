@@ -20,7 +20,7 @@ groups:
                     uid: PBFA97CFB590B2093
                 editorMode: code
                 exemplar: true
-                expr: sum by (exported_instance) (rate(bot_shard_disconnected{exported_instance=~"(prod-1|prod-2|prod-3|prod-4|prod-5)"}[$__rate_interval]) * 60)
+                expr: sum by (exported_instance) (rate(bot_shard_event{exported_instance=~"(prod-1|prod-2|prod-3|prod-4|prod-5|prod-6|prod-7|prod-8|prod-9|prod-10|prod-11|prod-12)", event="disconnected"}[$__rate_interval]) * 60)
                 format: time_series
                 instant: false
                 interval: ""
@@ -90,13 +90,13 @@ groups:
                 settings:
                     mode: dropNN
                 type: reduce
-          dashboardUid: zyAf4i4Zz
+          dashboardUid: fmbot-v2
           panelId: 59
-          noDataState: NoData
+          noDataState: OK
           execErrState: Error
           for: 15m
           annotations:
-            __dashboardUid__: zyAf4i4Zz
+            __dashboardUid__: fmbot-v2
             __panelId__: "59"
             description: ""
             runbook_url: ""
