@@ -24,6 +24,8 @@ services:
     depends_on:
       - cadvisor
       - pushgateway
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     deploy:
       placement:
         constraints:
