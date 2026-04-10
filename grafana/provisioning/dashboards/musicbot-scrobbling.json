@@ -193,7 +193,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[$__range])) / sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\"}[$__range]))",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[$__range])) / sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"noEligibleUsers\"}[$__range]))",
           "legendFormat": "Success Rate",
           "refId": "A"
         }
@@ -271,12 +271,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(lastfm_api_calls[5m])) by (method) * 60",
+          "expr": "sum(rate(lastfm_authorized_api_calls[5m])) by (method) * 60",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
       ],
-      "title": "Last.fm Calls per Minute",
+      "title": "Last.fm Authorized Calls per Minute",
       "type": "timeseries"
     },
     {
@@ -389,7 +389,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
       "id": 20,
       "options": {
         "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
@@ -415,42 +415,6 @@
           "color": { "mode": "palette-classic" },
           "custom": {
             "axisBorderShow": false, "axisCenteredZero": false, "axisLabel": "", "axisPlacement": "auto",
-            "barAlignment": 0, "drawStyle": "bars", "fillOpacity": 80, "gradientMode": "none",
-            "lineInterpolation": "linear", "lineWidth": 1, "pointSize": 5, "showPoints": "never",
-            "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" }
-          },
-          "mappings": [],
-          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 16 },
-      "id": 21,
-      "options": {
-        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "bottom", "showLegend": true },
-        "tooltip": { "mode": "multi", "sort": "desc" }
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
-        {
-          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-          "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[1h])) by (bot_name)",
-          "legendFormat": "{{bot_name}}",
-          "refId": "A"
-        }
-      ],
-      "title": "Successful Requests per Hour (by bot)",
-      "type": "timeseries"
-    },
-    {
-      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-      "fieldConfig": {
-        "defaults": {
-          "color": { "mode": "palette-classic" },
-          "custom": {
-            "axisBorderShow": false, "axisCenteredZero": false, "axisLabel": "", "axisPlacement": "auto",
             "barAlignment": 0, "drawStyle": "line", "fillOpacity": 15, "gradientMode": "none",
             "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "showPoints": "never",
             "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" }
@@ -461,7 +425,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 16 },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
       "id": 23,
       "options": {
         "legend": { "calcs": ["mean", "min"], "displayMode": "table", "placement": "bottom", "showLegend": true },
@@ -472,7 +436,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name) / sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\"}[5m])) by (bot_name)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name) / sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"noEligibleUsers\"}[5m])) by (bot_name)",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
@@ -573,20 +537,20 @@
           "color": { "mode": "palette-classic" },
           "custom": {
             "axisBorderShow": false, "axisCenteredZero": false, "axisLabel": "", "axisPlacement": "auto",
-            "barAlignment": 0, "drawStyle": "bars", "fillOpacity": 80, "gradientMode": "none",
-            "lineInterpolation": "linear", "lineWidth": 1, "pointSize": 5, "showPoints": "never",
-            "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" }
+            "barAlignment": 0, "drawStyle": "line", "fillOpacity": 15, "gradientMode": "none",
+            "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "showPoints": "never",
+            "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" }
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "short"
+          "unit": "opm"
         },
         "overrides": []
       },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 33 },
       "id": 31,
       "options": {
-        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
         "tooltip": { "mode": "multi", "sort": "desc" }
       },
       "pluginVersion": "11.4.0",
@@ -594,12 +558,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[1h])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[5m])) by (result) * 60",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
       ],
-      "title": "URL Resolution Failures per Hour",
+      "title": "URL Resolution Failures per Minute",
       "type": "timeseries"
     },
     {
@@ -724,20 +688,20 @@
           "color": { "mode": "palette-classic" },
           "custom": {
             "axisBorderShow": false, "axisCenteredZero": false, "axisLabel": "", "axisPlacement": "auto",
-            "barAlignment": 0, "drawStyle": "bars", "fillOpacity": 80, "gradientMode": "none",
-            "lineInterpolation": "linear", "lineWidth": 1, "pointSize": 5, "showPoints": "never",
-            "spanNulls": true, "stacking": { "group": "A", "mode": "normal" }, "thresholdsStyle": { "mode": "off" }
+            "barAlignment": 0, "drawStyle": "line", "fillOpacity": 15, "gradientMode": "none",
+            "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "showPoints": "never",
+            "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" }
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "short"
+          "unit": "opm"
         },
         "overrides": []
       },
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 50 },
       "id": 43,
       "options": {
-        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
         "tooltip": { "mode": "multi", "sort": "desc" }
       },
       "pluginVersion": "11.4.0",
@@ -745,12 +709,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[1h])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (result) * 60",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
       ],
-      "title": "Rejections per Hour (by reason)",
+      "title": "Rejections per Minute (by reason)",
       "type": "timeseries"
     }
   ],
