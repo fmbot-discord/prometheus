@@ -53,7 +53,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_calls_total{job=\"internalapi\", method=\"track.scrobble\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.scrobble\"}[$__range]))",
           "legendFormat": "Scrobbles",
           "refId": "A"
         }
@@ -88,7 +88,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_calls_total{job=\"internalapi\", method=\"track.updateNowPlaying\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.updateNowPlaying\"}[$__range]))",
           "legendFormat": "Now Playing",
           "refId": "A"
         }
@@ -158,7 +158,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_errors_total{job=\"internalapi\"}[$__range])) / sum(increase(lastfm_api_calls_total{job=\"internalapi\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_errors{job=\"internalapi\"}[$__range])) / sum(increase(lastfm_api_calls{job=\"internalapi\"}[$__range]))",
           "legendFormat": "Error Rate",
           "refId": "A"
         }
@@ -193,7 +193,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[$__range]))",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[$__range]))",
           "legendFormat": "Failed Resolves",
           "refId": "A"
         }
@@ -236,7 +236,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(lastfm_api_calls_total{job=\"internalapi\"}[5m])) by (method)",
+          "expr": "sum(rate(lastfm_api_calls{job=\"internalapi\"}[5m])) by (method)",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
@@ -272,7 +272,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(lastfm_api_errors_total{job=\"internalapi\"}[5m])) by (method)",
+          "expr": "sum(rate(lastfm_api_errors{job=\"internalapi\"}[5m])) by (method)",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
@@ -365,7 +365,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name)",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
@@ -401,7 +401,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=\"success\"}[1h])) by (bot_name)",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[1h])) by (bot_name)",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
@@ -480,14 +480,14 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[5m])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[5m])) by (result)",
           "legendFormat": "{{result}}",
           "refId": "A"
         },
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=\"success\"}[5m]))",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m]))",
           "legendFormat": "success (resolved)",
           "refId": "B"
         }
@@ -523,7 +523,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[1h])) by (result)",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[1h])) by (result)",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
@@ -566,7 +566,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (result)",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
@@ -602,7 +602,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (bot_name)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (bot_name)",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
@@ -638,7 +638,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_users_total{bot_name=~\"$bot_name\", outcome!=\"scrobbled\"}[5m])) by (outcome)",
+          "expr": "sum(rate(musicbot_scrobble_users{bot_name=~\"$bot_name\", outcome!=\"scrobbled\"}[5m])) by (outcome)",
           "legendFormat": "{{outcome}}",
           "refId": "A"
         }
@@ -674,7 +674,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(musicbot_scrobble_requests_total{bot_name=~\"$bot_name\", result!=\"success\"}[1h])) by (result)",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[1h])) by (result)",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
@@ -690,7 +690,7 @@
       {
         "current": { "selected": false, "text": "All", "value": "$__all" },
         "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-        "definition": "label_values(musicbot_scrobble_requests_total, bot_name)",
+        "definition": "label_values(musicbot_scrobble_requests, bot_name)",
         "hide": 0,
         "includeAll": true,
         "label": "Music Bot",
@@ -699,7 +699,7 @@
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(musicbot_scrobble_requests_total, bot_name)",
+          "query": "label_values(musicbot_scrobble_requests, bot_name)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 2,
