@@ -53,7 +53,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.scrobble\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{method=\"track.scrobble\"}[$__range]))",
           "legendFormat": "Scrobbles",
           "refId": "A"
         }
@@ -88,7 +88,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.updateNowPlaying\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{method=\"track.updateNowPlaying\"}[$__range]))",
           "legendFormat": "Now Playing",
           "refId": "A"
         }
@@ -123,7 +123,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "musicbot_active_scrobbles{job=\"internalapi\"}",
+          "expr": "musicbot_active_scrobbles",
           "legendFormat": "Active",
           "refId": "A"
         }
@@ -158,7 +158,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(increase(lastfm_api_errors{job=\"internalapi\"}[$__range])) / sum(increase(lastfm_api_calls{job=\"internalapi\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_errors[$__range])) / sum(increase(lastfm_api_calls[$__range]))",
           "legendFormat": "Error Rate",
           "refId": "A"
         }
@@ -171,12 +171,47 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }, { "color": "orange", "value": 0.8 }, { "color": "green", "value": 0.9 }] },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 4, "x": 16, "y": 1 },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.4.0",
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "editorMode": "code",
+          "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[$__range])) / sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\"}[$__range]))",
+          "legendFormat": "Success Rate",
+          "refId": "A"
+        }
+      ],
+      "title": "Request Success Rate (range)",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }] },
           "unit": "none"
         },
         "overrides": []
       },
-      "gridPos": { "h": 5, "w": 4, "x": 16, "y": 1 },
+      "gridPos": { "h": 5, "w": 4, "x": 20, "y": 1 },
       "id": 5,
       "options": {
         "colorMode": "value",
@@ -221,7 +256,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -236,12 +271,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(lastfm_api_calls{job=\"internalapi\"}[5m])) by (method)",
+          "expr": "sum(rate(lastfm_api_calls[5m])) by (method) * 60",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
       ],
-      "title": "Last.fm Calls per Second",
+      "title": "Last.fm Calls per Minute",
       "type": "timeseries"
     },
     {
@@ -257,7 +292,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -272,12 +307,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(lastfm_api_errors{job=\"internalapi\"}[5m])) by (method)",
+          "expr": "sum(rate(lastfm_api_errors[5m])) by (method) * 60",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
       ],
-      "title": "Last.fm Errors per Second",
+      "title": "Last.fm Errors per Minute",
       "type": "timeseries"
     },
     {
@@ -308,21 +343,21 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.5, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[5m])) by (le, method))",
+          "expr": "histogram_quantile(0.5, sum(rate(lastfm_api_response_time_seconds_bucket[5m])) by (le, method))",
           "legendFormat": "p50 {{method}}",
           "refId": "A"
         },
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.95, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[5m])) by (le, method))",
+          "expr": "histogram_quantile(0.95, sum(rate(lastfm_api_response_time_seconds_bucket[5m])) by (le, method))",
           "legendFormat": "p95 {{method}}",
           "refId": "B"
         },
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "histogram_quantile(0.99, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[5m])) by (le, method))",
+          "expr": "histogram_quantile(0.99, sum(rate(lastfm_api_response_time_seconds_bucket[5m])) by (le, method))",
           "legendFormat": "p99 {{method}}",
           "refId": "C"
         }
@@ -350,11 +385,11 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 16 },
       "id": 20,
       "options": {
         "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
@@ -365,12 +400,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name) * 60",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
       ],
-      "title": "Successful Requests per Second (by bot)",
+      "title": "Successful Requests per Minute (by bot)",
       "type": "timeseries"
     },
     {
@@ -390,7 +425,7 @@
         },
         "overrides": []
       },
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 16 },
       "id": 21,
       "options": {
         "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "bottom", "showLegend": true },
@@ -407,6 +442,42 @@
         }
       ],
       "title": "Successful Requests per Hour (by bot)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false, "axisCenteredZero": false, "axisLabel": "", "axisPlacement": "auto",
+            "barAlignment": 0, "drawStyle": "line", "fillOpacity": 15, "gradientMode": "none",
+            "lineInterpolation": "smooth", "lineWidth": 2, "pointSize": 5, "showPoints": "never",
+            "spanNulls": true, "stacking": { "group": "A", "mode": "none" }, "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "red", "value": null }, { "color": "orange", "value": 0.8 }, { "color": "green", "value": 0.9 }] },
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 16 },
+      "id": 23,
+      "options": {
+        "legend": { "calcs": ["mean", "min"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "11.4.0",
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "editorMode": "code",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) by (bot_name) / sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\"}[5m])) by (bot_name)",
+          "legendFormat": "{{bot_name}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Success Rate (by bot)",
       "type": "timeseries"
     },
     {
@@ -437,7 +508,7 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "musicbot_active_scrobbles{job=\"internalapi\"}",
+          "expr": "musicbot_active_scrobbles",
           "legendFormat": "Active Scrobbles",
           "refId": "A"
         }
@@ -465,7 +536,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -480,19 +551,19 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[5m])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"trackNotFound|invalidUrl|invalidUrlRequest\"}[5m])) by (result) * 60",
           "legendFormat": "{{result}}",
           "refId": "A"
         },
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m]))",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[5m])) * 60",
           "legendFormat": "success (resolved)",
           "refId": "B"
         }
       ],
-      "title": "URL Resolution: Success vs Failures",
+      "title": "URL Resolution: Success vs Failures per Minute",
       "type": "timeseries"
     },
     {
@@ -551,7 +622,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -566,12 +637,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (result)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (result) * 60",
           "legendFormat": "{{result}}",
           "refId": "A"
         }
       ],
-      "title": "All Rejections per Second (by reason)",
+      "title": "All Rejections per Minute (by reason)",
       "type": "timeseries"
     },
     {
@@ -587,7 +658,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -602,12 +673,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (bot_name)",
+          "expr": "sum(rate(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"success\"}[5m])) by (bot_name) * 60",
           "legendFormat": "{{bot_name}}",
           "refId": "A"
         }
       ],
-      "title": "All Rejections per Second (by bot)",
+      "title": "All Rejections per Minute (by bot)",
       "type": "timeseries"
     },
     {
@@ -623,7 +694,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "reqps"
+          "unit": "opm"
         },
         "overrides": []
       },
@@ -638,12 +709,12 @@
         {
           "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
           "editorMode": "code",
-          "expr": "sum(rate(musicbot_scrobble_users{bot_name=~\"$bot_name\", outcome!=\"scrobbled\"}[5m])) by (outcome)",
+          "expr": "sum(rate(musicbot_scrobble_users{bot_name=~\"$bot_name\", outcome!=\"scrobbled\"}[5m])) by (outcome) * 60",
           "legendFormat": "{{outcome}}",
           "refId": "A"
         }
       ],
-      "title": "User Scrobble Failures (by outcome)",
+      "title": "User Scrobble Failures per Minute (by outcome)",
       "type": "timeseries"
     },
     {
@@ -684,7 +755,7 @@
     }
   ],
   "schemaVersion": 39,
-  "tags": ["musicbot", "scrobbling", "internalapi"],
+  "tags": ["musicbot", "scrobbling"],
   "templating": {
     "list": [
       {
@@ -710,6 +781,7 @@
       }
     ]
   },
+  "refresh": "5m",
   "time": { "from": "now-24h", "to": "now" },
   "timepicker": {},
   "timezone": "",
