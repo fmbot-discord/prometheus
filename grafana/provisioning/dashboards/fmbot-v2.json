@@ -92,7 +92,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(discord_connected_server_count{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(discord_connected_server_count{instance=~\"$botinstance\"})",
           "legendFormat": "Connected",
           "refId": "A"
         }
@@ -172,7 +172,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "max(bot_registered_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "max(bot_registered_users_count{instance=\"$master_instance\"})",
           "legendFormat": "Users",
           "refId": "A"
         }
@@ -252,7 +252,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "max(bot_active_users_count_1d{exported_instance=~\"$botinstance\"})",
+          "expr": "max(bot_active_users_count_1d{instance=~\"$botinstance\"})",
           "legendFormat": "Daily",
           "refId": "A"
         },
@@ -261,7 +261,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "max(bot_active_users_count_30d{exported_instance=~\"$botinstance\"})",
+          "expr": "max(bot_active_users_count_30d{instance=~\"$botinstance\"})",
           "legendFormat": "Monthly",
           "refId": "B"
         }
@@ -360,7 +360,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "avg(bot_active_users_count_1d{exported_instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{exported_instance=~\"$master_instance\"}) * 100",
+          "expr": "avg(bot_active_users_count_1d{instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{instance=~\"$master_instance\"}) * 100",
           "legendFormat": "DAU/MAU",
           "refId": "A"
         }
@@ -420,7 +420,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(bot_active_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_supporter_count{instance=\"$master_instance\"})",
           "legendFormat": "Supporters",
           "refId": "A"
         }
@@ -500,7 +500,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(bot_connected_shards{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(bot_connected_shards{instance=~\"$botinstance\"})",
           "legendFormat": "Connected",
           "refId": "A"
         }
@@ -580,7 +580,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(discord_cached_users_total{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
           "legendFormat": "Cached Users",
           "refId": "A"
         }
@@ -660,7 +660,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(discord_cached_guilds_total{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(discord_cached_guilds_total{instance=~\"$botinstance\"})",
           "legendFormat": "Cached Guilds",
           "refId": "A"
         }
@@ -741,7 +741,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Text",
           "range": true,
@@ -754,7 +754,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Slash",
           "range": true,
@@ -884,7 +884,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_1d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_1d{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -899,7 +899,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_7d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_7d{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -915,7 +915,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_30d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_30d{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1064,7 +1064,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "Text commands ",
@@ -1077,7 +1077,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_slash_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Slash commands",
           "range": true,
@@ -1090,7 +1090,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Last.fm unauthorized calls",
           "range": true,
@@ -1103,7 +1103,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Last.fm authorized calls",
           "range": true,
@@ -1166,7 +1166,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Unauthorized",
           "range": true,
@@ -1179,7 +1179,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Authorized",
           "range": true,
@@ -1310,7 +1310,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1325,7 +1325,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_discord_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_discord_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1341,7 +1341,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_stripe_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_stripe_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1503,7 +1503,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_registered_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_registered_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1518,7 +1518,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_authorized_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_authorized_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1534,7 +1534,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_unique_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_unique_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1705,7 +1705,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(discord_server_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(discord_server_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1720,7 +1720,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_registered_guilds_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_registered_guilds_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1823,10 +1823,10 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[1d]) / (24 * 60 * 60))",
+          "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[1d]) / (24 * 60 * 60))",
           "instant": false,
           "interval": "",
-          "legendFormat": "{{exported_job}}",
+          "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
@@ -1946,7 +1946,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": ".{{name}}",
@@ -2010,7 +2010,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "Guild",
           "range": true,
@@ -2023,7 +2023,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "User",
           "range": true,
@@ -2133,7 +2133,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "/{{name}}",
@@ -2228,17 +2228,17 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(bot_slash_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p50 Slash",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(bot_slash_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p95 Slash",
           "refId": "B"
         },
         {
-          "expr": "histogram_quantile(0.99, sum(rate(bot_slash_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p99 Slash",
           "refId": "C"
         }
@@ -2346,7 +2346,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "/{{name}}",
@@ -2446,7 +2446,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_slash_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Slash Commands",
           "refId": "A"
         },
@@ -2455,7 +2455,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Text Commands",
           "refId": "B"
         }
@@ -2547,17 +2547,17 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(bot_text_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.50, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p50 Text",
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(bot_text_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.95, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p95 Text",
           "refId": "B"
         },
         {
-          "expr": "histogram_quantile(0.99, sum(rate(bot_text_command_handler_duration_bucket{exported_instance=~\"$botinstance\"}[$interval])) by (le))",
+          "expr": "histogram_quantile(0.99, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
           "legendFormat": "p99 Text",
           "refId": "C"
         }
@@ -2626,22 +2626,22 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(increase(bot_button_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Buttons",
           "refId": "A"
         },
         {
-          "expr": "sum(increase(bot_select_menus_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Select Menus",
           "refId": "B"
         },
         {
-          "expr": "sum(increase(bot_modals_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Modals",
           "refId": "C"
         },
         {
-          "expr": "sum(increase(bot_autocompletes_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Autocompletes",
           "refId": "D"
         }
@@ -2697,22 +2697,22 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Slash",
           "refId": "A"
         },
         {
-          "expr": "sum(increase(bot_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Text",
           "refId": "B"
         },
         {
-          "expr": "sum(increase(bot_user_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "User",
           "refId": "C"
         },
         {
-          "expr": "sum(increase(bot_message_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Message",
           "refId": "D"
         }
@@ -2820,7 +2820,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"connected\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{instance=~\"$botinstance\", event=\"connected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -2836,7 +2836,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"disconnected\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{instance=~\"$botinstance\", event=\"disconnected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -2853,7 +2853,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"ready\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{instance=~\"$botinstance\", event=\"ready\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -2870,7 +2870,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (rate(bot_shard_event{exported_instance=~\"$botinstance\", event=\"resumed\"}[$__rate_interval]) * 60)",
+          "expr": "sum (rate(bot_shard_event{instance=~\"$botinstance\", event=\"resumed\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -2969,7 +2969,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum by (name)(rate(bot_discord_events{exported_instance=~\"$botinstance\"}[$interval]))",
+          "expr": "sum by (name)(rate(bot_discord_events{instance=~\"$botinstance\"}[$interval]))",
           "legendFormat": "{{name}}",
           "refId": "A"
         }
@@ -3063,22 +3063,22 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(bot_button_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_button_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Buttons",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(bot_select_menus_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_select_menus_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Select Menus",
           "refId": "B"
         },
         {
-          "expr": "sum(rate(bot_modals_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_modals_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Modals",
           "refId": "C"
         },
         {
-          "expr": "sum(rate(bot_autocompletes_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_autocompletes_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Autocompletes",
           "refId": "D"
         }
@@ -3246,37 +3246,37 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(spotify_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(spotify_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Spotify",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(musicbrainz_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "MusicBrainz",
           "refId": "B"
         },
         {
-          "expr": "sum(rate(discogs_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(discogs_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Discogs",
           "refId": "C"
         },
         {
-          "expr": "sum(rate(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(applemusic_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Apple Music",
           "refId": "D"
         },
         {
-          "expr": "sum(rate(openai_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(openai_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "OpenAI",
           "refId": "E"
         },
         {
-          "expr": "sum(rate(opencollective_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(opencollective_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "OpenCollective",
           "refId": "F"
         },
         {
-          "expr": "sum(rate(lyrics_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lyrics_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Lyrics",
           "refId": "G"
         }
@@ -3332,32 +3332,32 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(increase(spotify_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Spotify",
           "refId": "A"
         },
         {
-          "expr": "sum(increase(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "MusicBrainz",
           "refId": "B"
         },
         {
-          "expr": "sum(increase(discogs_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Discogs",
           "refId": "C"
         },
         {
-          "expr": "sum(increase(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Apple Music",
           "refId": "D"
         },
         {
-          "expr": "sum(increase(openai_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "OpenAI",
           "refId": "E"
         },
         {
-          "expr": "sum(increase(lyrics_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "legendFormat": "Lyrics",
           "refId": "F"
         }
@@ -3498,7 +3498,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Unauthorized",
           "refId": "A"
         },
@@ -3507,7 +3507,7 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "expr": "sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Authorized",
           "refId": "B"
         }
@@ -3601,7 +3601,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum by (method)(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (method)(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
@@ -3709,7 +3709,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (method) (rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "{{method}}",
           "range": true,
@@ -3814,7 +3814,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -3829,7 +3829,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors_badauth{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors_badauth{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3845,7 +3845,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors_failure{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3941,12 +3941,12 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(lastfm_image_cdn_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Fetched",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(lastfm_cached_image_cdn_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_cached_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Cache Hits",
           "refId": "B"
         }
@@ -4052,7 +4052,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (method) (rate(lastfm_errors_failure{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -4150,7 +4150,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum by (method) (rate(lastfm_api_response_time_sum{exported_instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{exported_instance=~\"$botinstance\"}[$interval]))",
+          "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
           "legendFormat": "{{method}}",
           "refId": "A"
         }
@@ -4279,12 +4279,12 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(discord_cached_users_total{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
           "legendFormat": "Cached Users",
           "refId": "A"
         },
         {
-          "expr": "sum(discord_cached_guilds_total{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(discord_cached_guilds_total{instance=~\"$botinstance\"})",
           "legendFormat": "Cached Guilds",
           "refId": "B"
         }
@@ -4496,12 +4496,12 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_queries{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_queries{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "EF Queries/min",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_savechanges{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_savechanges{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "SaveChanges/min",
           "refId": "B"
         }
@@ -4593,17 +4593,17 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_active_dbcontexts{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_active_dbcontexts{instance=~\"$botinstance\"})",
           "legendFormat": "Active DbContexts",
           "refId": "A"
         },
         {
-          "expr": "sum(npgsql_db_client_connections_usage{exported_instance=~\"$botinstance\", state=\"idle\"})",
+          "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"idle\"})",
           "legendFormat": "Idle Connections",
           "refId": "B"
         },
         {
-          "expr": "sum(npgsql_db_client_connections_usage{exported_instance=~\"$botinstance\", state=\"used\"})",
+          "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"used\"})",
           "legendFormat": "Used Connections",
           "refId": "C"
         }
@@ -4694,7 +4694,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{exported_instance=~\"$botinstance\"}) / (sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{exported_instance=~\"$botinstance\"}) + sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{exported_instance=~\"$botinstance\"})) * 100",
+          "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) / (sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) + sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"})) * 100",
           "legendFormat": "Query Cache Hit Rate",
           "refId": "A"
         }
@@ -4763,12 +4763,12 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "bot_update_queue_size{exported_instance=\"prod-1\"}",
+          "expr": "bot_update_queue_size{instance=\"prod-1\"}",
           "legendFormat": "Queue Size",
           "refId": "A"
         },
         {
-          "expr": "bot_update_outdated_users{exported_instance=\"prod-1\"}",
+          "expr": "bot_update_outdated_users{instance=\"prod-1\"}",
           "legendFormat": "Outdated Users",
           "refId": "B"
         }
@@ -4859,27 +4859,27 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(rate(bot_indexed_users{exported_instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
           "legendFormat": "Indexed (Queue)",
           "refId": "A"
         },
         {
-          "expr": "sum(rate(bot_indexed_users{exported_instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
           "legendFormat": "Indexed (User)",
           "refId": "B"
         },
         {
-          "expr": "sum(rate(bot_updated_users{exported_instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
           "legendFormat": "Updated (Queue)",
           "refId": "C"
         },
         {
-          "expr": "sum(rate(bot_updated_users{exported_instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
           "legendFormat": "Updated (User)",
           "refId": "D"
         },
         {
-          "expr": "sum(rate(bot_smallindexed_users{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_smallindexed_users{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Small Indexed",
           "refId": "E"
         }
@@ -4970,12 +4970,12 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum by (bot) (rate(lastfm_scrobbling_scrobbled{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (bot) (rate(lastfm_scrobbling_scrobbled{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Scrobbled {{bot}}",
           "refId": "A"
         },
         {
-          "expr": "sum by (bot) (rate(lastfm_scrobbling_nowplaying{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (bot) (rate(lastfm_scrobbling_nowplaying{instance=~\"$botinstance\"}[$interval]) * 60)",
           "legendFormat": "Now Playing {{bot}}",
           "refId": "B"
         }
@@ -5093,9 +5093,9 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (dotnet_total_memory_bytes{exported_instance=~\"$botinstance\"} /1024 /1024)",
+          "expr": "sum by (instance) (dotnet_total_memory_bytes{instance=~\"$botinstance\"} /1024 /1024)",
           "interval": "",
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5187,7 +5187,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "increase(dotnet_collection_count_total{exported_instance=~\"$botinstance\"}[$interval])",
+          "expr": "increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval])",
           "legendFormat": "Gen {{generation}}",
           "refId": "A"
         }
@@ -5279,13 +5279,13 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "process_num_threads{exported_instance=~\"$botinstance\"}",
-          "legendFormat": "{{exported_instance}} Threads",
+          "expr": "process_num_threads{instance=~\"$botinstance\"}",
+          "legendFormat": "{{instance}} Threads",
           "refId": "A"
         },
         {
-          "expr": "process_open_handles{exported_instance=~\"$botinstance\"}",
-          "legendFormat": "{{exported_instance}} Handles",
+          "expr": "process_open_handles{instance=~\"$botinstance\"}",
+          "legendFormat": "{{instance}} Handles",
           "refId": "B"
         }
       ],
@@ -5394,7 +5394,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5505,7 +5505,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5597,7 +5597,7 @@
       "pluginVersion": "12.3.1",
       "targets": [
         {
-          "expr": "sum(system_net_http_http_client_active_requests{exported_instance=~\"$botinstance\"})",
+          "expr": "sum(system_net_http_http_client_active_requests{instance=~\"$botinstance\"})",
           "legendFormat": "Active HTTP Requests",
           "refId": "A"
         }
@@ -5708,7 +5708,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -5839,14 +5839,14 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(exported_instance)",
+        "definition": "label_values(instance)",
         "includeAll": true,
         "multi": true,
         "name": "botinstance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(exported_instance)",
+          "query": "label_values(instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -5862,13 +5862,13 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(exported_instance)",
+        "definition": "label_values(instance)",
         "includeAll": false,
         "name": "master_instance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(exported_instance)",
+          "query": "label_values(instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,

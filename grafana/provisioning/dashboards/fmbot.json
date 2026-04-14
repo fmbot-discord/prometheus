@@ -28,19 +28,6 @@
   "links": [],
   "panels": [
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 70,
-      "panels": [],
-      "title": "Row title",
-      "type": "row"
-    },
-    {
       "datasource": {
         "type": "prometheus",
         "uid": "PBFA97CFB590B2093"
@@ -75,7 +62,7 @@
         "h": 5,
         "w": 3,
         "x": 0,
-        "y": 1
+        "y": 0
       },
       "id": 30,
       "options": {
@@ -95,7 +82,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -104,7 +91,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (discord_connected_server_count{exported_instance=~\"$botinstance\"})",
+          "expr": "sum (discord_connected_server_count{instance=~\"$botinstance\"})",
           "format": "time_series",
           "instant": false,
           "interval": "1",
@@ -170,7 +157,7 @@
         "h": 5,
         "w": 3,
         "x": 3,
-        "y": 1
+        "y": 0
       },
       "id": 49,
       "options": {
@@ -190,7 +177,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -199,7 +186,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "max(bot_registered_guilds_count{exported_instance=\"$master_instance\"})",
+          "expr": "max(bot_registered_guilds_count{instance=\"$master_instance\"})",
           "hide": false,
           "instant": false,
           "interval": "1",
@@ -298,7 +285,7 @@
         "h": 8,
         "w": 18,
         "x": 6,
-        "y": 1
+        "y": 0
       },
       "id": 24,
       "options": {
@@ -319,7 +306,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -328,7 +315,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "Text commands ",
@@ -341,7 +328,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_slash_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Slash commands",
           "range": true,
@@ -354,7 +341,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Last.fm unauthorized calls",
           "range": true,
@@ -367,7 +354,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Last.fm authorized calls",
           "range": true,
@@ -401,7 +388,7 @@
         "h": 5,
         "w": 3,
         "x": 0,
-        "y": 6
+        "y": 5
       },
       "id": 31,
       "options": {
@@ -421,7 +408,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -430,7 +417,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "max(bot_registered_users_count{exported_job=\"production\"})",
+          "expr": "max(bot_registered_users_count{job=\"production\"})",
           "interval": "",
           "legendFormat": "Registered",
           "range": true,
@@ -484,7 +471,7 @@
         "h": 5,
         "w": 3,
         "x": 3,
-        "y": 6
+        "y": 5
       },
       "id": 50,
       "options": {
@@ -504,7 +491,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -513,7 +500,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "max(bot_authorized_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "max(bot_authorized_users_count{instance=\"$master_instance\"})",
           "interval": "",
           "legendFormat": "Authorized",
           "range": true,
@@ -611,7 +598,7 @@
         "h": 8,
         "w": 9,
         "x": 6,
-        "y": 9
+        "y": 8
       },
       "id": 52,
       "options": {
@@ -634,7 +621,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -643,7 +630,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_commands_executed{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": ".{{name}}",
@@ -722,7 +709,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 9
+        "y": 8
       },
       "id": 53,
       "options": {
@@ -745,7 +732,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -754,7 +741,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (method)(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (method)(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "{{method}}",
@@ -788,7 +775,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 11
+        "y": 10
       },
       "id": 57,
       "options": {
@@ -808,7 +795,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -817,7 +804,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "max(bot_active_users_count_1d{exported_instance=~\"$botinstance\"})",
+          "expr": "max(bot_active_users_count_1d{instance=~\"$botinstance\"})",
           "interval": "",
           "legendFormat": "Daily",
           "range": true,
@@ -830,7 +817,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "max(bot_active_users_count_30d{exported_instance=~\"$botinstance\"})",
+          "expr": "max(bot_active_users_count_30d{instance=~\"$botinstance\"})",
           "interval": "",
           "legendFormat": "Monthly",
           "range": true,
@@ -872,7 +859,7 @@
         "h": 3,
         "w": 6,
         "x": 0,
-        "y": 16
+        "y": 15
       },
       "id": 33,
       "options": {
@@ -892,7 +879,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -901,10 +888,10 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[1d]) / (24 * 60 * 60))",
+          "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[1d]) / (24 * 60 * 60))",
           "instant": false,
           "interval": "",
-          "legendFormat": "{{exported_job}}",
+          "legendFormat": "{{job}}",
           "refId": "A"
         }
       ],
@@ -1005,7 +992,7 @@
         "h": 7,
         "w": 6,
         "x": 6,
-        "y": 17
+        "y": 16
       },
       "id": 39,
       "options": {
@@ -1022,7 +1009,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1031,7 +1018,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_registered_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_registered_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1046,7 +1033,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_authorized_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_authorized_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1062,7 +1049,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_unique_users_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_unique_users_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1208,7 +1195,7 @@
         "h": 7,
         "w": 5,
         "x": 12,
-        "y": 17
+        "y": 16
       },
       "id": 47,
       "options": {
@@ -1225,7 +1212,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1234,7 +1221,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1249,7 +1236,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_discord_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_discord_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1265,7 +1252,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(bot_active_stripe_supporter_count{exported_instance=\"$master_instance\"})",
+          "expr": "sum(bot_active_stripe_supporter_count{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1397,7 +1384,7 @@
         "h": 7,
         "w": 7,
         "x": 17,
-        "y": 17
+        "y": 16
       },
       "id": 12,
       "options": {
@@ -1418,7 +1405,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1427,7 +1414,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_1d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_1d{instance=\"$master_instance\"})",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -1442,7 +1429,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_7d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_7d{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1458,7 +1445,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_30d{exported_instance=\"$master_instance\"})",
+          "expr": "avg(bot_active_users_count_30d{instance=\"$master_instance\"})",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1533,7 +1520,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 19
+        "y": 18
       },
       "id": 32,
       "options": {
@@ -1553,7 +1540,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1562,7 +1549,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Unauthorized",
           "range": true,
@@ -1575,7 +1562,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Authorized",
           "range": true,
@@ -1609,7 +1596,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 24
+        "y": 23
       },
       "id": 40,
       "options": {
@@ -1629,7 +1616,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1638,7 +1625,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Text",
           "range": true,
@@ -1651,7 +1638,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Slash",
           "range": true,
@@ -1729,7 +1716,7 @@
         "h": 8,
         "w": 9,
         "x": 6,
-        "y": 24
+        "y": 23
       },
       "id": 59,
       "options": {
@@ -1752,7 +1739,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1761,12 +1748,12 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (rate(bot_shard_connected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum by (instance) (rate(bot_shard_connected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}} connect",
+          "legendFormat": "{{instance}} connect",
           "range": true,
           "refId": "A"
         },
@@ -1777,13 +1764,13 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (rate(bot_shard_disconnected{exported_instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum by (instance) (rate(bot_shard_disconnected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}} disconnect",
+          "legendFormat": "{{instance}} disconnect",
           "range": true,
           "refId": "B"
         }
@@ -1859,7 +1846,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 24
+        "y": 23
       },
       "id": 35,
       "options": {
@@ -1879,7 +1866,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1888,9 +1875,9 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (dotnet_total_memory_bytes{exported_instance=~\"$botinstance\"} /1024 /1024)",
+          "expr": "sum by (instance) (dotnet_total_memory_bytes{instance=~\"$botinstance\"} /1024 /1024)",
           "interval": "",
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -1922,7 +1909,7 @@
         "h": 5,
         "w": 6,
         "x": 0,
-        "y": 29
+        "y": 28
       },
       "id": 63,
       "options": {
@@ -1942,7 +1929,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -1951,7 +1938,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "Guild",
           "range": true,
@@ -1964,7 +1951,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
+          "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "User",
           "range": true,
@@ -2074,7 +2061,7 @@
         "h": 8,
         "w": 6,
         "x": 6,
-        "y": 32
+        "y": 31
       },
       "id": 51,
       "options": {
@@ -2091,7 +2078,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2100,7 +2087,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(musicbrainz_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2115,7 +2102,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(spotify_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(spotify_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2131,7 +2118,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(discogs_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(discogs_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2147,7 +2134,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(opencollective_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(opencollective_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2163,7 +2150,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(openai_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(openai_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2179,7 +2166,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60 )",
+          "expr": "sum(rate(applemusic_api_calls{instance=~\"$botinstance\"}[$interval]) * 60 )",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -2286,7 +2273,7 @@
         "h": 8,
         "w": 4,
         "x": 12,
-        "y": 32
+        "y": 31
       },
       "id": 38,
       "options": {
@@ -2303,7 +2290,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2312,7 +2299,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_image_cdn_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -2327,7 +2314,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_cached_image_cdn_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_cached_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Cache hits",
           "range": true,
@@ -2405,7 +2392,7 @@
         "h": 8,
         "w": 8,
         "x": 16,
-        "y": 32
+        "y": 31
       },
       "id": 58,
       "options": {
@@ -2428,7 +2415,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2437,7 +2424,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name) (rate(bot_discord_events{exported_instance=~\"$botinstance\"}[$interval]))",
+          "expr": "sum by (name) (rate(bot_discord_events{instance=~\"$botinstance\"}[$interval]))",
           "instant": true,
           "interval": "",
           "legendFormat": "{{name}}",
@@ -2472,7 +2459,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 34
+        "y": 33
       },
       "id": 54,
       "options": {
@@ -2492,7 +2479,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2501,7 +2488,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(spotify_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Spotify",
           "range": true,
@@ -2514,7 +2501,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(musicbrainz_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Musicbrainz",
           "range": true,
@@ -2527,7 +2514,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(discogs_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "hide": false,
           "interval": "",
           "legendFormat": "Discogs",
@@ -2541,7 +2528,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(opencollective_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(opencollective_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "hide": false,
           "interval": "",
           "legendFormat": "OpenCollective",
@@ -2555,7 +2542,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(increase(applemusic_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
+          "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "hide": false,
           "interval": "",
           "legendFormat": "Apple Music",
@@ -2632,7 +2619,7 @@
         "h": 9,
         "w": 7,
         "x": 6,
-        "y": 40
+        "y": 39
       },
       "id": 67,
       "options": {
@@ -2652,13 +2639,13 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (method)  (rate(lastfm_api_response_time_sum{exported_instance=~\"$botinstance\"}[1h]) / rate(lastfm_api_response_time_count{exported_instance=~\"$botinstance\"}[1h]))",
+          "expr": "sum by (method)  (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[1h]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[1h]))",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -2741,7 +2728,7 @@
         "h": 9,
         "w": 5,
         "x": 13,
-        "y": 40
+        "y": 39
       },
       "id": 46,
       "options": {
@@ -2764,7 +2751,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2773,7 +2760,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (method) (rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "{{method}}",
           "range": true,
@@ -2852,7 +2839,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 40
+        "y": 39
       },
       "id": 41,
       "options": {
@@ -2871,7 +2858,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2880,7 +2867,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_indexed_users{exported_instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "Indexed (Queue)",
@@ -2893,7 +2880,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_indexed_users{exported_instance=~\"$botinstance\",reason=\"user_init\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\",reason=\"user_init\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "Indexed (User)",
           "range": true,
@@ -2906,7 +2893,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_updated_users{exported_instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -2920,7 +2907,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(bot_updated_users{exported_instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
+          "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -2964,7 +2951,7 @@
         "h": 4,
         "w": 6,
         "x": 0,
-        "y": 42
+        "y": 41
       },
       "id": 62,
       "options": {
@@ -2984,7 +2971,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -2993,7 +2980,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "avg(bot_active_users_count_1d{exported_instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{exported_instance=~\"$master_instance\"}) * 100",
+          "expr": "avg(bot_active_users_count_1d{instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{instance=~\"$master_instance\"}) * 100",
           "interval": "",
           "legendFormat": "__auto",
           "range": true,
@@ -3097,7 +3084,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 46
+        "y": 45
       },
       "id": 55,
       "options": {
@@ -3118,7 +3105,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3127,7 +3114,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (bot) (rate(lastfm_scrobbling_scrobbled{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (bot) (rate(lastfm_scrobbling_scrobbled{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -3142,7 +3129,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (bot) (rate(lastfm_scrobbling_nowplaying{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum by (bot) (rate(lastfm_scrobbling_nowplaying{instance=~\"$botinstance\"}[$interval]) * 60)",
           "interval": "",
           "legendFormat": "NP {{bot}}",
           "range": true,
@@ -3176,7 +3163,7 @@
         "h": 5,
         "w": 6,
         "x": 18,
-        "y": 48
+        "y": 47
       },
       "id": 66,
       "options": {
@@ -3196,7 +3183,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3205,7 +3192,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_update_queue_size{exported_instance=\"prod-1\"}",
+          "expr": "bot_update_queue_size{instance=\"prod-1\"}",
           "interval": "",
           "legendFormat": "Queue size",
           "range": true,
@@ -3218,7 +3205,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_update_outdated_users{exported_instance=\"prod-1\"}",
+          "expr": "bot_update_outdated_users{instance=\"prod-1\"}",
           "interval": "",
           "legendFormat": "Outdated users",
           "range": true,
@@ -3297,7 +3284,7 @@
         "h": 8,
         "w": 5,
         "x": 6,
-        "y": 49
+        "y": 48
       },
       "id": 2,
       "options": {
@@ -3314,7 +3301,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3323,7 +3310,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -3338,7 +3325,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors_badauth{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors_badauth{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3354,7 +3341,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum(rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
+          "expr": "sum(rate(lastfm_errors_failure{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -3387,7 +3374,7 @@
             "barAlignment": 0,
             "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -3428,36 +3415,35 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "none"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 8,
-        "w": 5,
-        "x": 13,
-        "y": 49
+        "w": 7,
+        "x": 11,
+        "y": 48
       },
-      "id": 14,
+      "id": 68,
       "options": {
         "legend": {
           "calcs": [
-            "mean",
-            "lastNotNull",
-            "max"
+            "sum",
+            "mean"
           ],
           "displayMode": "table",
-          "placement": "bottom",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
           "hideZeros": false,
           "maxHeight": 600,
-          "mode": "multi",
+          "mode": "single",
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3466,16 +3452,17 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_open_handles",
+          "expr": "sum by (method) (rate(lastfm_errors_failure{instance=~\"$botinstance\"}[$interval]) * 60)",
           "format": "time_series",
+          "hide": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{method}}",
           "range": true,
-          "refId": "A"
+          "refId": "C"
         }
       ],
-      "title": "Number of open handles",
+      "title": "Failure errors per minute",
       "type": "timeseries"
     },
     {
@@ -3546,7 +3533,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 53
+        "y": 52
       },
       "id": 8,
       "options": {
@@ -3567,7 +3554,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3576,11 +3563,11 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (exported_instance) (dotnet_total_memory_bytes{exported_instance=~\"$botinstance\"} /1024/1024)",
+          "expr": "sum by (instance) (dotnet_total_memory_bytes{instance=~\"$botinstance\"} /1024/1024)",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -3656,7 +3643,7 @@
         "h": 8,
         "w": 6,
         "x": 0,
-        "y": 54
+        "y": 53
       },
       "id": 10,
       "options": {
@@ -3677,7 +3664,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3690,7 +3677,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -3763,7 +3750,7 @@
         "h": 8,
         "w": 7,
         "x": 6,
-        "y": 57
+        "y": 56
       },
       "id": 18,
       "options": {
@@ -3783,7 +3770,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3869,9 +3856,120 @@
       },
       "gridPos": {
         "h": 8,
+        "w": 5,
+        "x": 13,
+        "y": 56
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "maxHeight": 600,
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "code",
+          "exemplar": true,
+          "expr": "process_open_handles",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Number of open handles",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "showValues": false,
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 0,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
         "w": 6,
         "x": 18,
-        "y": 61
+        "y": 60
       },
       "id": 56,
       "options": {
@@ -3892,7 +3990,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -3905,7 +4003,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "{{exported_instance}}",
+          "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
         }
@@ -3981,7 +4079,7 @@
         "h": 8,
         "w": 8,
         "x": 6,
-        "y": 65
+        "y": 64
       },
       "id": 64,
       "options": {
@@ -4004,7 +4102,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -4013,7 +4111,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"guild_app\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "/{{name}}",
@@ -4092,7 +4190,7 @@
         "h": 8,
         "w": 8,
         "x": 6,
-        "y": 73
+        "y": 72
       },
       "id": 65,
       "options": {
@@ -4115,7 +4213,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
         {
           "datasource": {
@@ -4124,7 +4222,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (name)(rate(bot_slash_commands_executed{exported_instance=~\"$botinstance\", integration_type=\"user_app\"}[$interval]) * 60)",
+          "expr": "sum by (name)(rate(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$interval]) * 60)",
           "instant": false,
           "interval": "",
           "legendFormat": "/{{name}}",
@@ -4135,467 +4233,1602 @@
       "title": "Slash commands per minute - User",
       "type": "timeseries"
     },
-    {
+     {
       "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 81
-      },
-      "id": 71,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "id": 100,
       "panels": [],
-      "title": "Last.fm error visualization",
+      "title": "Overview",
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "",
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 0, "y": 1 },
+      "id": 101,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "sum(discord_connected_server_count{instance=~\"$botinstance\"})",
+        "legendFormat": "Connected"
+      }],
+      "title": "Connected Guilds",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Connected", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 3, "y": 1 },
+      "id": 102,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "max(bot_registered_users_count{instance=\"$master_instance\"})",
+        "legendFormat": "Users"
+      }],
+      "title": "Registered Users",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Users", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "purple", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 6, "y": 1 },
+      "id": 103,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "max(bot_active_users_count_1d{instance=~\"$botinstance\"})",
+          "legendFormat": "Daily"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "max(bot_active_users_count_30d{instance=~\"$botinstance\"})",
+          "legendFormat": "Monthly"
+        }
+      ],
+      "title": "Active Users",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [
+            { "fieldName": "Daily", "config": { "id": "equal", "options": { "value": 0 } } },
+            { "fieldName": "Monthly", "config": { "id": "equal", "options": { "value": 0 } } }
+          ],
+          "type": "exclude",
+          "match": "any"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "red", "value": null },
+            { "color": "yellow", "value": 20 },
+            { "color": "green", "value": 25 }
+          ]},
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 9, "y": 1 },
+      "id": 104,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "avg(bot_active_users_count_1d{instance=~\"$master_instance\"}) / avg(bot_active_users_count_30d{instance=~\"$master_instance\"}) * 100",
+        "legendFormat": "DAU/MAU"
+      }],
+      "title": "DAU/MAU Ratio",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "orange", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 12, "y": 1 },
+      "id": 105,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "sum(bot_active_supporter_count{instance=\"$master_instance\"})",
+        "legendFormat": "Supporters"
+      }],
+      "title": "Active Supporters",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Supporters", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 15, "y": 1 },
+      "id": 106,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "sum(bot_connected_shards{instance=~\"$botinstance\"})",
+        "legendFormat": "Connected"
+      }],
+      "title": "Connected Shards",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Connected", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 18, "y": 1 },
+      "id": 107,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
+        "legendFormat": "Cached Users"
+      }],
+      "title": "Discord Cached Users",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Cached Users", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "semi-dark-blue", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 3, "x": 21, "y": 1 },
+      "id": 108,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "targets": [{
+        "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+        "expr": "sum(discord_cached_guilds_total{instance=~\"$botinstance\"})",
+        "legendFormat": "Cached Guilds"
+      }],
+      "title": "Discord Cached Guilds",
+      "transformations": [{
+        "id": "filterByValue",
+        "options": {
+          "filters": [{ "fieldName": "Cached Guilds", "config": { "id": "equal", "options": { "value": 0 } } }],
+          "type": "exclude",
+          "match": "all"
+        }
+      }],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 5 },
+      "id": 1100,
+      "panels": [],
+      "title": "User Engagement & Growth",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
           "custom": {
             "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
             "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
             "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
             "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
             "showPoints": "never",
-            "showValues": false,
             "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
+            "stacking": { "group": "A", "mode": "none" }
           },
           "unit": "none"
         },
         "overrides": []
       },
-      "gridPos": {
-        "h": 8,
-        "w": 11,
-        "x": 0,
-        "y": 82
-      },
-      "id": 68,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 1101,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "sortBy": "Total",
-          "sortDesc": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "maxHeight": 600,
-          "mode": "single",
-          "sort": "none"
-        }
+        "legend": { "calcs": ["last"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
       },
-      "pluginVersion": "12.3.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
-          "format": "time_series",
-          "hide": true,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{method}}",
-          "range": true,
-          "refId": "C"
+          "expr": "max(bot_active_users_count_1d{instance=~\"$master_instance\"})",
+          "legendFormat": "DAU (1 Day)"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": " sum (rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "Authorized API calls",
-          "range": true,
-          "refId": "A"
+          "expr": "max(bot_active_users_count_7d{instance=~\"$master_instance\"})",
+          "legendFormat": "WAU (7 Days)"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval]) * 60)",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "All failure errors",
-          "range": true,
-          "refId": "B"
+          "expr": "max(bot_active_users_count_30d{instance=~\"$master_instance\"})",
+          "legendFormat": "MAU (30 Days)"
         }
       ],
-      "title": "Failure errors per minute",
+      "title": "User Engagement Trends",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "thresholds"
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisLabel": "New Users / Hour",
+            "axisPlacement": "auto",
+            "drawStyle": "bars",
+            "fillOpacity": 80,
+            "lineWidth": 0,
+            "spanNulls": false
+          },
+          "unit": "none"
+        }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 1102,
+      "options": {
+        "legend": { "displayMode": "hidden", "placement": "bottom", "showLegend": false },
+        "tooltip": { "mode": "single" }
+      },
+      "targets": [
+        {
+          "expr": "deriv(bot_registered_users_count{instance=~\"$master_instance\"}[$__interval]) * 3600",
+          "legendFormat": "New Signups / Hr"
+        }
+      ],
+      "title": "User Signups (Rate per Hour)",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+      "id": 1200,
+      "panels": [],
+      "title": "Supporters & Finance",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 40,
+            "lineWidth": 1,
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "normal" }
+          },
+          "unit": "none"
+        }
+      },
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 15 },
+      "id": 1201,
+      "options": {
+        "legend": { "calcs": ["last"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "expr": "max(bot_active_discord_supporter_count{instance=~\"$master_instance\"})",
+          "legendFormat": "Discord Supporters"
+        },
+        {
+          "expr": "max(bot_active_stripe_supporter_count{instance=~\"$master_instance\"})",
+          "legendFormat": "Stripe Supporters"
+        }
+      ],
+      "title": "Active Supporters",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 23 },
+      "id": 109,
+      "panels": [],
+      "title": "Command Execution",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": { "type": "linear" },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
           },
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
         },
         "overrides": []
       },
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 11,
-        "y": 82
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 24 },
+      "id": 110,
+      "options": {
+        "legend": { "calcs": ["mean", "max", "sum"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
       },
-      "id": 69,
+      "pluginVersion": "12.2.1",
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum(rate(bot_slash_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
+          "legendFormat": "Slash Commands"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum(rate(bot_commands_executed{instance=~\"$botinstance\"}[$interval]) * 60)",
+          "legendFormat": "Text Commands"
+        }
+      ],
+      "title": "Commands per Minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": { "legend": false, "tooltip": false, "viz": false },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": { "type": "linear" },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "Authorized" }, "properties": [{ "id": "color", "value": { "fixedColor": "green", "mode": "fixed" }}]},
+          { "matcher": { "id": "byName", "options": "Unauthorized" }, "properties": [{ "id": "color", "value": { "fixedColor": "yellow", "mode": "fixed" }}]}
+        ]
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 24 },
+      "id": 111,
+      "options": {
+        "legend": { "calcs": ["mean", "max", "sum"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
+          "legendFormat": "Unauthorized"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+          "expr": "sum(rate(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
+          "legendFormat": "Authorized"
+        }
+      ],
+      "title": "Last.fm API Calls per Minute",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 32 },
+      "id": 200,
+      "panels": [],
+      "title": "Discord Interactions",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 5, "w": 6, "x": 0, "y": 33 },
+      "id": 201,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
         "justifyMode": "auto",
         "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
+        "reduceOptions": { "calcs": ["last"], "fields": "", "values": false },
         "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
+        "textMode": "auto"
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
-        {
-          "editorMode": "code",
-          "expr": "sum(increase(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$__range])) + sum(increase(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$__range]))",
-          "interval": "",
-          "legendFormat": "API Calls",
-          "range": true,
-          "refId": "A"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(increase(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$__range]))",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "Failure errors",
-          "range": true,
-          "refId": "B"
-        }
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Slash" },
+        { "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Text" },
+        { "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "User" },
+        { "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Message" }
       ],
-      "title": "Error counts",
+      "title": "Commands Executed (Range)",
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "",
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "blue", "value": null }] },
           "unit": "none"
         },
         "overrides": []
       },
-      "gridPos": {
-        "h": 8,
-        "w": 11,
-        "x": 0,
-        "y": 90
-      },
-      "id": 72,
+      "gridPos": { "h": 5, "w": 6, "x": 6, "y": 33 },
+      "id": 202,
       "options": {
-        "legend": {
-          "calcs": [
-            "max",
-            "mean"
-          ],
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": true,
-          "sortBy": "Max",
-          "sortDesc": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "maxHeight": 600,
-          "mode": "single",
-          "sort": "none"
-        }
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["last"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
       "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\", method=\"\"}[$interval]) * 60)",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "Unknown method",
-          "range": true,
-          "refId": "C"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "exemplar": true,
-          "expr": "sum by (method) (rate(lastfm_errors_failure{exported_instance=~\"$botinstance\", method!=\"\"}[$interval]) * 60)",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{method}}",
-          "range": true,
-          "refId": "A"
-        }
+        { "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Buttons" },
+        { "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Select Menus" },
+        { "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Modals" },
+        { "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Autocompletes" }
       ],
-      "title": "Failure errors per minute",
+      "title": "Component Interactions (Range)",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 33 },
+      "id": 203,
+      "options": {
+        "legend": { "calcs": ["mean", "sum"], "displayMode": "table", "placement": "right", "showLegend": true, "sortBy": "Mean", "sortDesc": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(bot_button_executed{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Buttons" },
+        { "expr": "sum(rate(bot_select_menus_executed{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Select Menus" },
+        { "expr": "sum(rate(bot_modals_executed{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Modals" },
+        { "expr": "sum(rate(bot_autocompletes_executed{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Autocompletes" }
+      ],
+      "title": "Component Interactions per Minute",
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
-      },
-      "description": "",
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
       "fieldConfig": {
         "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "showValues": false,
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "decimals": 0,
-          "links": [],
           "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": 0
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
           "unit": "none"
         },
         "overrides": []
       },
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 11,
-        "y": 90
-      },
-      "id": 73,
+      "gridPos": { "h": 3, "w": 6, "x": 0, "y": 38 },
+      "id": 204,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "table",
-          "placement": "right",
-          "showLegend": false,
-          "sortBy": "Total",
-          "sortDesc": true
-        },
-        "tooltip": {
-          "hideZeros": false,
-          "maxHeight": 600,
-          "mode": "single",
-          "sort": "none"
-        }
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["last"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
       },
-      "pluginVersion": "12.3.0",
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))", "legendFormat": "Guild" },
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))", "legendFormat": "User" }
+      ],
+      "title": "Slash Commands by App Type (Range)",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 6, "x": 6, "y": 38 },
+      "id": 205,
+      "options": {
+        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "right", "showLegend": true, "sortBy": "Total", "sortDesc": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "sum by (name)(rate(bot_discord_events{instance=~\"$botinstance\"}[$interval]))",
+        "legendFormat": "{{name}}"
+      }],
+      "title": "Discord Gateway Events/sec",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 46 },
+      "id": 300,
+      "panels": [],
+      "title": "Command Handler Performance",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 47 },
+      "id": 301,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "editorMode": "code",
-          "expr": "sum(rate(lastfm_errors_failure{exported_instance=~\"$botinstance\"}[$interval])) \n/ \n(sum(rate(lastfm_authorized_api_calls{exported_instance=~\"$botinstance\"}[$interval])) + sum(rate(lastfm_api_calls{exported_instance=~\"$botinstance\"}[$interval])))\n* 100",
-          "hide": false,
-          "instant": false,
-          "legendFormat": "Error rate",
-          "range": true,
-          "refId": "B"
+          "expr": "histogram_quantile(0.50, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p50 Slash"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p95 Slash"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(bot_slash_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p99 Slash"
         }
       ],
-      "title": "Failure error rate %",
+      "title": "Slash Command Handler Latency (Percentiles)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 47 },
+      "id": 302,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.50, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p50 Text"
+        },
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p95 Text"
+        },
+        {
+          "expr": "histogram_quantile(0.99, sum(rate(bot_text_command_handler_duration_bucket{instance=~\"$botinstance\"}[$interval])) by (le))",
+          "legendFormat": "p99 Text"
+        }
+      ],
+      "title": "Text Command Handler Latency (Percentiles)",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 55 },
+      "id": 400,
+      "panels": [],
+      "title": "External API Integrations",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "Spotify" }, "properties": [{ "id": "color", "value": { "fixedColor": "#1ed760", "mode": "fixed" }}]},
+          { "matcher": { "id": "byName", "options": "MusicBrainz" }, "properties": [{ "id": "color", "value": { "fixedColor": "#ba478f", "mode": "fixed" }}]},
+          { "matcher": { "id": "byName", "options": "Apple Music" }, "properties": [{ "id": "color", "value": { "fixedColor": "#fc3c44", "mode": "fixed" }}]},
+          { "matcher": { "id": "byName", "options": "OpenAI" }, "properties": [{ "id": "color", "value": { "fixedColor": "#10a37f", "mode": "fixed" }}]}
+        ]
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 56 },
+      "id": 401,
+      "options": {
+        "legend": { "calcs": ["mean", "sum"], "displayMode": "table", "placement": "right", "showLegend": true, "sortBy": "Mean", "sortDesc": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(spotify_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Spotify" },
+        { "expr": "sum(rate(musicbrainz_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "MusicBrainz" },
+        { "expr": "sum(rate(discogs_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Discogs" },
+        { "expr": "sum(rate(applemusic_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Apple Music" },
+        { "expr": "sum(rate(openai_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "OpenAI" },
+        { "expr": "sum(rate(opencollective_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "OpenCollective" },
+        { "expr": "sum(rate(lyrics_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Lyrics" }
+      ],
+      "title": "External API Calls per Minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 6, "x": 12, "y": 56 },
+      "id": 402,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["last"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Spotify" },
+        { "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "MusicBrainz" },
+        { "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Discogs" },
+        { "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Apple Music" },
+        { "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "OpenAI" },
+        { "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Lyrics" }
+      ],
+      "title": "External API Calls (Range)",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 6, "x": 18, "y": 56 },
+      "id": 403,
+      "options": {
+        "legend": { "calcs": ["mean"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(lastfm_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Fetched" },
+        { "expr": "sum(rate(lastfm_cached_image_cdn_calls{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Cache Hits" }
+      ],
+      "title": "Last.fm Images per Minute",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 64 },
+      "id": 500,
+      "panels": [],
+      "title": "Last.fm API Details",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 65 },
+      "id": 501,
+      "options": {
+        "legend": { "calcs": ["mean"], "displayMode": "table", "placement": "right", "showLegend": true, "sortBy": "Mean", "sortDesc": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
+        "legendFormat": "{{method}}"
+      }],
+      "title": "Last.fm Response Time by Method",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 65 },
+      "id": 502,
+      "options": {
+        "legend": { "calcs": ["mean", "sum"], "displayMode": "table", "placement": "right", "showLegend": true, "sortBy": "Mean", "sortDesc": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "sum by (method)(rate(lastfm_api_calls{instance=~\"$botinstance\"}[$interval]) * 60)",
+        "legendFormat": "{{method}}"
+      }],
+      "title": "Last.fm API Calls by Method",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green", "value": null },
+            { "color": "yellow", "value": 1 },
+            { "color": "red", "value": 5 }
+          ]},
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 65 },
+      "id": 503,
+      "options": {
+        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(lastfm_errors{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Total Errors" },
+        { "expr": "sum(rate(lastfm_errors_badauth{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Bad Auth" },
+        { "expr": "sum(rate(lastfm_errors_failure{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Failures" }
+      ],
+      "title": "Last.fm Errors per Minute",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 73 },
+      "id": 1300,
+      "panels": [],
+      "title": "System Resources",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineWidth": 2,
+            "spanNulls": true
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": { "id": "byName", "options": "Cached Guilds" },
+            "properties": [
+              { "id": "custom.axisPlacement", "value": "right" },
+              { "id": "color", "value": { "fixedColor": "yellow", "mode": "fixed" } }
+            ]
+          }
+        ]
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 74 },
+      "id": 1301,
+      "options": {
+        "legend": { "calcs": ["last", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
+          "legendFormat": "Cached Users"
+        },
+        {
+          "expr": "sum(discord_cached_guilds_total{instance=~\"$botinstance\"})",
+          "legendFormat": "Cached Guilds"
+        }
+      ],
+      "title": "NetCord Cache Size",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "Bps",
+          "custom": { "fillOpacity": 10, "drawStyle": "line" }
+        }
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 74 },
+      "id": 1302,
+      "targets": [
+        {
+          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
+          "legendFormat": "Received (Rx)"
+        },
+        {
+          "expr": "-sum(rate(container_network_transmit_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
+          "legendFormat": "Transmitted (Tx)"
+        }
+      ],
+      "title": "Network Traffic (Container)",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 82 },
+      "id": 600,
+      "panels": [],
+      "title": "Database & EF Core",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 83 },
+      "id": 601,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_queries{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "EF Queries/min" },
+        { "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_savechanges{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "SaveChanges/min" }
+      ],
+      "title": "EF Core Operations per Minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 83 },
+      "id": 602,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_active_dbcontexts{instance=~\"$botinstance\"})", "legendFormat": "Active DbContexts" },
+        { "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"idle\"})", "legendFormat": "Idle Connections" },
+        { "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"used\"})", "legendFormat": "Used Connections" }
+      ],
+      "title": "Database Connections",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 83 },
+      "id": 603,
+      "options": {
+        "legend": { "calcs": ["mean"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) / (sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) + sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"})) * 100", "legendFormat": "Query Cache Hit Rate" }
+      ],
+      "title": "EF Core Query Cache Hit Rate",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 91 },
+      "id": 700,
+      "panels": [],
+      "title": "User Indexing & Updates",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 92 },
+      "id": 701,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": { "calcs": ["last"], "fields": "", "values": false },
+        "showPercentChange": false,
+        "textMode": "auto"
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "bot_update_queue_size{instance=\"prod-1\"}", "legendFormat": "Queue Size" },
+        { "expr": "bot_update_outdated_users{instance=\"prod-1\"}", "legendFormat": "Outdated Users" }
+      ],
+      "title": "Update Queue Status",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 9, "x": 6, "y": 92 },
+      "id": 702,
+      "options": {
+        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)", "legendFormat": "Indexed (Queue)" },
+        { "expr": "sum(rate(bot_indexed_users{instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)", "legendFormat": "Indexed (User)" },
+        { "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"queue\"}[$interval]) * 60)", "legendFormat": "Updated (Queue)" },
+        { "expr": "sum(rate(bot_updated_users{instance=~\"$botinstance\", reason=\"user_init\"}[$interval]) * 60)", "legendFormat": "Updated (User)" },
+        { "expr": "sum(rate(bot_smallindexed_users{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Small Indexed" }
+      ],
+      "title": "User Index/Update Operations per Minute",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 9, "x": 15, "y": 92 },
+      "id": 703,
+      "options": {
+        "legend": { "calcs": ["sum"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum by (bot) (rate(lastfm_scrobbling_scrobbled{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Scrobbled {{bot}}" },
+        { "expr": "sum by (bot) (rate(lastfm_scrobbling_nowplaying{instance=~\"$botinstance\"}[$interval]) * 60)", "legendFormat": "Now Playing {{bot}}" }
+      ],
+      "title": "Bot Scrobbles per Minute",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 100 },
+      "id": 800,
+      "panels": [],
+      "title": "System Details",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "decmbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 0, "y": 101 },
+      "id": 801,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "sum by (instance) (dotnet_total_memory_bytes{instance=~\"$botinstance\"} / 1024 / 1024)",
+        "legendFormat": "{{instance}}"
+      }],
+      "title": ".NET Memory Usage (MB)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 8, "y": 101 },
+      "id": 802,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval])",
+        "legendFormat": "Gen {{generation}}"
+      }],
+      "title": "GC Collections",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 101 },
+      "id": 803,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "process_num_threads{instance=~\"$botinstance\"}", "legendFormat": "{{instance}} Threads" },
+        { "expr": "process_open_handles{instance=~\"$botinstance\"}", "legendFormat": "{{instance}} Handles" }
+      ],
+      "title": "Threads & Handles",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 109 },
+      "id": 804,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [
+        { "expr": "sum by (instance) (rate(bot_shard_connected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} connect" },
+        { "expr": "sum by (instance) (rate(bot_shard_disconnected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} disconnect" }
+      ],
+      "title": "Shard Connect/Disconnect Events",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
+      "fieldConfig": {
+        "defaults": {
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "axisBorderShow": false,
+            "axisPlacement": "auto",
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": { "group": "A", "mode": "none" },
+            "thresholdsStyle": { "mode": "off" }
+          },
+          "mappings": [],
+          "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 109 },
+      "id": 805,
+      "options": {
+        "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "right", "showLegend": true },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      },
+      "pluginVersion": "12.2.1",
+      "targets": [{
+        "expr": "sum(system_net_http_http_client_active_requests{instance=~\"$botinstance\"})",
+        "legendFormat": "Active HTTP Requests"
+      }],
+      "title": "Active HTTP Client Requests",
       "type": "timeseries"
     }
   ],
@@ -4721,14 +5954,14 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(exported_instance)",
+        "definition": "label_values(instance)",
         "includeAll": true,
         "multi": true,
         "name": "botinstance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(exported_instance)",
+          "query": "label_values(instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -4744,13 +5977,13 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(exported_instance)",
+        "definition": "label_values(instance)",
         "includeAll": false,
         "name": "master_instance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(exported_instance)",
+          "query": "label_values(instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -4767,5 +6000,5 @@
   "timezone": "",
   "title": "fmbot",
   "uid": "zyAf4i4Zz",
-  "version": 17
+  "version": 16
 }
