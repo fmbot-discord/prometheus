@@ -2504,6 +2504,127 @@
           "version": "13.0.1"
         }
       }
+    },
+    "panel-100": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "PBFA97CFB590B2093"
+                    },
+                    "group": "prometheus",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "editorMode": "code",
+                      "expr": "sort_desc(sum by (bot_name) (increase(musicbot_scrobble_users{outcome=\"scrobbled\", bot_name=~\"$bot_name\"}[$__range])))",
+                      "format": "table",
+                      "instant": true,
+                      "legendFormat": "__auto"
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "Time": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {
+                    "Value": "Scrobbles",
+                    "bot_name": "Bot"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "description": "Total user scrobbles delivered per music bot over the dashboard time range.",
+        "id": 100,
+        "links": [],
+        "title": "Music Bot Leaderboard (range)",
+        "vizConfig": {
+          "group": "table",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "filterable": false,
+                  "inspect": false
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "blue",
+                      "value": 0
+                    }
+                  ]
+                },
+                "unit": "none"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Scrobbles"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "type": "gauge",
+                        "mode": "gradient"
+                      }
+                    },
+                    {
+                      "id": "color",
+                      "value": {
+                        "mode": "continuous-GrYlRd"
+                      }
+                    },
+                    {
+                      "id": "decimals",
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "enablePagination": false,
+                "fields": ["Scrobbles"],
+                "reducer": ["sum"],
+                "show": true
+              },
+              "showHeader": true
+            }
+          },
+          "version": "13.0.1"
+        }
+      }
     }
   },
   "layout": {
@@ -2687,6 +2808,19 @@
                       "width": 24,
                       "x": 0,
                       "y": 8
+                    }
+                  },
+                  {
+                    "kind": "GridLayoutItem",
+                    "spec": {
+                      "element": {
+                        "kind": "ElementReference",
+                        "name": "panel-100"
+                      },
+                      "height": 12,
+                      "width": 24,
+                      "x": 0,
+                      "y": 16
                     }
                   }
                 ]
