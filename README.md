@@ -1,6 +1,6 @@
 # .fmbot monitoring stack
 
-Prometheus + Grafana + Alertmanager + cAdvisor + node-exporter + Pushgateway + Seq, deployed as a Docker Swarm stack. Originally forked from `vegasbrianc/prometheus`.
+Prometheus + Grafana + cAdvisor + node-exporter + Pushgateway + Seq, deployed as a Docker Swarm stack. Originally forked from `vegasbrianc/prometheus`.
 
 The Grafana dashboard is not publicly accessible.
 
@@ -24,8 +24,8 @@ The Grafana dashboard is not publicly accessible.
 
 ## Required swarm secrets
 
-Alertmanager reads the PagerDuty routing key from a Docker swarm secret. Create it once on the manager node before the first deploy:
+Grafana reads the PagerDuty integration key from a Docker swarm secret (mounted at `/run/secrets/pagerduty_routing_key` and referenced from the provisioned PagerDuty contact point via `$__file{...}`). Create it once on the manager node before the first deploy:
 
     printf "%s" "<pagerduty-events-v2-integration-key>" | docker secret create pagerduty_routing_key -
 
-To rotate: `docker secret rm pagerduty_routing_key`, recreate, then `docker service update --force prom_alertmanager`.
+To rotate: `docker secret rm pagerduty_routing_key`, recreate, then `docker service update --force prom_grafana`.

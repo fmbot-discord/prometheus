@@ -104,3 +104,85 @@ groups:
           labels:
             "": ""
           isPaused: false
+    - orgId: 1
+      name: Liveness
+      folder: Bot health
+      interval: 1m
+      rules:
+        - uid: 7d3c8e2a-1f4b-4a5e-9c8d-3b2e4f5a6b7c
+          title: NoCommandsProcessed
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: PBFA97CFB590B2093
+              model:
+                datasource:
+                    type: prometheus
+                    uid: PBFA97CFB590B2093
+                editorMode: code
+                expr: sum(rate(bot_slash_commands_executed[5m])) + sum(rate(bot_commands_executed[5m]))
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: commands/sec
+                maxDataPoints: 43200
+                range: true
+                refId: A
+            - refId: B
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 0.0001
+                        type: lt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - C
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: Alerting
+          execErrState: Error
+          for: 30m
+          annotations:
+            summary: fmbot has processed no commands for 30 minutes
+            description: Combined rate of bot_slash_commands_executed and bot_commands_executed has been zero. Bot is likely down or unable to handle interactions.
+          labels:
+            severity: critical
+            route: pagerduty
+          isPaused: false

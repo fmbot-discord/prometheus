@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-This repo is the monitoring stack for the fmbot Discord bot — Prometheus + Grafana + Alertmanager + cAdvisor + node-exporter + Pushgateway + Seq + postgres-exporter, deployed as a Docker Swarm stack. It started as a fork of `vegasbrianc/prometheus`; the README has since been rewritten to describe this stack specifically.
+This repo is the monitoring stack for the fmbot Discord bot — Prometheus + Grafana + cAdvisor + node-exporter + Pushgateway + Seq + postgres-exporter, deployed as a Docker Swarm stack. It started as a fork of `vegasbrianc/prometheus`; the README has since been rewritten to describe this stack specifically. Alerting is Grafana-managed (Grafana ships its own internal Alertmanager), so the upstream `prom/alertmanager` service is not deployed.
 
 The parent `P:\fmbot\CLAUDE.md` covers the broader fmbot workspace and lists this folder under "Monitoring & Observability" — refer to it for context on what the bot itself emits metrics about.
 
@@ -24,6 +24,9 @@ docker service logs prom_<service_name>        # logs (e.g. prom_prometheus, pro
 
 Without these set, Grafana/Seq start with empty credentials and postgres-exporter fails to connect.
 
+**Required swarm secrets** (`docker secret create` once on the manager):
+- `pagerduty_routing_key` — PagerDuty Events API v2 integration key. Mounted into the Grafana container at `/run/secrets/pagerduty_routing_key`; the provisioned PagerDuty contact point in `grafana/provisioning/alerting/contactpoints.yaml` references it via `$__file{...}`. Rotate with `docker secret rm` + recreate, then `docker service update --force prom_grafana`.
+
 ## Services & Ports
 
 Defined in `docker-stack.yml`:
@@ -31,8 +34,7 @@ Defined in `docker-stack.yml`:
 | Service | Image | Port(s) | Notes |
 |---------|-------|---------|-------|
 | prometheus | prom/prometheus:latest | 9090 | 180d retention, 8G mem / 3 CPU limit, manager-only |
-| grafana | grafana/grafana | 3000 | Admin user is `frikandel`, manager-only, runs as uid 472 |
-| alertmanager | prom/alertmanager | 9093 | Manager-only |
+| grafana | grafana/grafana | 3000 | Admin user is `frikandel`, manager-only, runs as uid 472. Holds all alerting (rules + contact points + notification policies) via internal Alertmanager. |
 | cadvisor | gcr.io/cadvisor/cadvisor | 8080 | `mode: global` (every node) |
 | node-exporter | prom/node-exporter | 9100 | `mode: global` |
 | pushgateway | prom/pushgateway | 9091 | `mode: global` — referenced via `tasks.pushgateway` DNS |
@@ -42,11 +44,11 @@ Defined in `docker-stack.yml`:
 ## Configuration Files
 
 - **`prometheus/prometheus.yml`** — Scrape config. Jobs: `prometheus`, `cadvisor`, `node-exporter` (DNS SD via `tasks.node-exporter`), `pushgateway` (DNS SD, `honor_labels: true`), `postgres-exporter`. Global scrape interval 15s; node-exporter is 5s. The bot itself is **not** scraped here — the bot pushes to Pushgateway and ships logs to Seq.
-- **`prometheus/alert.rules`** — Alert rules file. Currently an empty stub (`groups: [{name: example, rules: []}]`); add new alerts here, no restart-free reload is configured.
-- **`alertmanager/config.yml`** — Routes everything to a `slack` receiver, but the actual `slack_configs` block is commented out — alerts will not fire to Slack until that's filled in.
 - **`grafana/config.monitoring`** — Grafana env file. Sign-up disabled, feature toggles `kubernetesDashboards,dashboardNewLayouts` enabled.
 - **`grafana/provisioning/datasources/datasource.yml`** — Auto-provisions the `Prometheus` datasource pointing at `http://prometheus:9090` as default. Don't add it via the UI; that produces a duplicate.
 - **`grafana/provisioning/dashboards/dashboard.yml`** — Provisioner that imports any JSON dashboard placed alongside it under `/etc/grafana/provisioning/dashboards`.
+- **`grafana/provisioning/alerting/Alerting group.yaml`** — Provisioned alert rules (Grafana-managed). Each top-level entry is a rule group; folder/group naming is reflected in the Grafana Alerting UI.
+- **`grafana/provisioning/alerting/contactpoints.yaml`** — Provisioned contact points. PagerDuty receiver reads its integration key from the swarm secret via `$__file{/run/secrets/pagerduty_routing_key}` and targets the EU events endpoint. Notification routing (which alert goes to which contact point) is configured via the Grafana UI rather than provisioned, to avoid clobbering existing routes.
 
 ## Dashboards: Two Locations (Don't Confuse Them)
 

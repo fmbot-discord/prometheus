@@ -1,0 +1,12 @@
+apiVersion: 1
+contactPoints:
+    - orgId: 1
+      name: PagerDuty
+      receivers:
+          - uid: pagerduty-prod
+            type: pagerduty
+            settings:
+                integrationKey: $__file{/run/secrets/pagerduty_routing_key}
+                severity: critical
+                url: https://events.eu.pagerduty.com/v2/enqueue
+            disableResolveMessage: false

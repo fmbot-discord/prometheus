@@ -55,24 +55,6 @@ services:
       restart_policy:
           condition: on-failure
 
-  alertmanager:
-    image: prom/alertmanager
-    ports:
-      - 9093:9093
-    volumes:
-      - "./alertmanager/:/etc/alertmanager/"
-    command:
-      - '--config.file=/etc/alertmanager/config.yml'
-      - '--storage.path=/alertmanager'
-    secrets:
-      - pagerduty_routing_key
-    deploy:
-      placement:
-        constraints:
-           - node.role==manager
-      restart_policy:
-        condition: on-failure
-
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
     volumes:
@@ -99,6 +81,8 @@ services:
     env_file:
       - ./grafana/config.monitoring
     user: "472"
+    secrets:
+      - pagerduty_routing_key
     deploy:
       placement:
         constraints:
