@@ -4,6 +4,10 @@ volumes:
     prometheus_data: {}
     grafana_data: {}
 
+secrets:
+    pagerduty_routing_key:
+        external: true
+
 services:
 
   prometheus:
@@ -60,12 +64,14 @@ services:
     command:
       - '--config.file=/etc/alertmanager/config.yml'
       - '--storage.path=/alertmanager'
+    secrets:
+      - pagerduty_routing_key
     deploy:
       placement:
         constraints:
            - node.role==manager
       restart_policy:
-        condition: on-failure    
+        condition: on-failure
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor

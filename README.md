@@ -21,3 +21,11 @@ The Grafana dashboard is not publicly accessible.
 - `SEQ_PASSWORD` — bcrypt hash for the Seq admin user
 - `GRAFANA_PASSWORD` — Grafana admin password
 - `POSTGRES_EXPORTER_CONNSTRING` — Postgres DSN for postgres-exporter, e.g. `postgresql://postgres_exporter:PASSWORD@host.docker.internal:5432/fmbot?sslmode=disable`
+
+## Required swarm secrets
+
+Alertmanager reads the PagerDuty routing key from a Docker swarm secret. Create it once on the manager node before the first deploy:
+
+    printf "%s" "<pagerduty-events-v2-integration-key>" | docker secret create pagerduty_routing_key -
+
+To rotate: `docker secret rm pagerduty_routing_key`, recreate, then `docker service update --force prom_alertmanager`.
