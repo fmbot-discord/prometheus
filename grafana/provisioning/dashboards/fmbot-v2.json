@@ -5,8 +5,8 @@
     "name": "fmbot-v2",
     "namespace": "default",
     "uid": "XV0KMzh00Ge9m1bvynEXk8YTn0NE8GUhoWH3SxSXXLsX",
-    "resourceVersion": "1776163928088994",
-    "generation": 3,
+    "resourceVersion": "1785965479476991",
+    "generation": 4,
     "creationTimestamp": "2026-01-20T16:00:35Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "14"
@@ -15,11 +15,11 @@
       "grafana.app/createdBy": "provisioning:",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Prometheus",
-      "grafana.app/sourceChecksum": "bccd1eb9556b03b9c25a520eb4b70e11",
+      "grafana.app/sourceChecksum": "c4bbd84b5b60bf5fda7ed5cb9976c040",
       "grafana.app/sourcePath": "/etc/grafana/provisioning/dashboards/fmbot-v2.json",
-      "grafana.app/sourceTimestamp": "1776163922000",
+      "grafana.app/sourceTimestamp": "1785965474000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-04-14T10:52:08Z",
+      "grafana.app/updatedTimestamp": "2026-08-05T21:31:19Z",
       "grafana.app/folder": ""
     }
   },
@@ -180,7 +180,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -278,7 +278,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -376,7 +376,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -502,7 +502,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -588,7 +588,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -686,7 +686,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -784,7 +784,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -882,7 +882,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -980,7 +980,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -1118,7 +1118,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -1287,7 +1287,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -1529,7 +1529,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -1690,7 +1690,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -1837,7 +1837,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2045,7 +2045,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2176,7 +2176,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2353,7 +2353,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2486,7 +2486,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2619,7 +2619,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2796,7 +2796,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -2915,7 +2915,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3113,7 +3113,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3269,7 +3269,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3425,7 +3425,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3527,7 +3527,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3614,7 +3614,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3742,7 +3742,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -3984,7 +3984,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4086,7 +4086,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4381,7 +4381,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4552,7 +4552,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4688,7 +4688,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4818,7 +4818,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -4930,6 +4930,15 @@
                             }
                           },
                           "fieldName": "Discord"
+                        },
+                        {
+                          "config": {
+                            "id": "equal",
+                            "options": {
+                              "value": "0"
+                            }
+                          },
+                          "fieldName": "Stripe"
                         }
                       ],
                       "match": "any",
@@ -5051,7 +5060,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5170,7 +5179,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5290,7 +5299,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5422,7 +5431,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5553,7 +5562,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5765,7 +5774,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -5902,7 +5911,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6058,7 +6067,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6175,7 +6184,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6277,7 +6286,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6409,7 +6418,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6541,7 +6550,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6671,7 +6680,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6766,7 +6775,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -6959,7 +6968,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -7095,7 +7104,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -7213,7 +7222,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -7350,7 +7359,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       },
@@ -7468,7 +7477,7 @@
                 }
               }
             },
-            "version": "13.1.1"
+            "version": "13.1.2"
           }
         }
       }
@@ -8321,8 +8330,8 @@
           "auto_count": 30,
           "auto_min": "10s",
           "current": {
-            "text": "5m",
-            "value": "5m"
+            "text": "10m",
+            "value": "10m"
           },
           "hide": "dontHide",
           "name": "interval",
@@ -8333,12 +8342,12 @@
               "value": "1m"
             },
             {
-              "selected": true,
+              "selected": false,
               "text": "5m",
               "value": "5m"
             },
             {
-              "selected": false,
+              "selected": true,
               "text": "10m",
               "value": "10m"
             },
@@ -8458,8 +8467,8 @@
         "spec": {
           "allowCustomValue": true,
           "current": {
-            "text": "prod-7",
-            "value": "prod-7"
+            "text": "prod-8",
+            "value": "prod-8"
           },
           "definition": "label_values(instance)",
           "hide": "dontHide",

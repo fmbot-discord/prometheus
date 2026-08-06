@@ -5,19 +5,17 @@
     "name": "frzxqxf",
     "namespace": "default",
     "uid": "af0661a0-e531-4922-a70f-2d69cd2e8faf",
-    "resourceVersion": "1780500883686988",
-    "generation": 2,
+    "resourceVersion": "1786013424707016",
+    "generation": 3,
     "creationTimestamp": "2026-06-03T15:31:41Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "4050494630567936"
     },
     "annotations": {
       "grafana.app/createdBy": "user:u000000001",
-      "grafana.app/folder": "",
-      "grafana.app/message": "fixes",
-      "grafana.app/saved-from-ui": "Grafana v13.0.1 (a100054f)",
+      "grafana.app/saved-from-ui": "Grafana v13.1.2 (7f247b37a4)",
       "grafana.app/updatedBy": "user:u000000001",
-      "grafana.app/updatedTimestamp": "2026-06-03T15:34:43Z"
+      "grafana.app/updatedTimestamp": "2026-08-06T10:50:24Z"
     }
   },
   "spec": {
@@ -89,7 +87,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -166,7 +164,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -179,6 +177,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -293,21 +293,11 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "table",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "cellHeight": "sm",
-                "footer": {
-                  "countRows": false,
-                  "enablePagination": false,
-                  "fields": [
-                    "Scrobbles"
-                  ],
-                  "reducer": [
-                    "sum"
-                  ],
-                  "show": true
-                },
+                "enablePagination": false,
                 "showHeader": true
               },
               "fieldConfig": {
@@ -328,6 +318,9 @@
                       "type": "auto"
                     },
                     "filterable": false,
+                    "footer": {
+                      "reducers": []
+                    },
                     "inspect": false
                   }
                 },
@@ -354,6 +347,20 @@
                       {
                         "id": "decimals",
                         "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Scrobbles"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.footer.reducers",
+                        "value": [
+                          "sum"
+                        ]
                       }
                     ]
                   }
@@ -402,7 +409,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -415,6 +422,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -559,7 +568,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -572,6 +581,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -676,7 +687,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -753,7 +764,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -766,6 +777,8 @@
                     "mean"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true,
                   "sortBy": "Mean",
@@ -872,7 +885,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -882,6 +895,8 @@
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "bottom",
                   "showLegend": true
                 },
@@ -986,7 +1001,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -999,6 +1014,8 @@
                     "min"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1136,7 +1153,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -1233,7 +1250,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1246,6 +1263,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1350,7 +1369,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1363,6 +1382,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1467,7 +1488,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -1552,7 +1573,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1565,6 +1586,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1669,7 +1692,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1682,6 +1705,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1786,7 +1811,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1799,6 +1824,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -1903,7 +1930,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -1916,6 +1943,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -2020,7 +2049,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -2138,7 +2167,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -2151,6 +2180,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -2255,7 +2286,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -2268,6 +2299,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -2372,7 +2405,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "stat",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "colorMode": "value",
@@ -2477,7 +2510,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -2489,6 +2522,8 @@
                     "sum"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
@@ -2593,7 +2628,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1",
+            "version": "13.1.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -2606,6 +2641,8 @@
                     "max"
                   ],
                   "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
                   "placement": "right",
                   "showLegend": true
                 },
