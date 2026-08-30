@@ -8200,8 +8200,11 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "topk(5, histogram_quantile(0.95, sum by (shard_id, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
-                        "legendFormat": "shard {{shard_id}}"
+                        "expr": "topk(10, histogram_quantile(0.95, sum by (shard_id, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
+                        "legendFormat": "shard {{shard_id}}",
+                        "instant": true,
+                        "range": false,
+                        "format": "time_series"
                       },
                       "version": "v0"
                     },
@@ -8213,54 +8216,19 @@
               "transformations": []
             }
           },
-          "description": "",
+          "description": "Current p95 gateway latency of the 10 slowest shards",
           "id": 1403,
           "links": [],
-          "title": "Slowest shards (p95 latency)",
+          "title": "Worst shards (p95 latency)",
           "vizConfig": {
-            "group": "timeseries",
+            "group": "bargauge",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
                 "defaults": {
                   "color": {
-                    "mode": "palette-classic"
+                    "mode": "thresholds"
                   },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "linear",
-                    "lineWidth": 1,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "decimals": 0,
                   "thresholds": {
                     "mode": "absolute",
                     "steps": [
@@ -8269,41 +8237,45 @@
                         "value": 0
                       },
                       {
+                        "color": "yellow",
+                        "value": 0.3
+                      },
+                      {
                         "color": "red",
-                        "value": 80
+                        "value": 1
                       }
                     ]
                   },
-                  "unit": "s"
+                  "unit": "s",
+                  "min": 0
                 },
                 "overrides": []
               },
               "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
                   "calcs": [
-                    "mean",
-                    "lastNotNull",
-                    "max"
+                    "lastNotNull"
                   ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "bottom",
-                  "showLegend": true
+                  "fields": "",
+                  "values": false
                 },
-                "tooltip": {
-                  "hideZeros": false,
-                  "maxHeight": 600,
-                  "mode": "multi",
-                  "sort": "none"
-                }
+                "showUnfilled": true,
+                "valueMode": "color",
+                "namePlacement": "auto",
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "maxVizHeight": 300,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "sizing": "auto"
               }
-            },
-            "version": "13.1.2"
+            }
           }
         }
       },
@@ -8411,14 +8383,15 @@
                 "legend": {
                   "calcs": [
                     "mean",
-                    "lastNotNull",
-                    "max"
+                    "lastNotNull"
                   ],
                   "displayMode": "table",
                   "enableFacetedFilter": false,
                   "overflow": "ellipsis",
-                  "placement": "bottom",
-                  "showLegend": true
+                  "placement": "right",
+                  "showLegend": true,
+                  "sortBy": "Mean",
+                  "sortDesc": true
                 },
                 "tooltip": {
                   "hideZeros": false,
@@ -9062,8 +9035,8 @@
                           "kind": "ElementReference",
                           "name": "panel-1404"
                         },
-                        "height": 7,
-                        "width": 12,
+                        "height": 10,
+                        "width": 24,
                         "x": 0,
                         "y": 7
                       }
@@ -9075,10 +9048,10 @@
                           "kind": "ElementReference",
                           "name": "panel-1405"
                         },
-                        "height": 7,
-                        "width": 12,
-                        "x": 12,
-                        "y": 7
+                        "height": 5,
+                        "width": 24,
+                        "x": 0,
+                        "y": 17
                       }
                     }
                   ]
