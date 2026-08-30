@@ -8200,8 +8200,8 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "topk(10, histogram_quantile(0.95, sum by (shard_id, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
-                        "legendFormat": "shard {{shard_id}}",
+                        "expr": "sort_desc(histogram_quantile(0.95, sum by (instance, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
+                        "legendFormat": "{{instance}}",
                         "instant": true,
                         "range": false,
                         "format": "time_series"
@@ -8216,10 +8216,10 @@
               "transformations": []
             }
           },
-          "description": "Current p95 gateway latency of the 10 slowest shards",
+          "description": "Current p95 gateway latency per bot instance, worst first",
           "id": 1403,
           "links": [],
-          "title": "Worst shards (p95 latency)",
+          "title": "Gateway latency by instance (p95)",
           "vizConfig": {
             "group": "bargauge",
             "kind": "VizConfig",
