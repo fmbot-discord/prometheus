@@ -91,7 +91,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum (discord_connected_server_count{instance=~\"$botinstance\"})",
+          "expr": "sum (netcord_gateway_gatewayclient_gateway_cache_guilds{instance=~\"$botinstance\"})",
           "format": "time_series",
           "instant": false,
           "interval": "1",
@@ -4264,7 +4264,7 @@
       },
       "targets": [{
         "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-        "expr": "sum(discord_connected_server_count{instance=~\"$botinstance\"})",
+        "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_guilds{instance=~\"$botinstance\"})",
         "legendFormat": "Connected"
       }],
       "title": "Connected Guilds",
@@ -4455,7 +4455,7 @@
       },
       "targets": [{
         "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-        "expr": "sum(bot_connected_shards{instance=~\"$botinstance\"})",
+        "expr": "sum(netcord_gateway_shardedgatewayclient_sharded_gateway_shards{status=\"Ready\",instance=~\"$botinstance\"})",
         "legendFormat": "Connected"
       }],
       "title": "Connected Shards",
@@ -4492,7 +4492,7 @@
       },
       "targets": [{
         "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-        "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
+        "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
         "legendFormat": "Cached Users"
       }],
       "title": "Discord Cached Users",
@@ -5361,7 +5361,7 @@
       },
       "targets": [
         {
-          "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
+          "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
           "legendFormat": "Cached Users"
         },
         {
