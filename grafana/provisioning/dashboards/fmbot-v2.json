@@ -806,7 +806,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
+                        "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
                         "legendFormat": "Cached Users"
                       },
                       "version": "v0"
@@ -1551,7 +1551,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
+                        "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
                         "legendFormat": "Cached Users"
                       },
                       "version": "v0"

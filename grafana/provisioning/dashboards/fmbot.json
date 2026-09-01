@@ -4492,7 +4492,7 @@
       },
       "targets": [{
         "datasource": { "type": "prometheus", "uid": "PBFA97CFB590B2093" },
-        "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
+        "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
         "legendFormat": "Cached Users"
       }],
       "title": "Discord Cached Users",
@@ -5361,7 +5361,7 @@
       },
       "targets": [
         {
-          "expr": "sum(netcord_gateway_gatewayclient_gateway_cache_entities{entity=\"Users\",instance=~\"$botinstance\"})",
+          "expr": "sum(discord_cached_users_total{instance=~\"$botinstance\"})",
           "legendFormat": "Cached Users"
         },
         {
