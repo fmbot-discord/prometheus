@@ -72,7 +72,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "sum(increase(lastfm_api_calls{method=\"track.scrobble\"}[$__range]))",
-                        "legendFormat": "Scrobbles"
+                        "legendFormat": "Scrobbles",
+                        "instant": true,
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -672,7 +674,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "sum(increase(lastfm_api_calls{method=\"track.updateNowPlaying\"}[$__range]))",
-                        "legendFormat": "Now Playing"
+                        "legendFormat": "Now Playing",
+                        "instant": true,
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -1473,7 +1477,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "sum(increase(lastfm_api_errors[$__range])) / sum(increase(lastfm_api_calls[$__range]))",
-                        "legendFormat": "Error Rate"
+                        "legendFormat": "Error Rate",
+                        "instant": true,
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -2034,7 +2040,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=~\"track_not_found|invalid_url|invalid_url_request\"}[$__range]))",
-                        "legendFormat": "Failed Resolves"
+                        "legendFormat": "Failed Resolves",
+                        "instant": true,
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -2390,7 +2398,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result=\"success\"}[$__range])) / sum(increase(musicbot_scrobble_requests{bot_name=~\"$bot_name\", result!=\"no_eligible_users\"}[$__range]))",
-                        "legendFormat": "Success Rate"
+                        "legendFormat": "Success Rate",
+                        "instant": true,
+                        "range": false
                       }
                     },
                     "refId": "A",

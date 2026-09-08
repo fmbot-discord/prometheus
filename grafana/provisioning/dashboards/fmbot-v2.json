@@ -2376,7 +2376,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Slash"
+                        "legendFormat": "Slash",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2395,7 +2397,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Text"
+                        "legendFormat": "Text",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2414,7 +2418,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "User"
+                        "legendFormat": "User",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2433,7 +2439,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Message"
+                        "legendFormat": "Message",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2509,7 +2517,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Buttons"
+                        "legendFormat": "Buttons",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2528,7 +2538,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Select Menus"
+                        "legendFormat": "Select Menus",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2547,7 +2559,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Modals"
+                        "legendFormat": "Modals",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2566,7 +2580,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Autocompletes"
+                        "legendFormat": "Autocompletes",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2819,7 +2835,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Flow commands"
+                        "legendFormat": "Flow commands",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2838,7 +2856,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range])) / (sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range])) + sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range])) + sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range]))) * 100",
-                        "legendFormat": "% of all command executions"
+                        "legendFormat": "% of all command executions",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -2857,7 +2877,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\", response!=\"Ok\"}[$__range]))",
-                        "legendFormat": "Non-Ok responses"
+                        "legendFormat": "Non-Ok responses",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -3827,7 +3849,8 @@
                         "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "Unauthorized",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },
@@ -3850,7 +3873,8 @@
                         "expr": "sum(increase(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "Authorized",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },
@@ -4386,7 +4410,8 @@
                         "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "Text",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },
@@ -4409,7 +4434,8 @@
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "Slash",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },
@@ -4779,7 +4805,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Spotify"
+                        "legendFormat": "Spotify",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4798,7 +4826,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "MusicBrainz"
+                        "legendFormat": "MusicBrainz",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4817,7 +4847,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Discogs"
+                        "legendFormat": "Discogs",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4836,7 +4868,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Apple Music"
+                        "legendFormat": "Apple Music",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4855,7 +4889,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "OpenAI"
+                        "legendFormat": "OpenAI",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4874,7 +4910,9 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Lyrics"
+                        "legendFormat": "Lyrics",
+                        "instant": true,
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -6586,7 +6624,8 @@
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "Guild",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },
@@ -6609,7 +6648,8 @@
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
                         "interval": "",
                         "legendFormat": "User",
-                        "range": true
+                        "range": false,
+                        "instant": true
                       },
                       "version": "v0"
                     },

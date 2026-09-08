@@ -1552,7 +1552,8 @@
           "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Unauthorized",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "A"
         },
         {
@@ -1565,7 +1566,8 @@
           "expr": "sum(increase(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Authorized",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "B"
         }
       ],
@@ -1628,7 +1630,8 @@
           "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Text",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "B"
         },
         {
@@ -1641,7 +1644,8 @@
           "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Slash",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "C"
         }
       ],
@@ -1941,7 +1945,8 @@
           "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "Guild",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "B"
         },
         {
@@ -1954,7 +1959,8 @@
           "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
           "interval": "",
           "legendFormat": "User",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "C"
         }
       ],
@@ -2491,7 +2497,8 @@
           "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Spotify",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "B"
         },
         {
@@ -2504,7 +2511,8 @@
           "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))",
           "interval": "",
           "legendFormat": "Musicbrainz",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "C"
         },
         {
@@ -2518,7 +2526,8 @@
           "hide": false,
           "interval": "",
           "legendFormat": "Discogs",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "A"
         },
         {
@@ -2532,7 +2541,8 @@
           "hide": false,
           "interval": "",
           "legendFormat": "OpenCollective",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "D"
         },
         {
@@ -2546,7 +2556,8 @@
           "hide": false,
           "interval": "",
           "legendFormat": "Apple Music",
-          "range": true,
+          "instant": true,
+          "range": false,
           "refId": "E"
         }
       ],
@@ -4817,10 +4828,10 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Slash" },
-        { "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Text" },
-        { "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "User" },
-        { "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Message" }
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Slash", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Text", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "User", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Message", "instant": true, "range": false }
       ],
       "title": "Commands Executed (Range)",
       "type": "stat"
@@ -4848,10 +4859,10 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Buttons" },
-        { "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Select Menus" },
-        { "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Modals" },
-        { "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Autocompletes" }
+        { "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Buttons", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Select Menus", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Modals", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Autocompletes", "instant": true, "range": false }
       ],
       "title": "Component Interactions (Range)",
       "type": "stat"
@@ -4919,8 +4930,8 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))", "legendFormat": "Guild" },
-        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))", "legendFormat": "User" }
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))", "legendFormat": "Guild", "instant": true, "range": false },
+        { "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))", "legendFormat": "User", "instant": true, "range": false }
       ],
       "title": "Slash Commands by App Type (Range)",
       "type": "stat"
@@ -5146,12 +5157,12 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Spotify" },
-        { "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "MusicBrainz" },
-        { "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Discogs" },
-        { "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Apple Music" },
-        { "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "OpenAI" },
-        { "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Lyrics" }
+        { "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Spotify", "instant": true, "range": false },
+        { "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "MusicBrainz", "instant": true, "range": false },
+        { "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Discogs", "instant": true, "range": false },
+        { "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Apple Music", "instant": true, "range": false },
+        { "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "OpenAI", "instant": true, "range": false },
+        { "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))", "legendFormat": "Lyrics", "instant": true, "range": false }
       ],
       "title": "External API Calls (Range)",
       "type": "stat"
