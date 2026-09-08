@@ -767,7 +767,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "avg( node_filesystem_avail_bytes {mountpoint=\"/\"} / node_filesystem_size_bytes{mountpoint=\"/\"})",
+          "expr": "100 * (1 - avg( node_filesystem_avail_bytes {mountpoint=\"/\"} / node_filesystem_size_bytes{mountpoint=\"/\"}))",
           "interval": "10s",
           "intervalFactor": 1,
           "metric": "",

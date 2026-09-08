@@ -73,7 +73,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": true,
-                        "expr": "process_working_set_bytes /1024/1024",
+                        "expr": "process_working_set_bytes{instance=~\"$botinstance\"} /1024/1024",
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 1,
@@ -151,7 +151,7 @@
                       }
                     ]
                   },
-                  "unit": "short"
+                  "unit": "mbytes"
                 },
                 "overrides": []
               },
@@ -1477,32 +1477,7 @@
                   },
                   "unit": "none"
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "7 days - WAU"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               },
               "options": {
                 "annotations": {
@@ -1713,7 +1688,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum by (name) (rate(container_network_receive_bytes_total{name=~\".*prod.*\"}[$__rate_interval]))",
+                        "expr": "sum by (name) (rate(container_network_receive_bytes_total{name=~\"fmbot-.*-${botinstance:regex}-1\"}[$__rate_interval]))",
                         "legendFormat": "Received {{name}}",
                         "range": true
                       },
@@ -1734,7 +1709,7 @@
                       "kind": "DataQuery",
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum by (name) (rate(container_network_transmit_bytes_total{name=~\".*prod.*\"}[$__rate_interval]))",
+                        "expr": "sum by (name) (rate(container_network_transmit_bytes_total{name=~\"fmbot-.*-${botinstance:regex}-1\"}[$__rate_interval]))",
                         "legendFormat": "Transmit {{name}}",
                         "range": true
                       },
@@ -1997,32 +1972,7 @@
                   },
                   "unit": "none"
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "Connected"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               },
               "options": {
                 "annotations": {
@@ -2069,7 +2019,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": true,
-                        "expr": "process_open_handles",
+                        "expr": "process_open_handles{instance=~\"$botinstance\"}",
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 1,
@@ -4336,32 +4286,7 @@
                   },
                   "unit": "none"
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "Registered"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               },
               "options": {
                 "annotations": {
@@ -5426,32 +5351,7 @@
                   },
                   "unit": "none"
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "Total"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               },
               "options": {
                 "annotations": {
@@ -5869,7 +5769,7 @@
                       "spec": {
                         "editorMode": "code",
                         "exemplar": true,
-                        "expr": "process_num_threads",
+                        "expr": "process_num_threads{instance=~\"$botinstance\"}",
                         "format": "time_series",
                         "interval": "",
                         "intervalFactor": 1,
@@ -9821,7 +9721,7 @@
               "prod-9"
             ]
           },
-          "definition": "label_values(instance)",
+          "definition": "label_values(process_num_threads{job=~\"production|develop\"}, instance)",
           "hide": "dontHide",
           "includeAll": true,
           "multi": true,
@@ -9835,7 +9735,7 @@
             "kind": "DataQuery",
             "spec": {
               "qryType": 1,
-              "query": "label_values(instance)",
+              "query": "label_values(process_num_threads{job=~\"production|develop\"}, instance)",
               "refId": "PrometheusVariableQueryEditor-VariableQuery"
             },
             "version": "v0"
@@ -9844,7 +9744,8 @@
           "regex": "",
           "regexApplyTo": "value",
           "skipUrlSync": false,
-          "sort": "disabled"
+          "sort": "disabled",
+          "allValue": "prod-.*"
         }
       },
       {
@@ -9855,7 +9756,7 @@
             "text": "prod-8",
             "value": "prod-8"
           },
-          "definition": "label_values(instance)",
+          "definition": "query_result(bot_registered_users_count > 0)",
           "hide": "dontHide",
           "includeAll": false,
           "multi": false,
@@ -9868,14 +9769,14 @@
             "group": "prometheus",
             "kind": "DataQuery",
             "spec": {
-              "qryType": 1,
-              "query": "label_values(instance)",
+              "qryType": 3,
+              "query": "query_result(bot_registered_users_count > 0)",
               "refId": "PrometheusVariableQueryEditor-VariableQuery"
             },
             "version": "v0"
           },
           "refresh": "onDashboardLoad",
-          "regex": "",
+          "regex": "/instance=\"([^\"]+)\"/",
           "regexApplyTo": "value",
           "skipUrlSync": false,
           "sort": "disabled"

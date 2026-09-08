@@ -71,7 +71,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum(increase(lastfm_api_calls{method=\"track.scrobble\"}[$__range]))",
+                        "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.scrobble\"}[$__range]))",
                         "legendFormat": "Scrobbles",
                         "instant": true,
                         "range": false
@@ -150,7 +150,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum(rate(lastfm_authorized_api_calls[$Interval])) by (method) * 60",
+                        "expr": "sum(rate(lastfm_api_calls{job=\"internalapi\"}[$Interval])) by (method) * 60",
                         "legendFormat": "{{method}}"
                       }
                     },
@@ -283,9 +283,18 @@
               "transformations": [
                 {
                   "kind": "Transformation",
-                  "group": "",
+                  "group": "organize",
                   "spec": {
-                    "options": null
+                    "options": {
+                      "excludeByName": {
+                        "Time": true
+                      },
+                      "indexByName": {},
+                      "renameByName": {
+                        "Value": "Scrobbles",
+                        "bot_name": "Bot"
+                      }
+                    }
                   }
                 }
               ],
@@ -395,7 +404,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum(rate(lastfm_api_errors[$Interval])) by (method) * 60",
+                        "expr": "sum(rate(lastfm_api_errors{job=\"internalapi\"}[$Interval])) by (method) * 60",
                         "legendFormat": "{{method}}"
                       }
                     },
@@ -514,7 +523,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.5, sum(rate(lastfm_api_response_time_seconds_bucket[$Interval])) by (le, method))",
+                        "expr": "histogram_quantile(0.5, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[$Interval])) by (le, method))",
                         "legendFormat": "p50 {{method}}"
                       }
                     },
@@ -534,7 +543,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.95, sum(rate(lastfm_api_response_time_seconds_bucket[$Interval])) by (le, method))",
+                        "expr": "histogram_quantile(0.95, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[$Interval])) by (le, method))",
                         "legendFormat": "p95 {{method}}"
                       }
                     },
@@ -554,7 +563,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "histogram_quantile(0.99, sum(rate(lastfm_api_response_time_seconds_bucket[$Interval])) by (le, method))",
+                        "expr": "histogram_quantile(0.99, sum(rate(lastfm_api_response_time_seconds_bucket{job=\"internalapi\"}[$Interval])) by (le, method))",
                         "legendFormat": "p99 {{method}}"
                       }
                     },
@@ -673,7 +682,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum(increase(lastfm_api_calls{method=\"track.updateNowPlaying\"}[$__range]))",
+                        "expr": "sum(increase(lastfm_api_calls{job=\"internalapi\", method=\"track.updateNowPlaying\"}[$__range]))",
                         "legendFormat": "Now Playing",
                         "instant": true,
                         "range": false
@@ -1087,32 +1096,7 @@
                     }
                   }
                 },
-                "overrides": [
-                  {
-                    "__systemRef": "hideSeriesFrom",
-                    "matcher": {
-                      "id": "byNames",
-                      "options": {
-                        "mode": "exclude",
-                        "names": [
-                          "flavibot"
-                        ],
-                        "prefix": "All except:",
-                        "readOnly": true
-                      }
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.hideFrom",
-                        "value": {
-                          "legend": false,
-                          "tooltip": true,
-                          "viz": true
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "overrides": []
               }
             }
           }
@@ -1476,7 +1460,7 @@
                       },
                       "spec": {
                         "editorMode": "code",
-                        "expr": "sum(increase(lastfm_api_errors[$__range])) / sum(increase(lastfm_api_calls[$__range]))",
+                        "expr": "sum(increase(lastfm_api_errors{job=\"internalapi\"}[$__range])) / sum(increase(lastfm_api_calls{job=\"internalapi\"}[$__range]))",
                         "legendFormat": "Error Rate",
                         "instant": true,
                         "range": false

@@ -961,32 +961,7 @@
           },
           "unit": "none"
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "Registered"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": true,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 7,
@@ -1164,32 +1139,7 @@
           },
           "unit": "none"
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "Total"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": true,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 7,
@@ -1353,32 +1303,7 @@
           },
           "unit": "none"
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "7 days - WAU"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": true,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 7,
@@ -1752,7 +1677,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (instance) (rate(bot_shard_connected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum by (instance) (rate(bot_shard_event{instance=~\"$botinstance\", event=\"connected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1768,7 +1693,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "sum by (instance) (rate(bot_shard_disconnected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)",
+          "expr": "sum by (instance) (rate(bot_shard_event{instance=~\"$botinstance\", event=\"disconnected\"}[$__rate_interval]) * 60)",
           "format": "time_series",
           "hide": false,
           "instant": false,
@@ -3646,7 +3571,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "mbytes"
         },
         "overrides": []
       },
@@ -3684,7 +3609,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_working_set_bytes /1024/1024",
+          "expr": "process_working_set_bytes{instance=~\"$botinstance\"} /1024/1024",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -3899,7 +3824,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_open_handles",
+          "expr": "process_open_handles{instance=~\"$botinstance\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -4010,7 +3935,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "process_num_threads",
+          "expr": "process_num_threads{instance=~\"$botinstance\"}",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -5395,11 +5320,11 @@
       "id": 1302,
       "targets": [
         {
-          "expr": "sum(rate(container_network_receive_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
+          "expr": "sum(rate(container_network_receive_bytes_total{name=~\"fmbot-.*-${botinstance:regex}-1\"}[$__rate_interval]))",
           "legendFormat": "Received (Rx)"
         },
         {
-          "expr": "-sum(rate(container_network_transmit_bytes_total{instance=~\"$botinstance\"}[$__interval]))",
+          "expr": "-sum(rate(container_network_transmit_bytes_total{name=~\"fmbot-.*-${botinstance:regex}-1\"}[$__rate_interval]))",
           "legendFormat": "Transmitted (Tx)"
         }
       ],
@@ -5798,8 +5723,8 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum by (instance) (rate(bot_shard_connected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} connect" },
-        { "expr": "sum by (instance) (rate(bot_shard_disconnected{instance=~\"$botinstance\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} disconnect" }
+        { "expr": "sum by (instance) (rate(bot_shard_event{instance=~\"$botinstance\", event=\"connected\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} connect" },
+        { "expr": "sum by (instance) (rate(bot_shard_event{instance=~\"$botinstance\", event=\"disconnected\"}[$__rate_interval]) * 60)", "legendFormat": "{{instance}} disconnect" }
       ],
       "title": "Shard Connect/Disconnect Events",
       "type": "timeseries"
@@ -5965,14 +5890,15 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(instance)",
+        "allValue": "prod-.*",
+        "definition": "label_values(process_num_threads{job=~\"production|develop\"}, instance)",
         "includeAll": true,
         "multi": true,
         "name": "botinstance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(instance)",
+          "query": "label_values(process_num_threads{job=~\"production|develop\"}, instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -5981,24 +5907,24 @@
       },
       {
         "current": {
-          "text": "prod-7",
-          "value": "prod-7"
+          "text": "prod-8",
+          "value": "prod-8"
         },
         "datasource": {
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(instance)",
+        "definition": "query_result(bot_registered_users_count > 0)",
         "includeAll": false,
         "name": "master_instance",
         "options": [],
         "query": {
-          "qryType": 1,
-          "query": "label_values(instance)",
+          "qryType": 3,
+          "query": "query_result(bot_registered_users_count > 0)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
-        "regex": "",
+        "regex": "/instance=\"([^\"]+)\"/",
         "type": "query"
       }
     ]
