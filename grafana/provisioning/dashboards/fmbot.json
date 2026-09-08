@@ -1842,7 +1842,7 @@
               }
             ]
           },
-          "unit": "decmbytes"
+          "unit": "mbytes"
         },
         "overrides": []
       },
@@ -2656,7 +2656,7 @@
           "disableTextWrap": false,
           "editorMode": "code",
           "exemplar": false,
-          "expr": "sum by (method)  (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[1h]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[1h]))",
+          "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[1h])) / sum by (method) (rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[1h]))",
           "format": "time_series",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
@@ -3203,7 +3203,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_update_queue_size{instance=\"prod-1\"}",
+          "expr": "max(bot_update_queue_size{instance=~\"$botinstance\"})",
           "interval": "",
           "legendFormat": "Queue size",
           "range": true,
@@ -3216,7 +3216,7 @@
           },
           "editorMode": "code",
           "exemplar": true,
-          "expr": "bot_update_outdated_users{instance=\"prod-1\"}",
+          "expr": "max(bot_update_outdated_users{instance=~\"$botinstance\"})",
           "interval": "",
           "legendFormat": "Outdated users",
           "range": true,
@@ -3536,7 +3536,7 @@
               }
             ]
           },
-          "unit": "decmbytes"
+          "unit": "mbytes"
         },
         "overrides": []
       },
@@ -3789,7 +3789,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "exemplar": true,
-          "expr": "increase(dotnet_collection_count_total[$interval])",
+          "expr": "sum by (generation) (increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval]))",
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
@@ -5245,7 +5245,7 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [{
-        "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
+        "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval])) / sum by (method) (rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
         "legendFormat": "{{method}}"
       }],
       "title": "Last.fm Response Time by Method",
@@ -5485,8 +5485,8 @@
       "pluginVersion": "12.2.1",
       "targets": [
         { "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_active_dbcontexts{instance=~\"$botinstance\"})", "legendFormat": "Active DbContexts" },
-        { "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"idle\"})", "legendFormat": "Idle Connections" },
-        { "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"used\"})", "legendFormat": "Used Connections" }
+        { "expr": "sum(npgsql_db_client_connection_count{instance=~\"$botinstance\", db_client_connection_state=\"idle\"})", "legendFormat": "Idle Connections" },
+        { "expr": "sum(npgsql_db_client_connection_count{instance=~\"$botinstance\", db_client_connection_state=\"used\"})", "legendFormat": "Used Connections" }
       ],
       "title": "Database Connections",
       "type": "timeseries"
@@ -5523,7 +5523,7 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) / (sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) + sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"})) * 100", "legendFormat": "Query Cache Hit Rate" }
+        { "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}[$interval])) / (sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}[$interval])) + sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"}[$interval]))) * 100", "legendFormat": "Query Cache Hit Rate" }
       ],
       "title": "EF Core Query Cache Hit Rate",
       "type": "timeseries"
@@ -5559,8 +5559,8 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [
-        { "expr": "bot_update_queue_size{instance=\"prod-1\"}", "legendFormat": "Queue Size" },
-        { "expr": "bot_update_outdated_users{instance=\"prod-1\"}", "legendFormat": "Outdated Users" }
+        { "expr": "max(bot_update_queue_size{instance=~\"$botinstance\"})", "legendFormat": "Queue Size" },
+        { "expr": "max(bot_update_outdated_users{instance=~\"$botinstance\"})", "legendFormat": "Outdated Users" }
       ],
       "title": "Update Queue Status",
       "type": "stat"
@@ -5672,7 +5672,7 @@
           },
           "mappings": [],
           "thresholds": { "mode": "absolute", "steps": [{ "color": "green", "value": null }] },
-          "unit": "decmbytes"
+          "unit": "mbytes"
         },
         "overrides": []
       },
@@ -5722,7 +5722,7 @@
       },
       "pluginVersion": "12.2.1",
       "targets": [{
-        "expr": "increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval])",
+        "expr": "sum by (generation) (increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval]))",
         "legendFormat": "Gen {{generation}}"
       }],
       "title": "GC Collections",

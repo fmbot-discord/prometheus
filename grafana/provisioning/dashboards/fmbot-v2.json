@@ -3951,9 +3951,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[1d]) / (24 * 60 * 60))",
-                        "instant": false,
+                        "instant": true,
                         "interval": "",
-                        "legendFormat": "{{job}}"
+                        "legendFormat": "{{job}}",
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4113,7 +4114,7 @@
                       }
                     ]
                   },
-                  "unit": "decmbytes"
+                  "unit": "mbytes"
                 },
                 "overrides": []
               },
@@ -5495,7 +5496,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval]) / rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
+                        "expr": "sum by (method) (rate(lastfm_api_response_time_sum{instance=~\"$botinstance\"}[$interval])) / sum by (method) (rate(lastfm_api_response_time_count{instance=~\"$botinstance\"}[$interval]))",
                         "legendFormat": "{{method}}"
                       },
                       "version": "v0"
@@ -6365,7 +6366,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"idle\"})",
+                        "expr": "sum(npgsql_db_client_connection_count{instance=~\"$botinstance\", db_client_connection_state=\"idle\"})",
                         "legendFormat": "Idle Connections"
                       },
                       "version": "v0"
@@ -6384,7 +6385,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(npgsql_db_client_connections_usage{instance=~\"$botinstance\", state=\"used\"})",
+                        "expr": "sum(npgsql_db_client_connection_count{instance=~\"$botinstance\", db_client_connection_state=\"used\"})",
                         "legendFormat": "Used Connections"
                       },
                       "version": "v0"
@@ -6502,7 +6503,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) / (sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}) + sum(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"})) * 100",
+                        "expr": "sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}[$interval])) / (sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_hits{instance=~\"$botinstance\"}[$interval])) + sum(rate(microsoft_entityframeworkcore_microsoft_entityframeworkcore_compiled_query_cache_misses{instance=~\"$botinstance\"}[$interval]))) * 100",
                         "legendFormat": "Query Cache Hit Rate"
                       },
                       "version": "v0"
@@ -7117,7 +7118,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "bot_update_queue_size{instance=\"prod-1\"}",
+                        "expr": "max(bot_update_queue_size{instance=~\"$botinstance\"})",
                         "legendFormat": "Queue Size"
                       },
                       "version": "v0"
@@ -7136,7 +7137,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "bot_update_outdated_users{instance=\"prod-1\"}",
+                        "expr": "max(bot_update_outdated_users{instance=~\"$botinstance\"})",
                         "legendFormat": "Outdated Users"
                       },
                       "version": "v0"
@@ -7541,7 +7542,7 @@
                       "group": "prometheus",
                       "kind": "DataQuery",
                       "spec": {
-                        "expr": "increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval])",
+                        "expr": "sum by (generation) (increase(dotnet_collection_count_total{instance=~\"$botinstance\"}[$interval]))",
                         "legendFormat": "Gen {{generation}}"
                       },
                       "version": "v0"
