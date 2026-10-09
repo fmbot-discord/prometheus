@@ -5,8 +5,8 @@
     "name": "fmbot-v2",
     "namespace": "default",
     "uid": "XV0KMzh00Ge9m1bvynEXk8YTn0NE8GUhoWH3SxSXXLsX",
-    "resourceVersion": "1785965479476991",
-    "generation": 4,
+    "resourceVersion": "1788880770611997",
+    "generation": 14,
     "creationTimestamp": "2026-01-20T16:00:35Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "14"
@@ -15,11 +15,11 @@
       "grafana.app/createdBy": "provisioning:",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "Prometheus",
-      "grafana.app/sourceChecksum": "c4bbd84b5b60bf5fda7ed5cb9976c040",
+      "grafana.app/sourceChecksum": "f504a0d8a11a50f3844d765fe3eabd69",
       "grafana.app/sourcePath": "/etc/grafana/provisioning/dashboards/fmbot-v2.json",
-      "grafana.app/sourceTimestamp": "1785965474000",
+      "grafana.app/sourceTimestamp": "1788880765000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-08-05T21:31:19Z",
+      "grafana.app/updatedTimestamp": "2026-09-08T15:19:30Z",
       "grafana.app/folder": ""
     }
   },
@@ -180,7 +180,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -278,7 +278,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -376,7 +376,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -502,7 +502,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -588,7 +588,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -686,7 +686,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -784,7 +784,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -882,7 +882,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -980,7 +980,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1118,7 +1118,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1287,7 +1287,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1477,7 +1477,32 @@
                   },
                   "unit": "none"
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "30 days - MAU"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "annotations": {
@@ -1504,7 +1529,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1665,7 +1690,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1812,7 +1837,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -1972,7 +1997,32 @@
                   },
                   "unit": "none"
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Connected"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "annotations": {
@@ -1995,7 +2045,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -2126,7 +2176,846 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1401": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "histogram_quantile(0.50, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
+                        "legendFormat": "p50"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "histogram_quantile(0.95, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
+                        "legendFormat": "p95"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "histogram_quantile(0.99, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
+                        "legendFormat": "p99"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Discord gateway heartbeat latency (NetCord)",
+          "id": 1401,
+          "links": [],
+          "title": "Gateway latency",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": true,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "decimals": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "s"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "lastNotNull",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "maxHeight": 600,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1402": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum by (status) (netcord_gateway_shardedgatewayclient_sharded_gateway_shards{instance=~\"$botinstance\"})",
+                        "legendFormat": "{{status}}"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Shard connection status (NetCord)",
+          "id": 1402,
+          "links": [],
+          "title": "Shards by status",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": true,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "decimals": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "none"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "lastNotNull",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "maxHeight": 600,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1403": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sort_desc(histogram_quantile(0.95, sum by (instance, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
+                        "format": "time_series",
+                        "instant": true,
+                        "legendFormat": "{{instance}}",
+                        "range": false
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Current p95 gateway latency per bot instance, worst first",
+          "id": 1403,
+          "links": [],
+          "title": "Gateway latency by instance (p95)",
+          "vizConfig": {
+            "group": "bargauge",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 0.3
+                      },
+                      {
+                        "color": "red",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  "unit": "s"
+                },
+                "overrides": []
+              },
+              "options": {
+                "displayMode": "basic",
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "maxVizHeight": 300,
+                "minVizHeight": 16,
+                "minVizWidth": 8,
+                "namePlacement": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showUnfilled": true,
+                "sizing": "auto",
+                "valueMode": "color"
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1404": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum by (event) (rate(netcord_gateway_gatewayclient_gateway_received_messages{instance=~\"$botinstance\", op=\"Dispatch\"}[$interval]) * 60)",
+                        "legendFormat": "{{event}}"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Events per minute by dispatch type",
+          "id": 1404,
+          "links": [],
+          "title": "Gateway dispatch events received",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": true,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "decimals": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "none"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "lastNotNull"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "right",
+                  "showLegend": true,
+                  "sortBy": "Mean",
+                  "sortDesc": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "maxHeight": 600,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1405": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum by (action) (rate(netcord_gateway_gatewayclient_gateway_rate_limit_triggered{instance=~\"$botinstance\"}[$interval]) * 60)",
+                        "legendFormat": "{{action}}"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Gateway send rate limits per minute",
+          "id": 1405,
+          "links": [],
+          "title": "Gateway rate limits triggered",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": true,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "decimals": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  },
+                  "unit": "none"
+                },
+                "overrides": []
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "lastNotNull",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "maxHeight": 600,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-1406": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum(rate(bot_text_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval])) / sum(rate(bot_text_command_handler_duration_count{instance=~\"$botinstance\"}[$interval]))",
+                        "legendFormat": "Text mean"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum(rate(bot_slash_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval])) / sum(rate(bot_slash_command_handler_duration_count{instance=~\"$botinstance\"}[$interval]))",
+                        "legendFormat": "Slash mean"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum(rate(bot_text_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval] offset 24h)) / sum(rate(bot_text_command_handler_duration_count{instance=~\"$botinstance\"}[$interval] offset 24h))",
+                        "legendFormat": "Text mean -24h"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "PBFA97CFB590B2093"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "expr": "sum(rate(bot_slash_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval] offset 24h)) / sum(rate(bot_slash_command_handler_duration_count{instance=~\"$botinstance\"}[$interval] offset 24h))",
+                        "legendFormat": "Slash mean -24h"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "Mean handler duration (rate(sum)/rate(count)). Dashed lines = same series 24h earlier. Note: the timer wraps the whole handler incl. fast bail-outs, so values run lower than per-command response times.",
+          "id": 1406,
+          "links": [],
+          "title": "Command Handler Latency (Mean)",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": true,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  "unit": "s"
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byRegexp",
+                      "options": ".*-24h"
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.lineStyle",
+                        "value": {
+                          "dash": [
+                            10,
+                            10
+                          ],
+                          "fill": "dash"
+                        }
+                      },
+                      {
+                        "id": "custom.fillOpacity",
+                        "value": 0
+                      },
+                      {
+                        "id": "custom.lineWidth",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              "options": {
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "max"
+                  ],
+                  "displayMode": "table",
+                  "enableFacetedFilter": false,
+                  "overflow": "ellipsis",
+                  "placement": "right",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "desc"
+                }
+              }
+            },
+            "version": "13.2.3"
           }
         }
       },
@@ -2303,7 +3192,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -2326,8 +3215,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Slash",
                         "instant": true,
+                        "legendFormat": "Slash",
                         "range": false
                       },
                       "version": "v0"
@@ -2347,8 +3236,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Text",
                         "instant": true,
+                        "legendFormat": "Text",
                         "range": false
                       },
                       "version": "v0"
@@ -2368,8 +3257,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_user_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "User",
                         "instant": true,
+                        "legendFormat": "User",
                         "range": false
                       },
                       "version": "v0"
@@ -2389,8 +3278,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_message_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Message",
                         "instant": true,
+                        "legendFormat": "Message",
                         "range": false
                       },
                       "version": "v0"
@@ -2444,7 +3333,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -2467,8 +3356,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_button_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Buttons",
                         "instant": true,
+                        "legendFormat": "Buttons",
                         "range": false
                       },
                       "version": "v0"
@@ -2488,8 +3377,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_select_menus_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Select Menus",
                         "instant": true,
+                        "legendFormat": "Select Menus",
                         "range": false
                       },
                       "version": "v0"
@@ -2509,8 +3398,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_modals_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Modals",
                         "instant": true,
+                        "legendFormat": "Modals",
                         "range": false
                       },
                       "version": "v0"
@@ -2530,8 +3419,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_autocompletes_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Autocompletes",
                         "instant": true,
+                        "legendFormat": "Autocompletes",
                         "range": false
                       },
                       "version": "v0"
@@ -2585,7 +3474,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -2762,7 +3651,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -2785,8 +3674,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Flow commands",
                         "instant": true,
+                        "legendFormat": "Flow commands",
                         "range": false
                       },
                       "version": "v0"
@@ -2806,8 +3695,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range])) / (sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range])) + sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range])) + sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\"}[$__range]))) * 100",
-                        "legendFormat": "% of all command executions",
                         "instant": true,
+                        "legendFormat": "% of all command executions",
                         "range": false
                       },
                       "version": "v0"
@@ -2827,8 +3716,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(bot_flow_commands_executed{instance=~\"$botinstance\", response!=\"Ok\"}[$__range]))",
-                        "legendFormat": "Non-Ok responses",
                         "instant": true,
+                        "legendFormat": "Non-Ok responses",
                         "range": false
                       },
                       "version": "v0"
@@ -2914,7 +3803,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3033,7 +3922,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3155,7 +4044,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3277,7 +4166,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3498,7 +4387,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3635,7 +4524,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3772,7 +4661,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3797,10 +4686,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(lastfm_api_calls{instance=~\"$botinstance\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "Unauthorized",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -3821,10 +4710,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(lastfm_authorized_api_calls{instance=~\"$botinstance\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "Authorized",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -3876,7 +4765,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -3964,7 +4853,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -4092,7 +4981,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -4286,7 +5175,32 @@
                   },
                   "unit": "none"
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Registered"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "annotations": {
@@ -4309,7 +5223,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -4334,10 +5248,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(bot_commands_executed{instance=~\"$botinstance\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "Text",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4358,10 +5272,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "Slash",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -4413,7 +5327,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -4708,7 +5622,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -4731,8 +5645,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(spotify_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Spotify",
                         "instant": true,
+                        "legendFormat": "Spotify",
                         "range": false
                       },
                       "version": "v0"
@@ -4752,8 +5666,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(musicbrainz_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "MusicBrainz",
                         "instant": true,
+                        "legendFormat": "MusicBrainz",
                         "range": false
                       },
                       "version": "v0"
@@ -4773,8 +5687,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(discogs_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Discogs",
                         "instant": true,
+                        "legendFormat": "Discogs",
                         "range": false
                       },
                       "version": "v0"
@@ -4794,8 +5708,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(applemusic_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Apple Music",
                         "instant": true,
+                        "legendFormat": "Apple Music",
                         "range": false
                       },
                       "version": "v0"
@@ -4815,8 +5729,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(openai_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "OpenAI",
                         "instant": true,
+                        "legendFormat": "OpenAI",
                         "range": false
                       },
                       "version": "v0"
@@ -4836,8 +5750,8 @@
                       "kind": "DataQuery",
                       "spec": {
                         "expr": "sum(increase(lyrics_api_calls{instance=~\"$botinstance\"}[$__range]))",
-                        "legendFormat": "Lyrics",
                         "instant": true,
+                        "legendFormat": "Lyrics",
                         "range": false
                       },
                       "version": "v0"
@@ -4891,7 +5805,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5027,7 +5941,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5157,7 +6071,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5351,7 +6265,32 @@
                   },
                   "unit": "none"
                 },
-                "overrides": []
+                "overrides": [
+                  {
+                    "__systemRef": "hideSeriesFrom",
+                    "matcher": {
+                      "id": "byNames",
+                      "options": {
+                        "mode": "exclude",
+                        "names": [
+                          "Total"
+                        ],
+                        "prefix": "All except:",
+                        "readOnly": true
+                      }
+                    },
+                    "properties": [
+                      {
+                        "id": "custom.hideFrom",
+                        "value": {
+                          "legend": false,
+                          "tooltip": true,
+                          "viz": true
+                        }
+                      }
+                    ]
+                  }
+                ]
               },
               "options": {
                 "annotations": {
@@ -5374,7 +6313,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5493,7 +6432,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5613,7 +6552,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5745,7 +6684,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -5876,7 +6815,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6088,7 +7027,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6225,7 +7164,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6381,7 +7320,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6498,7 +7437,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6523,10 +7462,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"guild_app\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "Guild",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -6547,10 +7486,10 @@
                         "editorMode": "code",
                         "exemplar": true,
                         "expr": "sum(increase(bot_slash_commands_executed{instance=~\"$botinstance\", integration_type=\"user_app\"}[$__range]))",
+                        "instant": true,
                         "interval": "",
                         "legendFormat": "User",
-                        "range": false,
-                        "instant": true
+                        "range": false
                       },
                       "version": "v0"
                     },
@@ -6602,7 +7541,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6734,7 +7673,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6866,7 +7805,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -6996,7 +7935,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7091,7 +8030,7 @@
                 "wideLayout": true
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7284,7 +8223,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7420,7 +8359,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7538,7 +8477,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7675,7 +8614,7 @@
                 }
               }
             },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       },
@@ -7793,845 +8732,7 @@
                 }
               }
             },
-            "version": "13.1.2"
-          }
-        }
-      },
-      "panel-1401": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "histogram_quantile(0.50, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
-                        "legendFormat": "p50"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "histogram_quantile(0.95, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
-                        "legendFormat": "p95"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "histogram_quantile(0.99, sum by (le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval])))",
-                        "legendFormat": "p99"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "C"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Discord gateway heartbeat latency (NetCord)",
-          "id": 1401,
-          "links": [],
-          "title": "Gateway latency",
-          "vizConfig": {
-            "group": "timeseries",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "palette-classic"
-                  },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "linear",
-                    "lineWidth": 1,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "decimals": 0,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "s"
-                },
-                "overrides": []
-              },
-              "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
-                  "calcs": [
-                    "mean",
-                    "lastNotNull",
-                    "max"
-                  ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "bottom",
-                  "showLegend": true
-                },
-                "tooltip": {
-                  "hideZeros": false,
-                  "maxHeight": 600,
-                  "mode": "multi",
-                  "sort": "none"
-                }
-              }
-            },
-            "version": "13.1.2"
-          }
-        }
-      },
-      "panel-1402": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum by (status) (netcord_gateway_shardedgatewayclient_sharded_gateway_shards{instance=~\"$botinstance\"})",
-                        "legendFormat": "{{status}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Shard connection status (NetCord)",
-          "id": 1402,
-          "links": [],
-          "title": "Shards by status",
-          "vizConfig": {
-            "group": "timeseries",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "palette-classic"
-                  },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "linear",
-                    "lineWidth": 1,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "decimals": 0,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
-                  "calcs": [
-                    "mean",
-                    "lastNotNull",
-                    "max"
-                  ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "bottom",
-                  "showLegend": true
-                },
-                "tooltip": {
-                  "hideZeros": false,
-                  "maxHeight": 600,
-                  "mode": "multi",
-                  "sort": "none"
-                }
-              }
-            },
-            "version": "13.1.2"
-          }
-        }
-      },
-      "panel-1403": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sort_desc(histogram_quantile(0.95, sum by (instance, le) (rate(netcord_gateway_gatewayclient_gateway_latency_bucket{instance=~\"$botinstance\"}[$interval]))))",
-                        "legendFormat": "{{instance}}",
-                        "instant": true,
-                        "range": false,
-                        "format": "time_series"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Current p95 gateway latency per bot instance, worst first",
-          "id": 1403,
-          "links": [],
-          "title": "Gateway latency by instance (p95)",
-          "vizConfig": {
-            "group": "bargauge",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "thresholds"
-                  },
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "yellow",
-                        "value": 0.3
-                      },
-                      {
-                        "color": "red",
-                        "value": 1
-                      }
-                    ]
-                  },
-                  "unit": "s",
-                  "min": 0
-                },
-                "overrides": []
-              },
-              "options": {
-                "displayMode": "basic",
-                "orientation": "horizontal",
-                "reduceOptions": {
-                  "calcs": [
-                    "lastNotNull"
-                  ],
-                  "fields": "",
-                  "values": false
-                },
-                "showUnfilled": true,
-                "valueMode": "color",
-                "namePlacement": "auto",
-                "minVizHeight": 16,
-                "minVizWidth": 8,
-                "maxVizHeight": 300,
-                "legend": {
-                  "calcs": [],
-                  "displayMode": "list",
-                  "placement": "bottom",
-                  "showLegend": false
-                },
-                "sizing": "auto"
-              }
-            }
-          }
-        }
-      },
-      "panel-1404": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum by (event) (rate(netcord_gateway_gatewayclient_gateway_received_messages{instance=~\"$botinstance\", op=\"Dispatch\"}[$interval]) * 60)",
-                        "legendFormat": "{{event}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Events per minute by dispatch type",
-          "id": 1404,
-          "links": [],
-          "title": "Gateway dispatch events received",
-          "vizConfig": {
-            "group": "timeseries",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "palette-classic"
-                  },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "linear",
-                    "lineWidth": 1,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "decimals": 0,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
-                  "calcs": [
-                    "mean",
-                    "lastNotNull"
-                  ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "right",
-                  "showLegend": true,
-                  "sortBy": "Mean",
-                  "sortDesc": true
-                },
-                "tooltip": {
-                  "hideZeros": false,
-                  "maxHeight": 600,
-                  "mode": "multi",
-                  "sort": "none"
-                }
-              }
-            },
-            "version": "13.1.2"
-          }
-        }
-      },
-      "panel-1405": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum by (action) (rate(netcord_gateway_gatewayclient_gateway_rate_limit_triggered{instance=~\"$botinstance\"}[$interval]) * 60)",
-                        "legendFormat": "{{action}}"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Gateway send rate limits per minute",
-          "id": 1405,
-          "links": [],
-          "title": "Gateway rate limits triggered",
-          "vizConfig": {
-            "group": "timeseries",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "palette-classic"
-                  },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "linear",
-                    "lineWidth": 1,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "decimals": 0,
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      },
-                      {
-                        "color": "red",
-                        "value": 80
-                      }
-                    ]
-                  },
-                  "unit": "none"
-                },
-                "overrides": []
-              },
-              "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
-                  "calcs": [
-                    "mean",
-                    "lastNotNull",
-                    "max"
-                  ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "bottom",
-                  "showLegend": true
-                },
-                "tooltip": {
-                  "hideZeros": false,
-                  "maxHeight": 600,
-                  "mode": "multi",
-                  "sort": "none"
-                }
-              }
-            },
-            "version": "13.1.2"
-          }
-        }
-      },
-      "panel-1406": {
-        "kind": "Panel",
-        "spec": {
-          "data": {
-            "kind": "QueryGroup",
-            "spec": {
-              "queries": [
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum(rate(bot_text_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval])) / sum(rate(bot_text_command_handler_duration_count{instance=~\"$botinstance\"}[$interval]))",
-                        "legendFormat": "Text mean"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "A"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum(rate(bot_slash_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval])) / sum(rate(bot_slash_command_handler_duration_count{instance=~\"$botinstance\"}[$interval]))",
-                        "legendFormat": "Slash mean"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "B"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum(rate(bot_text_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval] offset 24h)) / sum(rate(bot_text_command_handler_duration_count{instance=~\"$botinstance\"}[$interval] offset 24h))",
-                        "legendFormat": "Text mean -24h"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "C"
-                  }
-                },
-                {
-                  "kind": "PanelQuery",
-                  "spec": {
-                    "hidden": false,
-                    "query": {
-                      "datasource": {
-                        "name": "PBFA97CFB590B2093"
-                      },
-                      "group": "prometheus",
-                      "kind": "DataQuery",
-                      "spec": {
-                        "expr": "sum(rate(bot_slash_command_handler_duration_sum{instance=~\"$botinstance\"}[$interval] offset 24h)) / sum(rate(bot_slash_command_handler_duration_count{instance=~\"$botinstance\"}[$interval] offset 24h))",
-                        "legendFormat": "Slash mean -24h"
-                      },
-                      "version": "v0"
-                    },
-                    "refId": "D"
-                  }
-                }
-              ],
-              "queryOptions": {},
-              "transformations": []
-            }
-          },
-          "description": "Mean handler duration (rate(sum)/rate(count)). Dashed lines = same series 24h earlier. Note: the timer wraps the whole handler incl. fast bail-outs, so values run lower than per-command response times.",
-          "id": 1406,
-          "links": [],
-          "title": "Command Handler Latency (Mean)",
-          "vizConfig": {
-            "group": "timeseries",
-            "kind": "VizConfig",
-            "spec": {
-              "fieldConfig": {
-                "defaults": {
-                  "color": {
-                    "mode": "palette-classic"
-                  },
-                  "custom": {
-                    "axisBorderShow": false,
-                    "axisCenteredZero": false,
-                    "axisColorMode": "text",
-                    "axisLabel": "",
-                    "axisPlacement": "auto",
-                    "barAlignment": 0,
-                    "barWidthFactor": 0.6,
-                    "drawStyle": "line",
-                    "fillOpacity": 10,
-                    "gradientMode": "none",
-                    "hideFrom": {
-                      "legend": false,
-                      "tooltip": false,
-                      "viz": false
-                    },
-                    "insertNulls": false,
-                    "lineInterpolation": "smooth",
-                    "lineWidth": 2,
-                    "pointSize": 5,
-                    "scaleDistribution": {
-                      "type": "linear"
-                    },
-                    "showPoints": "never",
-                    "showValues": false,
-                    "spanNulls": true,
-                    "stacking": {
-                      "group": "A",
-                      "mode": "none"
-                    },
-                    "thresholdsStyle": {
-                      "mode": "off"
-                    }
-                  },
-                  "thresholds": {
-                    "mode": "absolute",
-                    "steps": [
-                      {
-                        "color": "green",
-                        "value": 0
-                      }
-                    ]
-                  },
-                  "unit": "s"
-                },
-                "overrides": [
-                  {
-                    "matcher": {
-                      "id": "byRegexp",
-                      "options": ".*-24h"
-                    },
-                    "properties": [
-                      {
-                        "id": "custom.lineStyle",
-                        "value": {
-                          "dash": [
-                            10,
-                            10
-                          ],
-                          "fill": "dash"
-                        }
-                      },
-                      {
-                        "id": "custom.fillOpacity",
-                        "value": 0
-                      },
-                      {
-                        "id": "custom.lineWidth",
-                        "value": 1
-                      }
-                    ]
-                  }
-                ]
-              },
-              "options": {
-                "annotations": {
-                  "clustering": -1,
-                  "multiLane": false
-                },
-                "legend": {
-                  "calcs": [
-                    "mean",
-                    "max"
-                  ],
-                  "displayMode": "table",
-                  "enableFacetedFilter": false,
-                  "overflow": "ellipsis",
-                  "placement": "right",
-                  "showLegend": true
-                },
-                "tooltip": {
-                  "hideZeros": false,
-                  "mode": "multi",
-                  "sort": "desc"
-                }
-              }
-            },
-            "version": "13.1.2"
+            "version": "13.2.3"
           }
         }
       }
@@ -9102,7 +9203,6 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "collapse": false,
-              "title": "Gateway",
               "layout": {
                 "kind": "GridLayout",
                 "spec": {
@@ -9174,7 +9274,8 @@
                     }
                   ]
                 }
-              }
+              },
+              "title": "Gateway"
             }
           },
           {
@@ -9690,6 +9791,7 @@
       {
         "kind": "QueryVariable",
         "spec": {
+          "allValue": "prod-.*",
           "allowCustomValue": true,
           "current": {
             "text": [
@@ -9744,8 +9846,7 @@
           "regex": "",
           "regexApplyTo": "value",
           "skipUrlSync": false,
-          "sort": "disabled",
-          "allValue": "prod-.*"
+          "sort": "disabled"
         }
       },
       {
